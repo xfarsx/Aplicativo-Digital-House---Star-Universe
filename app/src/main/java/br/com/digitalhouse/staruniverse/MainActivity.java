@@ -8,11 +8,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
-
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton buttonFace;
     private ImageButton buttonGmail;
+    private ImageButton buttonBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
       buttonFace = findViewById(R.id.btnFace);
       buttonGmail = findViewById(R.id.btnGmail);
-     // buttonCadastro = findViewById(R.id.btnCadastro);
+
 
         buttonFace.setOnClickListener(new View.OnClickListener() {
             @Override

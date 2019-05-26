@@ -9,4 +9,8 @@
     <string name="seu_perfil_p_blic_lista_de_amigos">Seu perfil público, lista de amigos</string>
     <string name="continuar">Continuar</string>
     <string name="frase_final_facebook">Isso não permite que o app faça postagem no Facebook.</string>
+    <string name="Termos_de_Uso_Google">Para continuar, o Gogle compartilhará seu nome, seu enedereço de e-mail e sua foto do perfil com o app Star Universe. Antes de usar esse app, revise política de privacidade e os termos de serviço dele.</string>
+    <string name="escolha_uma_conta">Escolha uma conta</string>
+    <string name="para_continuar_no_star_universe">para continuar no star universe.</string>
+    <string name="login_com_facebook">Login com Facebook</string>
 </resources>

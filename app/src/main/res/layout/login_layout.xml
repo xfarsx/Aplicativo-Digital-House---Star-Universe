@@ -43,8 +43,8 @@
             android:layout_height="56dp"
             android:foregroundTint="@color/staruniverse"
             android:hint="Senha"
+            android:textColor="@color/staruniverse"
             android:inputType="textPassword"
-            android:textAppearance="@style/LoginInputLabel"
             android:theme="@style/LoginInput.Edit" />
     </android.support.design.widget.TextInputLayout>
 
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Usuário"
-            android:textAppearance="@style/LoginInputLabel"
+            android:textColor="@color/staruniverse"
             android:theme="@style/LoginInput.Edit" />
     </android.support.design.widget.TextInputLayout>
 
@@ -79,74 +79,64 @@
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
+        <ImageButton
+            android:id="@+id/btnGmail"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="116dp"
+            android:layout_marginEnd="112dp"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:src="@drawable/gmail"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+
+        <ImageButton
+            android:id="@+id/btnFace"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="116dp"
+            android:layout_weight="1"
+            android:background="#000000"
+            android:src="@drawable/facebookicon"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
+            android:layout_marginTop="72dp"
             android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnFace">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginBottom="72dp"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/btnGmail"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:background="#000000"
-                    android:src="@drawable/gmail" />
-
-
-                <ImageButton
-                    android:id="@+id/btnFace"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:background="#000000"
-                    android:src="@drawable/facebookicon" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/fraseCadastro"
+                style="@style/StringStyleStarUniverse2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/que_se_tornar_um_jedi" />
+
+            <Button
+                style="@style/StringStyleStarUniverse2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="#000000"
                 android:gravity="center"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <TextView
-                    android:id="@+id/fraseCadastro"
-                    style="@style/StringStyleStarUniverse2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/que_se_tornar_um_jedi" />
-
-                <Button
-                    style="@style/StringStyleStarUniverse2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:layout_weight="1"
-                    android:background="#000000"
-                    android:gravity="center"
-                    android:text="Cadastre-se"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                android:text="Cadastre-se"
+                android:textStyle="bold" />
         </LinearLayout>
+
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>
