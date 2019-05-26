@@ -9,7 +9,56 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+ Login
     <style name="LoginInput" parent="Widget.Design.TextInputLayout">
+        <item name="android:textColor">@color/staruniverse</item>
+        <item name="android:textColorHint">@color/staruniverse</item>
+    </style>
+
+    <style name="LoginInput.Edit" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">@color/staruniverse</item>
+        <item name="colorControlNormal">@color/staruniverse</item>
+        <item name="colorControlHighlight">@color/staruniverse</item>
+    </style>
+
+    <style name="LoginInputLabel" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/staruniverse</item>
+    </style>
+    <style name="StringStyleStandard">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="StringStyleStarUniverse">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/staruniverse</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="StringStyleStarUniverse2">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/staruniverse</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="StringStyleBlack">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="BarStarUniverse">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:background">@color/staruniverse</item>
+    </style>
+
+    <!-- FullScreen theme. -->
+    <style name="FullScreen" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+ <style name="LoginInput" parent="Widget.Design.TextInputLayout">
         <item name="android:textColor">@color/staruniverse</item>
         <item name="android:textColorHint">@color/staruniverse</item>
     </style>
