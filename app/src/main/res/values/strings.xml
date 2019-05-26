@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Star Universe</string>
-    <string name="que_se_tornar_um_jedi">Que se tornar um Jedi ? Cadastre-se</string>
+    <string name="que_se_tornar_um_jedi">Que se tornar um Jedi ?</string>
     <string name="lembrar_senha_">Lembrar senha ?</string>
     <string name="star_universe">Star Universe</string>
+    <string name="e_endereco_de_e_mail">e endereço de e-mail.</string>
+    <string name="editar_isso">Editar isso:</string>
+    <string name="receber">receberá:</string>
+    <string name="seu_perfil_p_blic_lista_de_amigos">Seu perfil público, lista de amigos</string>
+    <string name="continuar">Continuar</string>
+    <string name="frase_final_facebook">Isso não permite que o app faça postagem no Facebook.</string>
 </resources>

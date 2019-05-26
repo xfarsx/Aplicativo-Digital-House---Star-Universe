@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -15,9 +17,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_layout);
+        this.setContentView(R.layout.login_layout);
 
       buttonFace = findViewById(R.id.btnFace);
+      buttonGmail = findViewById(R.id.btnGmail);
+     // buttonCadastro = findViewById(R.id.btnCadastro);
 
         buttonFace.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,6 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        buttonGmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                setContentView(R.layout.gmail_layout);
+
+            }
+        });
+
+
 
     }
 
