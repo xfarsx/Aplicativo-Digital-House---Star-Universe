@@ -22,7 +22,6 @@
 
     <style name="LoginInputLabel" parent="@android:style/TextAppearance">
         <item name="android:textColor">@color/staruniverse</item>
-        <item name="android:color">@color/staruniverse</item>
     </style>
     <style name="StringStyleStandard">
         <item name="android:textAllCaps">false</item>

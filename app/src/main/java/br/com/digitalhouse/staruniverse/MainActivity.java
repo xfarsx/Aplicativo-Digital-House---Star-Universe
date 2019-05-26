@@ -1,18 +1,19 @@
 package br.com.digitalhouse.staruniverse;
 
-import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton buttonFace;
     private ImageButton buttonGmail;
-    private ImageButton buttonBack;
+    private LinearLayout barBack;
+    private Button buttonCadastrese;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
       buttonFace = findViewById(R.id.btnFace);
       buttonGmail = findViewById(R.id.btnGmail);
+
+
+        buttonCadastrese = findViewById(R.id.btnCadastrese);
 
 
         buttonFace.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+       /* buttonCadastrese.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                setContentView(R.layout.);
+            }
+        });*/
+
 
 
 
