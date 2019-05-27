@@ -4,14 +4,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logostaruniverse_ic"
+        android:icon="@mipmap/logo_star_universe"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo_star_universe"
         android:supportsRtl="true"
-
-              android:theme="@style/Theme.MaterialComponents.NoActionBar.Bridge">
-         <activity android:name=".MainActivity"
-            android:label="Star Universe"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashActivity"
+            android:label="StarUniverse"
             android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
