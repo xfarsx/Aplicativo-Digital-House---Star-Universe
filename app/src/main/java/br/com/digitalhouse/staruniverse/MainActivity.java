@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton buttonGmail;
     private Button buttonCadastrese;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -19,4 +19,6 @@
     <string name="nome_jedi">Nome Jedi</string>
     <string name="senha">Senha</string>
     <string name="confirmar_senha">Confirmar Senha</string>
+    <string name="voltar">Voltar</string>
+    <string name="cadastrar">Cadastrar</string>
 </resources>
