@@ -30,6 +30,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/LoginInputLabel"
             android:textColorHint="@color/staruniverse">
 
             <android.support.design.widget.TextInputEditText
@@ -37,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/nome"
                 android:id="@+id/Nome"
+                android:inputType="text"
                 android:textColor="@color/staruniverse"
                 android:theme="@style/LoginInput.Edit" />
         </android.support.design.widget.TextInputLayout>
@@ -44,6 +46,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/LoginInputLabel"
             android:textColorHint="@color/staruniverse">
 
             <android.support.design.widget.TextInputEditText
@@ -51,6 +54,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/sobrenome"
                 android:id="@+id/Sobrenome"
+                android:inputType="text"
                 android:textColor="@color/staruniverse"
                 android:theme="@style/LoginInput.Edit" />
         </android.support.design.widget.TextInputLayout>
@@ -58,6 +62,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/LoginInputLabel"
             android:textColorHint="@color/staruniverse">
 
             <android.support.design.widget.TextInputEditText
@@ -73,6 +78,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/LoginInputLabel"
             android:textColorHint="@color/staruniverse">
 
             <android.support.design.widget.TextInputEditText
@@ -80,6 +86,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/nome_jedi"
                 android:id="@+id/Jedi"
+                android:inputType="text"
                 android:textColor="@color/staruniverse"
                 android:theme="@style/LoginInput.Edit" />
         </android.support.design.widget.TextInputLayout>
@@ -87,6 +94,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/LoginInputLabel"
             android:textColorHint="@color/staruniverse">
 
             <android.support.design.widget.TextInputEditText
@@ -102,6 +110,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:hintTextAppearance="@style/LoginInputLabel"
             android:textColorHint="@color/staruniverse">
 
             <android.support.design.widget.TextInputEditText
