@@ -40,7 +40,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        buttonCadastrese.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                setContentView(R.layout.activity_cadastro);
+            }
+        });
 
 
 

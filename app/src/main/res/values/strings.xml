@@ -13,4 +13,10 @@
     <string name="escolha_uma_conta">Escolha uma conta</string>
     <string name="para_continuar_no_star_universe">para continuar no star universe.</string>
     <string name="login_com_facebook">Login com Facebook</string>
+    <string name="nome">Nome</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="e_mail">E-mail</string>
+    <string name="nome_jedi">Nome Jedi</string>
+    <string name="senha">Senha</string>
+    <string name="confirmar_senha">Confirmar Senha</string>
 </resources>

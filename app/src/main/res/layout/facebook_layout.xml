@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/linearLayout2"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appFaceBack"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:background="@color/facebook"
@@ -24,10 +24,10 @@
 
             <ImageButton
                 android:id="@+id/btnBack"
-                android:onClick="voltar"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="@color/facebook"
+                android:onClick="voltar"
                 android:src="@drawable/backiconwhite" />
 
             <TextView
@@ -36,7 +36,7 @@
                 android:text="@string/login_com_facebook"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
-        </LinearLayout>
+        </android.support.design.widget.AppBarLayout>
 
         <ImageView
             android:id="@+id/imageView"
