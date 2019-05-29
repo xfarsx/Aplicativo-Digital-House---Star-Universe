@@ -8,9 +8,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/logo_star_universe"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"
-            android:label="StarUniverse"
+        android:theme="@style/FullScreen">
+        <activity android:name=".MainActivity"/>
+        <activity
+            android:name=".Facebook"/>
+        <activity
+            android:name=".Gmail"/>
+        <activity
+            android:name=".SplashActivity"
+            android:label="Star Universe"
             android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,9 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity
+            android:name=".Cadastro"/>
     </application>
 
 </manifest>

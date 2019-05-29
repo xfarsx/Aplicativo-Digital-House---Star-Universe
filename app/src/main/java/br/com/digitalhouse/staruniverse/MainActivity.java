@@ -1,60 +1,70 @@
 package br.com.digitalhouse.staruniverse;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton buttonFace;
-    private ImageButton buttonGmail;
-    private LinearLayout barBack;
-    private Button buttonCadastrese;
 
+    private Button buttonCadastrese;
+    private Button buttonLogin;
+    private Button buttonFacebook;
+    private Button buttonGmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.login_layout);
-
-      buttonFace = findViewById(R.id.btnFace);
-      buttonGmail = findViewById(R.id.btnGmail);
-
+        this.setContentView(R.layout.activity_main);
 
         buttonCadastrese = findViewById(R.id.btnCadastrese);
+        buttonLogin = findViewById(R.id.btnLogar);
+        buttonFacebook = findViewById(R.id.btnFace);
+        buttonGmail = findViewById(R.id.btnGmail);
 
 
-        buttonFace.setOnClickListener(new View.OnClickListener() {
+        buttonCadastrese.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                setContentView(R.layout.facebook_layout);
+                startActivity(new Intent(MainActivity.this, Cadastro.class));
 
             }
         });
+
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(MainActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
 
         buttonGmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                setContentView(R.layout.gmail_layout);
+                //startActivity(new Intent(MainActivity.this, Gmail.class));
+                Toast.makeText(MainActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
 
             }
         });
 
-       /* buttonCadastrese.setOnClickListener(new View.OnClickListener() {
+        buttonFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                setContentView(R.layout.);
+                //startActivity(new Intent(MainActivity.this, Facebook.class));
+                Toast.makeText(MainActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
+
+
             }
-        });*/
-
-
-
+        });
 
     }
 
