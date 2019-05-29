@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
                 setContentView(R.layout.facebook_layout);
 
+
             }
         });
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 setContentView(R.layout.gmail_layout);
+
 
             }
         });
