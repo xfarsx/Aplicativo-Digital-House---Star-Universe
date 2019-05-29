@@ -1,5 +1,6 @@
 package br.com.digitalhouse.staruniverse;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,25 +26,25 @@ public class MainActivity extends AppCompatActivity {
         buttonFace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                setContentView(R.layout.facebook_layout);
-
+                startActivity(new Intent(MainActivity.this,FacebookActivity.class));
+                
             }
         });
 
         buttonGmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,GmailActivity.class));
 
-                setContentView(R.layout.gmail_layout);
+
 
             }
         });
         buttonCadastrese.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+        startActivity(new Intent(MainActivity.this,Cadastro.class));
 
-                setContentView(R.layout.activity_cadastro);
             }
         });
 
