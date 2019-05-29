@@ -19,4 +19,10 @@
     <string name="nome_jedi">Nome Jedi</string>
     <string name="senha">Senha</string>
     <string name="confirmar_senha">Confirmar Senha</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="nome">Nome</string>
+    <string name="email">E-mail</string>
+    <string name="nome_jedi">Nome Jedi</string>
+    <string name="senha">Senha</string>
+    <string name="confirmar_senha">Confirmar Senha</string>
 </resources>
