@@ -1,10 +1,12 @@
-package br.com.digitalhouse.staruniverse;
+package br.com.digitalhouse.staruniverse.Core;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
+import br.com.digitalhouse.staruniverse.R;
 
 public class Gmail extends AppCompatActivity {
 
@@ -22,7 +24,7 @@ public class Gmail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(Gmail.this,MainActivity.class));
+                startActivity(new Intent(Gmail.this, MainActivity.class));
 
             }
         });

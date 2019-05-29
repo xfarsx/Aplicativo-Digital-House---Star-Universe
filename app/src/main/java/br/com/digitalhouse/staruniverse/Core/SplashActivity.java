@@ -1,4 +1,4 @@
-package br.com.digitalhouse.staruniverse;
+package br.com.digitalhouse.staruniverse.Core;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -8,6 +8,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import br.com.digitalhouse.staruniverse.R;
 
 public class SplashActivity extends AppCompatActivity {
 

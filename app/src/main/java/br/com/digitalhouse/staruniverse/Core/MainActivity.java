@@ -1,4 +1,4 @@
-package br.com.digitalhouse.staruniverse;
+package br.com.digitalhouse.staruniverse.Core;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import br.com.digitalhouse.staruniverse.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //startActivity(new Intent(MainActivity.this, Gmail.class));
+              //  startActivity(new Intent(MainActivity.this,Gmail.class));
                 Toast.makeText(MainActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
 
             }
