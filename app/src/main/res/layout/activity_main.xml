@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:fillViewport="true"
-    tools:context=".MainActivity">
+    tools:context=".Core.MainActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
