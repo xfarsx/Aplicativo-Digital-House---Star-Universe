@@ -6,51 +6,62 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton buttonFace;
-    private ImageButton buttonGmail;
+
     private Button buttonCadastrese;
+    private Button buttonLogin;
+    private Button buttonFacebook;
+    private Button buttonGmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.login_layout);
 
-      buttonFace = findViewById(R.id.btnFace);
-      buttonGmail = findViewById(R.id.btnGmail);
         buttonCadastrese = findViewById(R.id.btnCadastrese);
+        buttonLogin = findViewById(R.id.btnLogar);
+        buttonFacebook = findViewById(R.id.btnFace);
+        buttonGmail = findViewById(R.id.btnGmail);
 
 
-        buttonFace.setOnClickListener(new View.OnClickListener() {
+        buttonCadastrese.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,FacebookActivity.class));
-                
+
+                startActivity(new Intent(MainActivity.this, Cadastro.class));
+
             }
         });
+
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(MainActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_LONG).show();
+
+            }
+        });
+
 
         buttonGmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,GmailActivity.class));
 
-
-
+                startActivity(new Intent(MainActivity.this, Gmail.class));
             }
         });
-        buttonCadastrese.setOnClickListener(new View.OnClickListener() {
+
+        buttonFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-        startActivity(new Intent(MainActivity.this,Cadastro.class));
+
+                startActivity(new Intent(MainActivity.this, Facebook.class));
 
             }
         });
-
-
-
-
 
     }
 

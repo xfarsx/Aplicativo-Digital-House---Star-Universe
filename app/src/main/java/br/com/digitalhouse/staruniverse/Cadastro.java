@@ -1,12 +1,11 @@
 package br.com.digitalhouse.staruniverse;
 
+import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 public class Cadastro extends AppCompatActivity {
@@ -18,6 +17,7 @@ public class Cadastro extends AppCompatActivity {
     private TextInputEditText editSenha;
     private TextInputEditText editConfirmarSenha;
     private Button buttonCadastrar;
+    private Button buttoVoltar;
 
 
     @Override
@@ -31,7 +31,9 @@ public class Cadastro extends AppCompatActivity {
         editNomeJedi = findViewById(R.id.Jedi);
         editSenha = findViewById(R.id.Senha);
         editConfirmarSenha = findViewById(R.id.ConfirmarSenha);
+
         buttonCadastrar = findViewById(R.id.btnCadastro);
+        buttoVoltar =findViewById(R.id.btnVoltar);
 
         buttonCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +73,7 @@ public class Cadastro extends AppCompatActivity {
                 }
 
                 if (editSenha.getText().toString().equals("123456")) {
-                    Toast.makeText(Cadastro.this, "Senha cadastrada com sucesso!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Cadastro.this, "Senha muito fraca!", Toast.LENGTH_SHORT).show();
                     editSenha.requestFocus();
                     return;
                 }
@@ -83,6 +85,15 @@ public class Cadastro extends AppCompatActivity {
                 }
 
                 Toast.makeText( Cadastro.this, "Usuário Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        buttoVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(Cadastro.this, MainActivity.class));
 
             }
         });
