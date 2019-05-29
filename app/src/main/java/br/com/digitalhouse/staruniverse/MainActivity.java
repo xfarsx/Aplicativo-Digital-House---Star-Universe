@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(MainActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -49,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this, Gmail.class));
+                //startActivity(new Intent(MainActivity.this, Gmail.class));
+                Toast.makeText(MainActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -57,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this, Facebook.class));
+                //startActivity(new Intent(MainActivity.this, Facebook.class));
+                Toast.makeText(MainActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
+
 
             }
         });
