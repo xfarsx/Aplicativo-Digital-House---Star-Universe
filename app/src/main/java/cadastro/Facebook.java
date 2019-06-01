@@ -1,4 +1,4 @@
-package br.com.digitalhouse.staruniverse.Core;
+package cadastro;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import br.com.digitalhouse.staruniverse.R;
+import login.LoginActivity;
 
 public class Facebook extends AppCompatActivity {
 
@@ -23,7 +24,7 @@ public class Facebook extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(Facebook.this, MainActivity.class));
+                startActivity(new Intent(Facebook.this, LoginActivity.class));
 
             }
         });

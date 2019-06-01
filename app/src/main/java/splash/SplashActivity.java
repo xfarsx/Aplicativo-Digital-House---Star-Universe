@@ -1,4 +1,4 @@
-package br.com.digitalhouse.staruniverse.Core;
+package splash;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -9,6 +9,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import login.LoginActivity;
 import br.com.digitalhouse.staruniverse.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -43,7 +44,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
                 SplashActivity.this.finish();

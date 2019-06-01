@@ -1,4 +1,4 @@
-package br.com.digitalhouse.staruniverse.Core;
+package login;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import cadastro.Cadastro;
 import br.com.digitalhouse.staruniverse.R;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
 
     private Button buttonCadastrese;
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(R.layout.activity_main);
+        this.setContentView(R.layout.activity_login);
 
         buttonCadastrese = findViewById(R.id.btnCadastrese);
         buttonLogin = findViewById(R.id.btnLogar);
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this, Cadastro.class));
+                startActivity(new Intent(LoginActivity.this, Cadastro.class));
 
             }
         });
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(MainActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -50,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-              //  startActivity(new Intent(MainActivity.this,Gmail.class));
-                Toast.makeText(MainActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
+              //  startActivity(new Intent(LoginActivity.this,Gmail.class));
+                Toast.makeText(LoginActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -60,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //startActivity(new Intent(MainActivity.this, Facebook.class));
-                Toast.makeText(MainActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
+                //startActivity(new Intent(LoginActivity.this, Facebook.class));
+                Toast.makeText(LoginActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
 
 
             }

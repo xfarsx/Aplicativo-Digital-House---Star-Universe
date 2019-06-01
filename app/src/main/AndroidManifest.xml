@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/logo_star_universe"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
-        <activity android:name=".Core.MainActivity"/>
+        <activity android:name="login.LoginActivity"/>
         <activity
-            android:name=".Core.Facebook"/>
+            android:name="cadastro.Facebook"/>
         <activity
-            android:name=".Core.Gmail"/>
+            android:name="cadastro.Gmail"/>
         <activity
-            android:name=".Core.SplashActivity"
+            android:name="splash.SplashActivity"
             android:label="Star Universe"
             android:theme="@style/FullScreen">
             <intent-filter>
@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Core.Cadastro"/>
+            android:name="cadastro.Cadastro"/>
     </application>
 
 </manifest>

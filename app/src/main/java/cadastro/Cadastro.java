@@ -1,4 +1,4 @@
-package br.com.digitalhouse.staruniverse.Core;
+package cadastro;
 
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import br.com.digitalhouse.staruniverse.R;
+import login.LoginActivity;
 
 public class Cadastro extends AppCompatActivity {
 
@@ -95,7 +96,7 @@ public class Cadastro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(Cadastro.this, MainActivity.class));
+                startActivity(new Intent(Cadastro.this, LoginActivity.class));
 
             }
         });

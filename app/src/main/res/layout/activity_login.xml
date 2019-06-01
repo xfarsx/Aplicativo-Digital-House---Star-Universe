@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:fillViewport="true"
-    tools:context=".Core.MainActivity">
+    tools:context="login.LoginActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -45,6 +45,7 @@
                 android:foregroundTint="@color/staruniverse"
                 android:hint="Senha"
                 android:inputType="textPassword"
+                android:padding="8dp"
                 android:textColor="@color/staruniverse"
                 android:theme="@style/LoginInput.Edit" />
         </android.support.design.widget.TextInputLayout>
@@ -67,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Usuário"
                 android:inputType="text"
+                android:padding="8dp"
                 android:textColor="@color/staruniverse"
                 android:theme="@style/LoginInput.Edit" />
         </android.support.design.widget.TextInputLayout>

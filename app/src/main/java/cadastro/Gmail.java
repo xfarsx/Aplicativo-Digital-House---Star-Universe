@@ -1,4 +1,4 @@
-package br.com.digitalhouse.staruniverse.Core;
+package cadastro;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import br.com.digitalhouse.staruniverse.R;
+import login.LoginActivity;
 
 public class Gmail extends AppCompatActivity {
 
@@ -24,7 +25,7 @@ public class Gmail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(Gmail.this, MainActivity.class));
+                startActivity(new Intent(Gmail.this, LoginActivity.class));
 
             }
         });
