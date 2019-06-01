@@ -9,13 +9,12 @@
         android:roundIcon="@mipmap/logo_star_universe"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
-        <activity android:name="login.LoginActivity"/>
+        <activity android:name="br.com.digitalhouse.staruniverse.home.HomeActivity"></activity>
+        <activity android:name="br.com.digitalhouse.staruniverse.login.LoginActivity" />
+        <activity android:name="br.com.digitalhouse.staruniverse.cadastro.Facebook" />
+        <activity android:name="br.com.digitalhouse.staruniverse.cadastro.Gmail" />
         <activity
-            android:name="cadastro.Facebook"/>
-        <activity
-            android:name="cadastro.Gmail"/>
-        <activity
-            android:name="splash.SplashActivity"
+            android:name="br.com.digitalhouse.staruniverse.splash.SplashActivity"
             android:label="Star Universe"
             android:theme="@style/FullScreen">
             <intent-filter>
@@ -24,8 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="cadastro.Cadastro"/>
+        <activity android:name="br.com.digitalhouse.staruniverse.cadastro.Cadastro" />
     </application>
 
 </manifest>

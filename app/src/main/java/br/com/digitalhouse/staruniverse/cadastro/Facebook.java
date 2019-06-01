@@ -1,4 +1,4 @@
-package cadastro;
+package br.com.digitalhouse.staruniverse.cadastro;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import br.com.digitalhouse.staruniverse.R;
-import login.LoginActivity;
+import br.com.digitalhouse.staruniverse.login.LoginActivity;
 
 public class Facebook extends AppCompatActivity {
 
