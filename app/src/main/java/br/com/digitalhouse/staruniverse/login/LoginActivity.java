@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import br.com.digitalhouse.staruniverse.cadastro.Cadastro;
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.home.HomeActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -42,7 +43,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(LoginActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
+                Intent intent =  new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(intent);
 
             }
         });
