@@ -21,4 +21,15 @@
     <string name="confirmar_senha">Confirmar Senha</string>
     <string name="voltar">Voltar</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="titulo_home">Home</string>
+    <string name="titulo_filmes">Filmes</string>
+    <string name="titulo_personagens">Personagens</string>
+    <string name="titulo_quiz">Quiz</string>
+    <string name="titulo_noticias">Noticias</string>
+    <string name="title_home">Home</string>
+    <string name="title_movies">Filmes</string>
+    <string name="title_characters">Personagens</string>
+    <string name="title_quiz">Quiz</string>
+    <string name="title_news">Noticias</string>
 </resources>
