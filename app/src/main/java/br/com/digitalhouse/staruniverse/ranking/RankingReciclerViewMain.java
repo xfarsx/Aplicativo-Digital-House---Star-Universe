@@ -21,7 +21,7 @@ public class RankingReciclerViewMain extends AppCompatActivity {
         setContentView(R.layout.activity_ranking);
         recyclerViewRank = findViewById(R.id.recycleRanking);
         //Inicialização da classe adapter
-        adapter = new RankingAdapter(());
+        adapter = new RankingAdapter(listaRanks());
 
         //Setando o adapter para o componente recyclerView
         recyclerViewRank.setAdapter(adapter);
@@ -30,7 +30,7 @@ public class RankingReciclerViewMain extends AppCompatActivity {
         recyclerViewRank.setLayoutManager(new LinearLayoutManager(this));
 
     }
-    private List<RankingActivity> listaDeContatos(){
+    private List<RankingActivity> listaRanks(){
         List<RankingActivity> ranks = new ArrayList<>();
         ranks.add(new RankingActivity("Usuário1 - 1461"));
         ranks.add(new RankingActivity("Usuário2 - 1361"));

@@ -27,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".cadastro.Cadastro" />
+        <activity android:name=".ranking.RankingReciclerViewMain" />
     </application>
 
 </manifest>

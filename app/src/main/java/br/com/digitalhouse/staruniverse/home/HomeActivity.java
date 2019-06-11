@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
+import br.com.digitalhouse.staruniverse.ranking.RankingReciclerViewMain;
 
 public class HomeActivity extends AppCompatActivity {
    private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNoticias, btnFilmes;
