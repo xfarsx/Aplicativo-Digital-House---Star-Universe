@@ -13,7 +13,7 @@ import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
 import br.com.digitalhouse.staruniverse.ranking.RankingReciclerViewMain;
 
 public class HomeActivity extends AppCompatActivity {
-   private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNoticias, btnFilmes;
+   private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNoticias, btnFilmes,btnRanking;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -25,11 +25,19 @@ public class HomeActivity extends AppCompatActivity {
         btnPersonagens = findViewById(R.id.btn_personagens);
         btnNoticias = findViewById(R.id.btn_noticias);
         btnQuiz = findViewById(R.id.btn_quiz);
+        btnRanking = findViewById(R.id.btn_ranking);
 
         btnFilmes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                startActivity(i);
+            }
+        });
+        btnRanking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this,RankingReciclerViewMain.class);
                 startActivity(i);
             }
         });

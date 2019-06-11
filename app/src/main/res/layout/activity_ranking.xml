@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/rankMain"
@@ -16,24 +16,26 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:background="#f9db22"
-            android:gravity="left|center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <Button
-                android:id="@+id/btnBackFace"
+            <ImageView
+                android:contentDescription="@string/desc"
+                android:id="@+id/btnBackRanking"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
+                android:layout_gravity="center"
                 android:background="#f9db22"
                 android:textColor="@color/black"
-                android:foreground="@drawable/baseline_arrow_back_black_18dp" />
+                android:src="@drawable/baseline_arrow_back_black_18dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/RANK"
+                android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:textSize="22sp" />
         </android.support.design.widget.AppBarLayout>
@@ -58,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Sua posição é -103º lugar"
+            android:text="@string/sua_posi_o_103_lugar"
             android:textColor="#f9db22"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/nav_view"
