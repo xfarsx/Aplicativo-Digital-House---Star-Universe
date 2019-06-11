@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fillViewport="true"
+    tools:context="br.com.digitalhouse.staruniverse.cadastro.Cadastro">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.49">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Torne-se um Jedi"
+            android:textSize="28sp"
+            android:textColor="@color/staruniverse"
+            android:layout_marginBottom="72dp"/>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:hintTextAppearance="@style/LoginInputLabel"
+            android:textColorHint="@color/staruniverse">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nome"
+                android:id="@+id/Nome"
+                android:inputType="text"
+                android:textColor="@color/staruniverse"
+                android:theme="@style/LoginInput.Edit" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:hintTextAppearance="@style/LoginInputLabel"
+            android:textColorHint="@color/staruniverse">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sobrenome"
+                android:id="@+id/Sobrenome"
+                android:inputType="text"
+                android:textColor="@color/staruniverse"
+                android:theme="@style/LoginInput.Edit" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:hintTextAppearance="@style/LoginInputLabel"
+            android:textColorHint="@color/staruniverse">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/e_mail"
+                android:id="@+id/Email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/staruniverse"
+                android:theme="@style/LoginInput.Edit" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:hintTextAppearance="@style/LoginInputLabel"
+            android:textColorHint="@color/staruniverse">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nome_jedi"
+                android:id="@+id/Jedi"
+                android:inputType="text"
+                android:textColor="@color/staruniverse"
+                android:theme="@style/LoginInput.Edit" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:hintTextAppearance="@style/LoginInputLabel"
+            android:textColorHint="@color/staruniverse">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/senha"
+                android:inputType="textPassword"
+                android:id="@+id/Senha"
+                android:textColor="@color/staruniverse"
+                android:theme="@style/LoginInput.Edit" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:hintTextAppearance="@style/LoginInputLabel"
+            android:textColorHint="@color/staruniverse">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirmar_senha"
+                android:inputType="textPassword"
+                android:id="@+id/ConfirmarSenha"
+                android:textColor="@color/staruniverse"
+                android:theme="@style/LoginInput.Edit" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:backgroundTint="@color/staruniverse"
+                android:textColor="@color/black"
+                android:text="@string/cadastrar"
+                android:id="@+id/btnCadastro"
+                android:layout_marginEnd="24dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:backgroundTint="@color/staruniverse"
+                android:textColor="@color/black"
+                android:text="@string/voltar"
+                android:id="@+id/btnVoltar"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</ScrollView>

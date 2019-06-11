@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    tools:context="br.com.digitalhouse.staruniverse.login.LoginActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -44,6 +45,7 @@
                 android:foregroundTint="@color/staruniverse"
                 android:hint="Senha"
                 android:inputType="textPassword"
+                android:padding="8dp"
                 android:textColor="@color/staruniverse"
                 android:theme="@style/LoginInput.Edit" />
         </android.support.design.widget.TextInputLayout>
@@ -65,6 +67,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Usuário"
+                android:inputType="text"
+                android:padding="8dp"
                 android:textColor="@color/staruniverse"
                 android:theme="@style/LoginInput.Edit" />
         </android.support.design.widget.TextInputLayout>
@@ -80,46 +84,49 @@
             app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
-        <ImageButton
-            android:id="@+id/btnGmail"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="44dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:background="#000000"
-            android:src="@drawable/gmail"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
-            app:layout_constraintStart_toEndOf="@+id/btnFace"
-            app:layout_constraintTop_toBottomOf="@+id/switch1"
-            app:layout_constraintVertical_bias="1.0" />
-
-
-        <ImageButton
-            android:id="@+id/btnFace"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="8dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:background="#000000"
-            android:src="@drawable/facebookicon"
+            android:gravity="center"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-            app:layout_constraintEnd_toStartOf="@+id/btnGmail"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout3"
-            app:layout_constraintTop_toBottomOf="@+id/switch1"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/switch1">
 
+            <Button
+                android:id="@+id/btnGmail"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="38dp"
+                android:background="@drawable/botao_gmail"
+                android:foreground="@drawable/gmail" />
+
+            <Button
+                android:id="@+id/btnFace"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="38dp"
+                android:background="@drawable/botao_facebook"
+                android:foreground="@drawable/facebookicon" />
+
+            <Button
+                android:id="@+id/btnLogar"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/botao_redondo"
+                android:foreground="@drawable/ic_arrow_forward_black_24dp" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:gravity="center"
@@ -134,7 +141,6 @@
                 style="@style/StringStyleStarUniverse2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:text="@string/que_se_tornar_um_jedi" />
 
             <Button
@@ -143,7 +149,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
-                android:layout_weight="1"
                 android:background="#000000"
                 android:gravity="center"
                 android:text="Cadastre-se"
