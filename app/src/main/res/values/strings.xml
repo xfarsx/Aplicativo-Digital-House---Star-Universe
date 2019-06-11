@@ -32,4 +32,6 @@
     <string name="title_characters">Personagens</string>
     <string name="title_quiz">Quiz</string>
     <string name="title_news">Noticias</string>
+    <string name="ranking">Ranking</string>
+    <string name="RANK">RANKING</string>
 </resources>

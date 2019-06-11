@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import br.com.digitalhouse.staruniverse.login.LoginActivity;
 import br.com.digitalhouse.staruniverse.R;
 
-public class SplashActivity extends AppCompatActivity {
+public class    xSplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
