@@ -1,13 +1,20 @@
 package br.com.digitalhouse.staruniverse.bottom;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.annotation.NonNull;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.filmes.FilmesActivity;
+import br.com.digitalhouse.staruniverse.home.HomeActivity;
+import br.com.digitalhouse.staruniverse.ranking.RankingReciclerViewMain;
 
 public class BottomActivity extends AppCompatActivity {
     private TextView mTextMessage;
@@ -45,6 +52,28 @@ public class BottomActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        if (getIntent() != null && getIntent().getStringExtra("POSITION") != null){
+            if (getIntent().getStringExtra("POSITION").equals("RANKING")){
+
+                Intent i = new Intent(BottomActivity.this, RankingReciclerViewMain.class);
+                startActivity(i);
+            }
+        }
+        if (getIntent() != null && getIntent().getStringExtra("POSITION") != null){
+            if (getIntent().getStringExtra("POSITION").equals("FILMES")){
+
+                replaceFragment(new FilmesActivity());
+
+            }
+        }
+    }
+    public void replaceFragment(Fragment fragment){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.containerFragments, fragment);
+        transaction.commit();
     }
 
 }
+
+

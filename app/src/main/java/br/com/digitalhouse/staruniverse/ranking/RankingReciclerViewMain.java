@@ -15,7 +15,7 @@ import java.util.List;
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.home.HomeActivity;
 
-public class RankingReciclerViewMain extends AppCompatActivity {
+public class RankingReciclerViewMain extends AppCompatActivity{
     RecyclerView recyclerViewRank;
     RankingAdapter adapter;
     private ImageView btnBack;

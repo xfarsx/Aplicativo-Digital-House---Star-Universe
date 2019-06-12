@@ -31,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                i.putExtra("POSITION", "FILMES");
                 startActivity(i);
             }
         });
@@ -38,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this,BottomActivity.class);
+                i.putExtra("POSITION", "RANKING");
                 startActivity(i);
             }
         });
