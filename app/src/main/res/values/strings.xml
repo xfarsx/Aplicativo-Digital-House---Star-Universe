@@ -51,4 +51,9 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="ranking">Ranking</string>
+    <string name="RANK">RANKING</string>
+    <string name="desc">desc</string>
+    <string name="sua_posi_o_103_lugar">Sua posição é -103º lugar</string>
+    <string name="quiz">Quiz</string>
 </resources>
