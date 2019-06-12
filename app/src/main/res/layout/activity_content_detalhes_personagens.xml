@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".personagens.DetalhesPersonagensActivity">
 
     <ImageView
         android:id="@+id/imageViewImgPersonagem"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
         android:layout_weight="1"
         android:src="@drawable/darth_vader" />
 
@@ -19,7 +22,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:text="Teste"
-        android:textColor="@color/black"
+        android:padding="10dp"
+        android:gravity="center|top"
+        android:textColor="@color/white"
         android:layout_weight="1"
         />
 </LinearLayout>

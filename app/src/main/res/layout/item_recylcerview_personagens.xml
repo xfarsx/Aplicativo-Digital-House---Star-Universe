@@ -6,8 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="#fff"
-    android:layout_margin="8dp">
+    android:backgroundTint="@color/staruniverse"
+    android:layout_margin="3dp">
 
     <android.support.constraint.ConstraintLayout
 
@@ -19,7 +19,7 @@
            android:id="@+id/imgPersonagem"
            android:src="@drawable/darth_vader"
            android:layout_width="match_parent"
-           android:layout_height="100dp"
+           android:layout_height="130dp"
            android:scaleType="centerCrop"/>
 
 
