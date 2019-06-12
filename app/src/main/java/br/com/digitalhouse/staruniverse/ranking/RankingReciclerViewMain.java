@@ -19,6 +19,10 @@ public class RankingReciclerViewMain extends AppCompatActivity {
     RecyclerView recyclerViewRank;
     RankingAdapter adapter;
     private ImageView btnBack;
+
+    public RankingReciclerViewMain() {
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         btnBack= findViewById(R.id.btnBackRanking);

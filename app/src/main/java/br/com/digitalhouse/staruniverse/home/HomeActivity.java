@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         btnRanking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this,RankingReciclerViewMain.class);
+                Intent i = new Intent(HomeActivity.this,BottomActivity.class);
                 startActivity(i);
             }
         });

@@ -4,14 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/rankMain"
+    android:background="@color/black"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black">
 
-        <android.support.design.widget.AppBarLayout
+
+        <android.support.v7.widget.Toolbar
             android:id="@+id/rankingAppbar"
             android:layout_width="match_parent"
             android:layout_height="80dp"
@@ -26,7 +24,7 @@
                 android:id="@+id/btnBackRanking"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
-                android:layout_gravity="center"
+                android:foregroundGravity="left"
                 android:background="#f9db22"
                 android:textColor="@color/black"
                 android:src="@drawable/baseline_arrow_back_black_18dp" />
@@ -35,10 +33,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/RANK"
-                android:layout_gravity="center"
+                android:gravity="start"
                 android:textColor="@color/black"
                 android:textSize="22sp" />
-        </android.support.design.widget.AppBarLayout>
+        </android.support.v7.widget.Toolbar>
 
         <TextView
             android:id="@+id/textView"
@@ -70,10 +68,6 @@
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintVertical_bias="0.046" />
 
-
-
-
-
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/nav_view"
             android:layout_width="0dp"
@@ -99,4 +93,3 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
     </android.support.constraint.ConstraintLayout>
-</android.support.constraint.ConstraintLayout>
