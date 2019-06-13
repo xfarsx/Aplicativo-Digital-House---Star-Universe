@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".personagens.DetalhesPersonagensActivity">
+
+    <ImageView
+        android:id="@+id/imageViewImgPersonagem"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:layout_weight="1"
+        android:src="@drawable/darth_vader" />
+
+    <TextView
+        android:id="@+id/textViewDescricaoPersonagem"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Teste"
+        android:padding="10dp"
+        android:gravity="center|top"
+        android:textColor="@color/white"
+        android:layout_weight="1"
+        />
+</LinearLayout>
