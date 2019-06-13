@@ -55,8 +55,8 @@ public class BottomActivity extends AppCompatActivity {
         if (getIntent() != null && getIntent().getStringExtra("POSITION") != null){
             if (getIntent().getStringExtra("POSITION").equals("RANKING")){
 
-                Intent i = new Intent(BottomActivity.this, RankingReciclerViewMain.class);
-                startActivity(i);
+                Intent rank = new Intent(BottomActivity.this, RankingReciclerViewMain.class);
+                startActivity(rank);
             }
         }
         if (getIntent() != null && getIntent().getStringExtra("POSITION") != null){
