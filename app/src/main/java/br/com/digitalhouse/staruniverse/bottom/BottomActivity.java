@@ -61,7 +61,7 @@ public class BottomActivity extends AppCompatActivity {
     public void replaceFragment(Fragment fragment){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.containerFragments, fragment);
+        transaction.replace(R.id.nav_view, fragment);
         transaction.commit();
     }
 
