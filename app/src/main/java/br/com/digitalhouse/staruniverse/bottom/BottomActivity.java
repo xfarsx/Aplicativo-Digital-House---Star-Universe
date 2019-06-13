@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.personagens.Personagens;
+import br.com.digitalhouse.staruniverse.quiz.QuizFragment;
 
 public class BottomActivity extends AppCompatActivity {
     private TextView mTextMessage;
@@ -32,7 +33,7 @@ public class BottomActivity extends AppCompatActivity {
                     replaceFragment(new Personagens());
                     return true;
                 case R.id.navigation_quiz:
-                    mTextMessage.setText(R.string.title_quiz);
+                    replaceFragment(new QuizFragment());
                     return true;
                 case R.id.navigation_noticias:
                     mTextMessage.setText(R.string.title_news);
@@ -54,6 +55,10 @@ public class BottomActivity extends AppCompatActivity {
             if (getIntent().getStringExtra("POSITION").equals("PERSON")){
 
                 replaceFragment(new Personagens());
+            }
+            if (getIntent().getStringExtra("POSITION").equals("QUIZ")){
+
+                replaceFragment(new QuizFragment());
             }
         }
     }

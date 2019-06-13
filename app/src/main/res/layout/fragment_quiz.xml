@@ -1,85 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rankMain"
+    android:fillViewport="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/rankMain"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/black"
+    android:orientation="vertical">
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black">
+        android:orientation="vertical">
 
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/rankingAppbar"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:background="#f9db22"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="0dp"
+            android:layout_weight="1"
 
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnRank"
+                android:layout_width="match_parent"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:textAlignment="textEnd"
+                android:layout_marginRight="12dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ranking"
+                android:textColor="#f9db22"
+                android:textSize="28dp"
+                tools:layout_editor_absoluteX="162dp"
+                tools:layout_editor_absoluteY="148dp" />
 
             <TextView
+                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Quiz"
-                android:paddingLeft="12dp"
-                android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:textSize="22sp" />
-        </android.support.design.widget.AppBarLayout>
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:text="Quais são os troopers imperiais que operam em Scarif?"
+                android:textColor="#f9db22"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/nav_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.476"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.046" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:text="@string/quiz"
-            android:textColor="#f9db22"
-            android:textSize="42sp"
-            tools:layout_editor_absoluteX="162dp"
-            tools:layout_editor_absoluteY="148dp" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
-            android:text="Quais são os troopers imperiais que operam em Scarif?"
-            android:textColor="#f9db22"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/nav_view"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.046" />
-
-
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:backgroundTint="#E8E200"
-            android:layout_marginEnd="0dp"
-            android:background="?android:attr/windowBackground"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/bottom_nav_menu" />
-
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:src="@drawable/options"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="283dp" />
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/button_a" />
+
+                <android.support.design.button.MaterialButton
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Opção 1"
+                    android:textAlignment="center"
+                    android:textColor="@color/staruniverse"
+                    app:cornerRadius="100dp"
+                    app:strokeColor="@color/staruniverse"
+                    app:strokeWidth="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/button_b" />
+
+                <android.support.design.button.MaterialButton
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Opção 1"
+                    android:textAlignment="center"
+                    android:textColor="@color/staruniverse"
+                    app:cornerRadius="100dp"
+                    app:strokeColor="@color/staruniverse"
+                    app:strokeWidth="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/button_c" />
+
+                <android.support.design.button.MaterialButton
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Opção 1"
+                    android:textAlignment="center"
+                    android:textColor="@color/staruniverse"
+                    app:cornerRadius="100dp"
+                    app:strokeColor="@color/staruniverse"
+                    app:strokeWidth="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:src="@drawable/button_d" />
+
+                <android.support.design.button.MaterialButton
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Opção 1"
+                    android:textAlignment="center"
+                    android:textColor="@color/staruniverse"
+                    app:cornerRadius="100dp"
+                    app:strokeColor="@color/staruniverse"
+                    app:strokeWidth="4dp" />
+            </LinearLayout>
 
 
-    </android.support.constraint.ConstraintLayout>
-</android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
+    </LinearLayout>
+
+</ScrollView>

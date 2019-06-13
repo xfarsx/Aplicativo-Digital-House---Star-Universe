@@ -64,6 +64,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                i.putExtra("POSITION", "QUIZ");
                 startActivity(i);
             }
         });
