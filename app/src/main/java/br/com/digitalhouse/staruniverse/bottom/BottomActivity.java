@@ -1,5 +1,6 @@
 package br.com.digitalhouse.staruniverse.bottom;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.home.HomeActivity;
 import br.com.digitalhouse.staruniverse.personagens.Personagens;
 import br.com.digitalhouse.staruniverse.quiz.QuizFragment;
 
@@ -24,7 +26,8 @@ public class BottomActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    Intent i = new Intent( BottomActivity.this,HomeActivity.class);
+                    startActivity(i);
                     return true;
                 case R.id.navigation_filmes:
                     mTextMessage.setText(R.string.title_movies);
