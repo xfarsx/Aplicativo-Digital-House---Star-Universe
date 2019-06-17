@@ -12,8 +12,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.filmes.FilmesActivity;
-import br.com.digitalhouse.staruniverse.home.HomeActivity;
+import br.com.digitalhouse.staruniverse.filmes.Filmes;
 import br.com.digitalhouse.staruniverse.ranking.RankingReciclerViewMain;
 
 public class BottomActivity extends AppCompatActivity {
@@ -55,17 +54,16 @@ public class BottomActivity extends AppCompatActivity {
         if (getIntent() != null && getIntent().getStringExtra("POSITION") != null){
             if (getIntent().getStringExtra("POSITION").equals("RANKING")){
 
-                Intent rank = new Intent(BottomActivity.this, RankingReciclerViewMain.class);
-                startActivity(rank);
+                replaceFragment(new RankingReciclerViewMain());
+
             }
-        }
-        if (getIntent() != null && getIntent().getStringExtra("POSITION") != null){
             if (getIntent().getStringExtra("POSITION").equals("FILMES")){
 
-                replaceFragment(new FilmesActivity());
+                replaceFragment(new Filmes());
 
             }
         }
+
     }
     public void replaceFragment(Fragment fragment){
         FragmentManager manager = getSupportFragmentManager();
