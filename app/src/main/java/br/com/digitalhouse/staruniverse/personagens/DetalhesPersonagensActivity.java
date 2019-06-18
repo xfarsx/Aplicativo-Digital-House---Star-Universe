@@ -1,4 +1,4 @@
-package br.com.digitalhouse.staruniverse.filmes;
+package br.com.digitalhouse.staruniverse.personagens;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,25 +7,25 @@ import android.widget.TextView;
 
 
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.model.PersonagemModel;
 
-public class DetalhesFilmesActivity extends AppCompatActivity {
+public class DetalhesPersonagensActivity extends AppCompatActivity {
 
     private TextView textViewDescricao;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_descricao_filmes);
+        setContentView(R.layout.activity_detalhes_personagem);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 
-        textViewDescricao = findViewById(R.id.textViewDescricaoFilme);
+        textViewDescricao = findViewById(R.id.textViewDescricaoPersonagem);
 
-        FilmesModelo filme = getIntent().getParcelableExtra("FILME");
+        PersonagemModel person = getIntent().getParcelableExtra("PERSONAGEM");
 
-        if (filme != null) {
-            textViewDescricao.setText(filme.getDescricao());
-            toolbar.setTitle(filme.getNome());
+        if(person != null) {
+            textViewDescricao.setText(person.getDescricao());
+            toolbar.setTitle(person.getNome());
         }
 
         setSupportActionBar(toolbar);

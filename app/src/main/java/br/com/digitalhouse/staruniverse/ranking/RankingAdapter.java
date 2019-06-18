@@ -15,7 +15,7 @@ import java.util.List;
 import br.com.digitalhouse.staruniverse.R;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHolder>{
+public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHolder> {
     private List<RankingActivity> listaDadosRank;
 
     public RankingAdapter(List<RankingActivity> listaDadosRank) {
@@ -43,14 +43,16 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
         return listaDadosRank.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView posicaoRank;
         RelativeLayout layoutTermoRank;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             posicaoRank = itemView.findViewById(R.id.textoRanking);
-            layoutTermoRank=itemView.findViewById(R.id.layoutItemRank);
+            layoutTermoRank = itemView.findViewById(R.id.layoutItemRank);
         }
+
         public void bind(RankingActivity rank) {
             posicaoRank.setText(rank.getRankDados());
         }

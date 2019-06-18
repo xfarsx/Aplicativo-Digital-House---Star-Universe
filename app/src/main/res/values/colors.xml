@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#5F5B02</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#ff0025</color>
+    <color name="colorAccent">#000000</color>
     <color name="staruniverse">#FFF5BD13</color>
     <color name="facebook">#3B5998</color>
     <color name="gmail">#C71610</color>

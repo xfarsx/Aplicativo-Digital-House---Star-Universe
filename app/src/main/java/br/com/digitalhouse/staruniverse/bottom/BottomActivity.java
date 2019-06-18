@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.filmes.Filmes;
+import br.com.digitalhouse.staruniverse.home.HomeActivity;
+import br.com.digitalhouse.staruniverse.personagens.Personagens;
+import br.com.digitalhouse.staruniverse.quiz.QuizFragment;
 import br.com.digitalhouse.staruniverse.ranking.RankingReciclerViewMain;
 
 public class BottomActivity extends AppCompatActivity {
@@ -25,16 +28,17 @@ public class BottomActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    Intent i = new Intent( BottomActivity.this,HomeActivity.class);
+                    startActivity(i);
                     return true;
                 case R.id.navigation_filmes:
                     mTextMessage.setText(R.string.title_movies);
                     return true;
                 case R.id.navigation_personagens:
-                    mTextMessage.setText(R.string.title_characters);
+                    replaceFragment(new Personagens());
                     return true;
                 case R.id.navigation_quiz:
-                    mTextMessage.setText(R.string.title_quiz);
+                    replaceFragment(new QuizFragment());
                     return true;
                 case R.id.navigation_noticias:
                     mTextMessage.setText(R.string.title_news);
@@ -51,7 +55,16 @@ public class BottomActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         mTextMessage = findViewById(R.id.message);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
         if (getIntent() != null && getIntent().getStringExtra("POSITION") != null){
+            if (getIntent().getStringExtra("POSITION").equals("PERSON")){
+
+                replaceFragment(new Personagens());
+            }
+            if (getIntent().getStringExtra("POSITION").equals("QUIZ")){
+
+                replaceFragment(new QuizFragment());
+            }
             if (getIntent().getStringExtra("POSITION").equals("RANKING")){
 
                 replaceFragment(new RankingReciclerViewMain());
@@ -63,8 +76,8 @@ public class BottomActivity extends AppCompatActivity {
 
             }
         }
-
     }
+
     public void replaceFragment(Fragment fragment){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
@@ -73,5 +86,3 @@ public class BottomActivity extends AppCompatActivity {
     }
 
 }
-
-

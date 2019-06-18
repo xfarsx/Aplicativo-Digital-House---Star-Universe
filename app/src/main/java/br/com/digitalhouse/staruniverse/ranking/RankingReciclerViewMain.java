@@ -25,7 +25,7 @@ public class RankingReciclerViewMain extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View view =  inflater.inflate(R.layout.activity_ranking, container, false);
+        View view = inflater.inflate(R.layout.activity_ranking, container, false);
         RecyclerView recyclerViewRanking = view.findViewById(R.id.recycleRanking);
         adapter = new RankingAdapter(listaRanks());
         recyclerViewRanking.setAdapter(adapter);
@@ -41,7 +41,8 @@ public class RankingReciclerViewMain extends Fragment {
         return view;
 
     }
-    private List<RankingActivity> listaRanks(){
+
+    private List<RankingActivity> listaRanks() {
         List<RankingActivity> ranks = new ArrayList<>();
         ranks.add(new RankingActivity("Usuário1 - 1461"));
         ranks.add(new RankingActivity("Usuário2 - 1361"));
