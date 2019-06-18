@@ -18,8 +18,8 @@
             android:label="@string/title_activity_bottom" />
         <activity android:name=".home.HomeActivity" />
         <activity android:name=".login.LoginActivity" />
-        <activity android:name=".cadastro.Facebook" />
-        <activity android:name=".cadastro.Gmail" />
+        <activity android:name=".cadastro.FacebookActivity" />
+        <activity android:name=".cadastro.GmailActivity" />
         <activity
             android:name=".splash.SplashActivity"
             android:label="Star Universe"
@@ -30,7 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".cadastro.Cadastro" />
+        <activity android:name=".cadastro.CadastroActivity" />
     </application>
 
 </manifest>
