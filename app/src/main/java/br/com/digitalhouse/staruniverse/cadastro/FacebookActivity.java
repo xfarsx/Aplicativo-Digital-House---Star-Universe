@@ -9,7 +9,7 @@ import android.widget.Button;
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.login.LoginActivity;
 
-public class Facebook extends AppCompatActivity {
+public class FacebookActivity extends AppCompatActivity {
 
     private Button buttonBackFacebook;
 
@@ -24,7 +24,7 @@ public class Facebook extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(Facebook.this, LoginActivity.class));
+                startActivity(new Intent(FacebookActivity.this, LoginActivity.class));
 
             }
         });

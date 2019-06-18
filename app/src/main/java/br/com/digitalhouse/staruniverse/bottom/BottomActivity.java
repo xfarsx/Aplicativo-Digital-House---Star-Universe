@@ -14,7 +14,7 @@ import android.widget.TextView;
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.filmes.Filmes;
 import br.com.digitalhouse.staruniverse.home.HomeActivity;
-import br.com.digitalhouse.staruniverse.personagens.Personagens;
+import br.com.digitalhouse.staruniverse.personagens.PersonagensFragment;
 import br.com.digitalhouse.staruniverse.quiz.QuizFragment;
 import br.com.digitalhouse.staruniverse.ranking.RankingReciclerViewMain;
 
@@ -35,7 +35,7 @@ public class BottomActivity extends AppCompatActivity {
                     mTextMessage.setText(R.string.title_movies);
                     return true;
                 case R.id.navigation_personagens:
-                    replaceFragment(new Personagens());
+                    replaceFragment(new PersonagensFragment());
                     return true;
                 case R.id.navigation_quiz:
                     replaceFragment(new QuizFragment());
@@ -59,7 +59,7 @@ public class BottomActivity extends AppCompatActivity {
         if (getIntent() != null && getIntent().getStringExtra("POSITION") != null){
             if (getIntent().getStringExtra("POSITION").equals("PERSON")){
 
-                replaceFragment(new Personagens());
+                replaceFragment(new PersonagensFragment());
             }
             if (getIntent().getStringExtra("POSITION").equals("QUIZ")){
 

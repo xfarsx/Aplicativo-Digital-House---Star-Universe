@@ -9,7 +9,7 @@ import android.widget.Button;
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.login.LoginActivity;
 
-public class Gmail extends AppCompatActivity {
+public class GmailActivity extends AppCompatActivity {
 
     private Button buttonBackGmail;
 
@@ -25,7 +25,7 @@ public class Gmail extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(Gmail.this, LoginActivity.class));
+                startActivity(new Intent(GmailActivity.this, LoginActivity.class));
 
             }
         });
