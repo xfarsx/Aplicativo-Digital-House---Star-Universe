@@ -12,67 +12,31 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
+
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-   private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNoticias, btnFilmes;
+    private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNoticias, btnFilmes;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        btnFavoritos = findViewById(R.id.btn_favoritos);
-        btnFilmes = findViewById(R.id.btn_filmes);
-        btnPersonagens = findViewById(R.id.btn_personagens);
-        btnNoticias = findViewById(R.id.btn_noticias);
-        btnQuiz = findViewById(R.id.btn_quiz);
+        Toolbar toolbar = iniciarAsViews();
 
-        btnFilmes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
-                startActivity(i);
-            }
-        });
+        botaoFilmes();
 
-        btnFavoritos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
-                startActivity(i);
-            }
-        });
+        botaoFavoritos();
 
-        btnPersonagens.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
-                startActivity(i);
-            }
-        });
+        botaoPersonagens();
 
-        btnQuiz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
-                startActivity(i);
-            }
-        });
+        botaoQuiz();
 
-        btnNoticias.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
-                startActivity(i);
-            }
-        });
+        botaoNoticias();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -82,6 +46,70 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+    }
+
+    private void botaoNoticias() {
+        btnNoticias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                startActivity(i);
+            }
+        });
+    }
+
+    private void botaoQuiz() {
+        btnQuiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                i.putExtra("POSITION", "QUIZ");
+                startActivity(i);
+            }
+        });
+    }
+
+    private void botaoPersonagens() {
+        btnPersonagens.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                i.putExtra("POSITION", "PERSON");
+                startActivity(i);
+
+            }
+        });
+    }
+
+    private void botaoFavoritos() {
+        btnFavoritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                startActivity(i);
+            }
+        });
+    }
+
+    private void botaoFilmes() {
+        btnFilmes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                startActivity(i);
+            }
+        });
+    }
+
+    private Toolbar iniciarAsViews() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        btnFavoritos = findViewById(R.id.btn_favoritos);
+        btnFilmes = findViewById(R.id.btn_filmes);
+        btnPersonagens = findViewById(R.id.btn_personagens);
+        btnNoticias = findViewById(R.id.btn_noticias);
+        btnQuiz = findViewById(R.id.btn_quiz);
+        return toolbar;
     }
 
     @Override
@@ -140,4 +168,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

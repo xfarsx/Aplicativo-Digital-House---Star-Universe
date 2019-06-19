@@ -18,10 +18,10 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        StartAnimations();
+        comecarAnimacao();
     }
 
-    private void StartAnimations() {
+    private void comecarAnimacao() {
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
         LinearLayout l = (LinearLayout) findViewById(R.id.main_layout);

@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:foregroundTint="@color/staruniverse"
-                android:hint="Senha"
+                android:hint="@string/senha_login"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColor="@color/staruniverse"
@@ -66,7 +66,7 @@
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Usuário"
+                android:hint="@string/usuario_login"
                 android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/staruniverse"
@@ -151,7 +151,7 @@
                 android:layout_marginStart="6dp"
                 android:background="#000000"
                 android:gravity="center"
-                android:text="Cadastre-se"
+                android:text="@string/cadastre_se_login"
                 android:textStyle="bold" />
         </LinearLayout>
 
