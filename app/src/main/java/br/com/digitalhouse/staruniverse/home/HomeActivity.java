@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
@@ -158,7 +159,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            //vai para perfil
             Intent intent = new Intent(this, PerfilActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_menu) {
@@ -166,8 +166,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);
         } else if (id == R.id.nav_avalie) {
             //vai para loja avaliação
+            Toast.makeText(HomeActivity.this, "Avalie - Vai para a loja", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_indique) {
             //abre whatsapp com link
+            Toast.makeText(HomeActivity.this, "Indique um amigo - Vai para WhatsApp", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_end) {
@@ -179,10 +181,4 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-//    public void replaceFragment(Fragment fragment){
-//        FragmentManager manager = getSupportFragmentManager();
-//        FragmentTransaction transaction = manager.beginTransaction();
-//        transaction.replace(R.id.drawer_layout, fragment);
-//        transaction.commit();
-//    }
 }

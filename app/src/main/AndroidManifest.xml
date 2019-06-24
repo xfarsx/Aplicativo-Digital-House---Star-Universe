@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/logo_star_universe"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
-        <activity android:name=".cadastro.PerfilActivity"></activity>
+        <activity android:name=".cadastro.TrocaEmailActivity"></activity>
+        <activity android:name=".cadastro.PerfilActivity" />
         <activity android:name=".cadastro.TrocaSenhaActivity" />
         <activity android:name=".personagens.DetalhesPersonagensActivity" />
         <activity

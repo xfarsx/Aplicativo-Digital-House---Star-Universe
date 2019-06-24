@@ -1,14 +1,13 @@
 package br.com.digitalhouse.staruniverse.cadastro;
 
-
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import br.com.digitalhouse.staruniverse.R;
 
-public class TrocaSenhaActivity extends AppCompatActivity {
+public class TrocaEmailActivity extends AppCompatActivity {
 
     private Button ok;
     private Button back;
@@ -16,7 +15,7 @@ public class TrocaSenhaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_troca_senha);
+        setContentView(R.layout.activity_troca_email);
 
         ok = findViewById(R.id.buttonOkEmail);
         ok.setOnClickListener(new View.OnClickListener() {
@@ -33,6 +32,5 @@ public class TrocaSenhaActivity extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 }
