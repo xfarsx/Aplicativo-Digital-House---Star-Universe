@@ -9,17 +9,17 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListener;
 import br.com.digitalhouse.staruniverse.filmes.FilmesModelo;
+import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListenerFilmes;
 
 public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder> {
 
     private List<FilmesModelo> listaFilme;
-    private RecyclerViewClickListener listener;
+    private RecyclerViewClickListenerFilmes listener;
 
-    public FilmesAdapter(List<FilmesModelo> listaFilme, RecyclerViewClickListener listener) {
+    public FilmesAdapter(List<FilmesModelo> listaFilme, RecyclerViewClickListenerFilmes listener) {
         this.listaFilme = listaFilme;
-        this.listener = listener;
+        this.listener = (RecyclerViewClickListenerFilmes) listener;
     }
 
     @NonNull

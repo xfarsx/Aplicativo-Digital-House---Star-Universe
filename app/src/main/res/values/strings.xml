@@ -65,6 +65,10 @@
     <string name="desc">desc</string>
     <string name="sua_posi_o_103_lugar">Sua posição é -103º lugar</string>
     <string name="quiz">Quiz</string>
+    <string name="usuario_login">usuario_login</string>
+    <string name="cadastre_se_login">cadastre_se_login</string>
+    <string name="torne_se_jedi_cadastro">torne_se_jedi_cadastro</string>
+    <string name="senha_login">senha login</string>
 
 
 </resources>

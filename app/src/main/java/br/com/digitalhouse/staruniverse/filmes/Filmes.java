@@ -17,7 +17,6 @@ import br.com.digitalhouse.staruniverse.filmes.FilmesAdapter;
 import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListener;
 import br.com.digitalhouse.staruniverse.filmes.FilmesModelo;
 import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListenerFilmes;
-import br.com.digitalhouse.staruniverse.model.PersonagemModel;
 
 public class Filmes extends Fragment implements RecyclerViewClickListenerFilmes {
 
@@ -33,7 +32,7 @@ public class Filmes extends Fragment implements RecyclerViewClickListenerFilmes 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_filmes, container, false);
         RecyclerView recyclerViewFilmes = view.findViewById(R.id.recycleFilmes);
-        FilmesAdapter adapter = new FilmesAdapter(listaDeFilmes(), this);
+        FilmesAdapter adapter = new FilmesAdapter(listaDeFilmes(), (RecyclerViewClickListenerFilmes) this);
         recyclerViewFilmes.setAdapter(adapter);
         recyclerViewFilmes.setLayoutManager(new GridLayoutManager(getContext(), 3));
         return view;

@@ -10,7 +10,7 @@
     android:layout_width="80dp"
     android:layout_height="80dp"
     android:id="@+id/rankingIcon"
-    android:src="@drawable/rankingicon"/>
+    android:src="@drawable/darth_vader"/>
 
     <TextView
         android:id="@+id/textoRanking"
