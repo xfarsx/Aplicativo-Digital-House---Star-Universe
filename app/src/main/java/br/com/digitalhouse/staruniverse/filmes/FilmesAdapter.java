@@ -19,7 +19,7 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
 
     public FilmesAdapter(List<FilmesModelo> listaFilme, RecyclerViewClickListenerFilmes listener) {
         this.listaFilme = listaFilme;
-        this.listener = (RecyclerViewClickListenerFilmes) listener;
+        this.listener =  listener;
     }
 
     @NonNull

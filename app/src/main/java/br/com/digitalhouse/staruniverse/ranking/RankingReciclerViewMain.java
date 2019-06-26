@@ -42,15 +42,21 @@ public class RankingReciclerViewMain extends Fragment {
 
     }
 
-    private List<RankingActivity> listaRanks() {
-        List<RankingActivity> ranks = new ArrayList<>();
-        ranks.add(new RankingActivity("Usuário1 - 1461"));
-        ranks.add(new RankingActivity("Usuário2 - 1361"));
-        ranks.add(new RankingActivity("Usuário3 - 1234"));
-        ranks.add(new RankingActivity("Usuário4 - 1120"));
-        ranks.add(new RankingActivity("Usuário5 - 1000"));
-        ranks.add(new RankingActivity("Usuário5 - 1000"));
-        ranks.add(new RankingActivity("Usuário5 - 1000"));
+    private List<RankingModelo> listaRanks() {
+        List<RankingModelo> ranks = new ArrayList<>();
+        ranks.add(new RankingModelo("Usuário1 - 1461"));
+        ranks.add(new RankingModelo("Usuário2 - 1361"));
+        ranks.add(new RankingModelo("Usuário3 - 1234"));
+        ranks.add(new RankingModelo("Usuário4 - 1120"));
+        ranks.add(new RankingModelo("Usuário6 - 1000"));
+        ranks.add(new RankingModelo("Usuário7 - 1000"));
+        ranks.add(new RankingModelo("Usuário8 - 1000"));
+        ranks.add(new RankingModelo("Usuário9 - 1000"));
+        ranks.add(new RankingModelo("Usuário9 - 1000"));
+        ranks.add(new RankingModelo("Usuário9 - 1000"));
+        ranks.add(new RankingModelo("Usuário9 - 1000"));
+        ranks.add(new RankingModelo("Usuário9 - 1000"));
+
 
 
         return ranks;

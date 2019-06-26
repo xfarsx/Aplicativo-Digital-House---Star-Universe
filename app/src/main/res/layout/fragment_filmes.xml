@@ -13,29 +13,12 @@
         android:id="@+id/rankingAppbar"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="#f9db22"
+        android:background="@color/black"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:contentDescription="@string/desc"
-            android:id="@+id/btnBackRanking"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:foregroundGravity="left"
-            android:background="#f9db22"
-            android:textColor="@color/black"
-            android:src="@drawable/baseline_arrow_back_black_18dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/filmes"
-            android:gravity="start"
-            android:textColor="@color/black"
-            android:textSize="22sp" />
     </android.support.v7.widget.Toolbar>
 
     <ImageView

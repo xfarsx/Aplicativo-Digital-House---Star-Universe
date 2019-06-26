@@ -18,10 +18,10 @@ import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListener;
 import br.com.digitalhouse.staruniverse.filmes.FilmesModelo;
 import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListenerFilmes;
 
-public class Filmes extends Fragment implements RecyclerViewClickListenerFilmes {
+public class FilmesFragment extends Fragment implements RecyclerViewClickListenerFilmes {
 
 
-    public Filmes() {
+    public FilmesFragment() {
         // Required empty public constructor
     }
 

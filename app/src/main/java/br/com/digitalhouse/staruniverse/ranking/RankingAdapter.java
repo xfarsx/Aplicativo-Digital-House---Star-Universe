@@ -1,6 +1,5 @@
 package br.com.digitalhouse.staruniverse.ranking;
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,16 +8,14 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.com.digitalhouse.staruniverse.R;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHolder> {
-    private List<RankingActivity> listaDadosRank;
+    private List<RankingModelo> listaDadosRank;
 
-    public RankingAdapter(List<RankingActivity> listaDadosRank) {
+    public RankingAdapter(List<RankingModelo> listaDadosRank) {
         this.listaDadosRank = listaDadosRank;
     }
 
@@ -32,7 +29,7 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         //Criar uma nova instancia
-        RankingActivity novoRank = listaDadosRank.get(i);
+        RankingModelo novoRank = listaDadosRank.get(i);
 
         //adiciona o valor da instancia para ser atribuido no componente
         viewHolder.bind(novoRank);
@@ -53,7 +50,7 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.ViewHold
             layoutTermoRank = itemView.findViewById(R.id.layoutItemRank);
         }
 
-        public void bind(RankingActivity rank) {
+        public void bind(RankingModelo rank) {
             posicaoRank.setText(rank.getRankDados());
         }
     }

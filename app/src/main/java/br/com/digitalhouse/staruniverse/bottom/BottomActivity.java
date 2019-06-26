@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.filmes.Filmes;
+import br.com.digitalhouse.staruniverse.filmes.FilmesFragment;
 import br.com.digitalhouse.staruniverse.home.HomeActivity;
 import br.com.digitalhouse.staruniverse.personagens.PersonagensFragment;
 import br.com.digitalhouse.staruniverse.quiz.QuizFragment;
@@ -32,7 +32,7 @@ public class BottomActivity extends AppCompatActivity {
                     startActivity(i);
                     return true;
                 case R.id.navigation_filmes:
-                    mTextMessage.setText(R.string.title_movies);
+                    replaceFragment(new FilmesFragment());
                     return true;
                 case R.id.navigation_personagens:
                     replaceFragment(new PersonagensFragment());
@@ -42,7 +42,7 @@ public class BottomActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_noticias:
                     mTextMessage.setText(R.string.title_news);
-                    return true;
+
             }
             return false;
         }
@@ -72,7 +72,7 @@ public class BottomActivity extends AppCompatActivity {
             }
             if (getIntent().getStringExtra("POSITION").equals("FILMES")){
 
-                replaceFragment(new Filmes());
+                replaceFragment(new FilmesFragment());
 
             }
         }

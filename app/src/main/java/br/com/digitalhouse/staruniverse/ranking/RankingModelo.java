@@ -1,12 +1,12 @@
 package br.com.digitalhouse.staruniverse.ranking;
 
-public class RankingActivity {
+public class RankingModelo {
     private String rankDados;
 
-    public RankingActivity() {
+    public RankingModelo() {
     }
 
-    public RankingActivity(String rankDados) {
+    public RankingModelo(String rankDados) {
         this.rankDados = rankDados;
     }
 
