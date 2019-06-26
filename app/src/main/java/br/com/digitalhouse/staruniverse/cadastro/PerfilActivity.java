@@ -31,6 +31,7 @@ public class PerfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
 
         setUpToolbar();
+        setTitle("Olá, Gean");
 
         alteraEmail = findViewById(R.id.btn_alteraremail);
         alteraEmail.setOnClickListener(new View.OnClickListener() {
