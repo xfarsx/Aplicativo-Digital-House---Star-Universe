@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/side_nav_bar"
+    android:background="@color/staruniverse"
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -13,23 +13,22 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#000000"
         android:text="Jean"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/toolbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:text="Nivel Jedi"
         android:textColor="#000000"
-        android:text="Nivel Jedi" />
+        android:textSize="18sp" />
 
 </LinearLayout>

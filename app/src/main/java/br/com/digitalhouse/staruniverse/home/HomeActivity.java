@@ -13,8 +13,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
+import br.com.digitalhouse.staruniverse.cadastro.PerfilActivity;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNoticias, btnFilmes,btnRanking;
@@ -164,18 +167,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_tools) {
-
+        if (id == R.id.nav_profile) {
+            Intent intent = new Intent(this, PerfilActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_menu) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_avalie) {
+            //vai para loja avaliação
+            Toast.makeText(HomeActivity.this, "Avalie - Vai para a loja", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.nav_indique) {
+            //abre whatsapp com link
+            Toast.makeText(HomeActivity.this, "Indique um amigo - Vai para WhatsApp", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_end) {
+            finishAffinity();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
