@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:background="@color/black"
     android:fillViewport="true"
     tools:context="br.com.digitalhouse.staruniverse.cadastro.CadastroActivity">
@@ -133,34 +134,40 @@
                 android:theme="@style/LoginInput.Edit" />
         </android.support.design.widget.TextInputLayout>
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+    <Button
+        android:id="@+id/btnCadastro"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="-1dp"
+        android:backgroundTint="@color/staruniverse"
+        android:text="@string/cadastrar"
+        android:textColor="@color/black" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:backgroundTint="@color/staruniverse"
-                android:textColor="@color/black"
-                android:text="@string/cadastrar"
-                android:id="@+id/btnCadastro"
-                android:layout_marginEnd="24dp"/>
+    <Button
+        android:id="@+id/btnVoltar"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/btnCadastro"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginRight="-128dp"
+        android:backgroundTint="@color/staruniverse"
+        android:text="@string/voltar"
+        android:textColor="@color/black" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:backgroundTint="@color/staruniverse"
-                android:textColor="@color/black"
-                android:text="@string/voltar"
-                android:id="@+id/btnVoltar"/>
+</RelativeLayout>
 
-        </LinearLayout>
 
     </LinearLayout>
 

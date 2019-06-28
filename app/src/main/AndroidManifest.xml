@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/logo_star_universe"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
-        <activity android:name=".personagens.DetalhesPersonagensActivity"></activity>
-        <activity
-            android:name=".homeContainer.HomeContainer"
-            android:label="@string/title_activity_home_container" />
+        <activity android:name=".cadastro.TrocaEmailActivity"></activity>
+        <activity android:name=".cadastro.PerfilActivity" />
+        <activity android:name=".cadastro.TrocaSenhaActivity" />
+        <activity android:name=".personagens.DetalhesPersonagensActivity" />
         <activity
             android:name=".bottom.BottomActivity"
             android:label="@string/title_activity_bottom" />
@@ -31,6 +31,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".cadastro.CadastroActivity" />
+        <activity android:name=".filmes.DetalhesFilmesActivity" />
     </application>
 
 </manifest>
