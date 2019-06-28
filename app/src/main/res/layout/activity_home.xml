@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="12dp">
 
             <ImageView
                 android:id="@+id/btn_quiz"
@@ -55,7 +55,14 @@
                 android:src="@drawable/quiz" />
 
         </RelativeLayout>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:text="Quiz"
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -78,15 +85,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="18dp">
+            android:layout_marginTop="14dp">
+
             <ImageView
                 android:id="@+id/btn_ranking"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ranking"
-                />
+                android:src="@drawable/ranking" />
         </RelativeLayout>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:text="Ranking"
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -107,7 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="12dp">
 
             <ImageView
                 android:id="@+id/btn_favoritos"
@@ -117,7 +131,14 @@
 
         </RelativeLayout>
 
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:text="Favoritos"
+            android:textColor="#000000"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -132,18 +153,27 @@
         app:layout_constraintStart_toEndOf="@+id/layout_filmes"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:layout_marginTop="20dp">
-    <ImageView
-        android:id="@+id/btn_personagens"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/personagens"/>
-</RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="09dp">
+
+            <ImageView
+                android:id="@+id/btn_personagens"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/personagens" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:text="Personagens"
+            android:textColor="#000000"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -165,13 +195,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp">
+
             <ImageView
                 android:id="@+id/btn_noticias"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/noticias"/>
+                android:src="@drawable/noticias" />
         </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:text="Notícias"
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
@@ -192,15 +232,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="12dp">
+
             <ImageView
                 android:id="@+id/btn_filmes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/filmes"/>
+                android:src="@drawable/filmes" />
+
+
         </RelativeLayout>
 
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Filmes"
+            android:textSize="11sp"
+            android:textColor="#000000"
+            android:textStyle="bold" />
     </LinearLayout>
 
 
