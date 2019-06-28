@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:showIn="@layout/app_bar_main"
-    tools:context="br.com.digitalhouse.staruniverse.home.HomeActivity">
+    android:padding="16dp"
+    tools:context="br.com.digitalhouse.staruniverse.home.HomeActivity"
+    tools:showIn="@layout/app_bar_main">
 
     <ImageView
         android:id="@+id/linearLayout5"
@@ -28,8 +29,8 @@
 
     <LinearLayout
         android:id="@+id/layout_quiz"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/round_button"
@@ -41,21 +42,34 @@
         app:layout_constraintTop_toBottomOf="@+id/layout_favoritos"
         app:layout_constraintVertical_bias="0.108">
 
-        <ImageView
-            android:id="@+id/btn_quiz"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/quiz" />
+            android:layout_marginTop="12dp">
 
+            <ImageView
+                android:id="@+id/btn_quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/quiz" />
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:text="Quiz"
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_ranking"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/round_button"
         android:orientation="vertical"
@@ -67,22 +81,34 @@
         app:layout_constraintVertical_bias="0.138"
         tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/btn_ranking"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ranking" />
+            android:layout_marginTop="14dp">
 
+            <ImageView
+                android:id="@+id/btn_ranking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ranking" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:text="Ranking"
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
 
     <LinearLayout
         android:id="@+id/layout_favoritos"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="236dp"
         android:background="@drawable/round_button"
         android:orientation="vertical"
@@ -91,20 +117,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/btn_favoritos"
-            android:layout_width="120dp"
-            android:layout_height="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/favoritos" />
+            android:layout_marginTop="12dp">
 
+            <ImageView
+                android:id="@+id/btn_favoritos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/favorito" />
 
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:text="Favoritos"
+            android:textColor="#000000"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_personagens"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="236dp"
         android:background="@drawable/round_button"
         android:orientation="vertical"
@@ -114,21 +154,32 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/btn_personagens"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/personagens" />
+            android:layout_marginTop="09dp">
 
-
+            <ImageView
+                android:id="@+id/btn_personagens"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/personagens" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:text="Personagens"
+            android:textColor="#000000"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_noticias"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/round_button"
@@ -140,20 +191,35 @@
         app:layout_constraintTop_toBottomOf="@+id/layout_personagens"
         app:layout_constraintVertical_bias="0.108">
 
-        <ImageView
-            android:id="@+id/btn_noticias"
-            android:layout_width="80dp"
-            android:layout_height="120dp"
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/noticias" />
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/btn_noticias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/noticias" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="11sp"
+            android:text="Notícias"
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_filmes"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="236dp"
         android:background="@drawable/round_button"
         android:orientation="vertical"
@@ -162,14 +228,29 @@
         app:layout_constraintStart_toEndOf="@+id/layout_favoritos"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/btn_filmes"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/filmes" />
+            android:layout_marginTop="12dp">
 
+            <ImageView
+                android:id="@+id/btn_filmes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/filmes" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Filmes"
+            android:textSize="11sp"
+            android:textColor="#000000"
+            android:textStyle="bold" />
     </LinearLayout>
 
 
