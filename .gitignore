@@ -11,6 +11,7 @@
 /.idea/build/gradle_models.ser
 /.idea/codeStyles/Project.xml
 /.idea/misc.xml
+/.idea/encondings.xml
 .DS_Store
 /build
 /captures
