@@ -11,9 +11,6 @@
         android:theme="@style/FullScreen">
         <activity android:name=".personagens.DetalhesPersonagensActivity"></activity>
         <activity
-            android:name=".homeContainer.HomeContainer"
-            android:label="@string/title_activity_home_container" />
-        <activity
             android:name=".bottom.BottomActivity"
             android:label="@string/title_activity_bottom" />
         <activity android:name=".home.HomeActivity" />
@@ -31,6 +28,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".cadastro.CadastroActivity" />
+        <activity android:name=".filmes.DetalhesFilmesActivity" />
     </application>
 
 </manifest>

@@ -13,18 +13,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-
-
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNoticias, btnFilmes;
+    private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNoticias, btnFilmes,btnRanking;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = iniciarAsViews();
 
@@ -35,6 +35,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         botaoPersonagens();
 
         botaoQuiz();
+
+        botaoRanking();
 
         botaoNoticias();
 
@@ -47,7 +49,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
     }
-
+    private void botaoRanking() {
+        btnRanking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                i.putExtra("POSITION", "RANKING");
+                startActivity(i);
+            }
+        });
+    }
     private void botaoNoticias() {
         btnNoticias.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +97,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                i.putExtra("POSITION", "QUIZ");
                 startActivity(i);
             }
         });
@@ -96,6 +108,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                i.putExtra("POSITION", "FILMES");
                 startActivity(i);
             }
         });
@@ -109,6 +122,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnPersonagens = findViewById(R.id.btn_personagens);
         btnNoticias = findViewById(R.id.btn_noticias);
         btnQuiz = findViewById(R.id.btn_quiz);
+        btnRanking = findViewById(R.id.btn_ranking);
         return toolbar;
     }
 
