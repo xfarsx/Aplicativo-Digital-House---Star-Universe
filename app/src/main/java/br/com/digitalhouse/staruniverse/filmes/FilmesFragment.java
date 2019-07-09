@@ -2,7 +2,7 @@ package br.com.digitalhouse.staruniverse.filmes;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.core.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,9 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.filmes.FilmesAdapter;
-import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListener;
-import br.com.digitalhouse.staruniverse.filmes.FilmesModelo;
 import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListenerFilmes;
 
 public class FilmesFragment extends Fragment implements RecyclerViewClickListenerFilmes {

@@ -3,14 +3,13 @@ package br.com.digitalhouse.staruniverse.quiz;
 
 import android.os.Bundle;
 
-import android.support.v4.app.Fragment;
+import androidx.core.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
 
 /**
  * A simple {@link Fragment} subclass.
