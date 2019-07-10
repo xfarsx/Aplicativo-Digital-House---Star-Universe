@@ -2,12 +2,12 @@ package br.com.digitalhouse.staruniverse.quiz;
 
 
 import android.os.Bundle;
-
-import androidx.core.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import androidx.fragment.app.Fragment;
 
 import br.com.digitalhouse.staruniverse.R;
 
