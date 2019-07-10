@@ -9,7 +9,7 @@
     android:padding="16dp"
     tools:context="br.com.digitalhouse.staruniverse.login.LoginActivity">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -156,7 +156,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
 

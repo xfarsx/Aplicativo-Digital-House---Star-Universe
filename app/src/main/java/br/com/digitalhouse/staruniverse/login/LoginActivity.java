@@ -1,14 +1,15 @@
 package br.com.digitalhouse.staruniverse.login;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import br.com.digitalhouse.staruniverse.cadastro.CadastroActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.cadastro.CadastroActivity;
 import br.com.digitalhouse.staruniverse.home.HomeActivity;
 
 public class LoginActivity extends AppCompatActivity {
