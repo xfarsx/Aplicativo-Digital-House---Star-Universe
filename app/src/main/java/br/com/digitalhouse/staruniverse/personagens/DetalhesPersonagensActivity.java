@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.model.PersonagemModel;
+import br.com.digitalhouse.staruniverse.model.Character;
 
 public class DetalhesPersonagensActivity extends AppCompatActivity {
 
@@ -21,11 +21,11 @@ public class DetalhesPersonagensActivity extends AppCompatActivity {
 
         textViewDescricao = findViewById(R.id.textViewDescricaoPersonagem);
 
-        PersonagemModel person = getIntent().getParcelableExtra("PERSONAGEM");
+        Character person = getIntent().getParcelableExtra("PERSONAGEM");
 
         if(person != null) {
-            textViewDescricao.setText(person.getDescricao());
-            toolbar.setTitle(person.getNome());
+            textViewDescricao.setText(person.getName());
+            toolbar.setTitle(person.getBirthYear());
         }
 
         setSupportActionBar(toolbar);

@@ -8,9 +8,9 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 import br.com.digitalhouse.staruniverse.data.database.dao.PersonagemDao;
-import br.com.digitalhouse.staruniverse.model.Personagem;
+import br.com.digitalhouse.staruniverse.model.Character;
 
-@Database(entities = {Personagem.class}, version = 1, exportSchema = false)
+@Database(entities = {Character.class}, version = 1, exportSchema = false)
 @TypeConverters(Converters.class)
 public abstract class DatabasePersonagem extends RoomDatabase {
     private static volatile DatabasePersonagem INSTANCE;

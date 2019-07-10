@@ -3,6 +3,7 @@ package br.com.digitalhouse.staruniverse.adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,15 +12,15 @@ import java.util.List;
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListener;
-import br.com.digitalhouse.staruniverse.model.PersonagemModel;
+import br.com.digitalhouse.staruniverse.model.Character;
 
 public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.ViewHolder>{
 
-    private List<PersonagemModel> listaPersonagem;
+    private List<Character> characterList;
     private RecyclerViewClickListener listener;
 
-    public PersonagemAdapter(List<PersonagemModel> listaPersonagem, RecyclerViewClickListener listener) {
-        this.listaPersonagem = listaPersonagem;
+    public PersonagemAdapter(List<Character> listaCharacter, RecyclerViewClickListener listener) {
+        this.characterList = listaCharacter;
         this.listener = listener;
     }
 
@@ -32,7 +33,7 @@ public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        final PersonagemModel novoPerson = listaPersonagem.get(i);
+        final Character novoPerson = characterList.get(i);
         viewHolder.bind(novoPerson);
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,23 +43,28 @@ public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.Vi
         });
     }
 
+    public void update(List<Character> characterList) {
+        this.characterList = characterList;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
-        return listaPersonagem.size();
+        return characterList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
+        private TextView textViewName;
 
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-
-
-
+            textViewName = itemView.findViewById(R.id.textViewName);
         }
-        public void bind(PersonagemModel personagemAdapter){
+        public void bind(Character Character){
+
+            textViewName.setText(Character.getName());
 
         }
     }

@@ -9,7 +9,7 @@
     android:padding="16dp"
     tools:context="br.com.digitalhouse.staruniverse.login.LoginActivity">
 
-    <androidx.constraintlayout.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -25,7 +25,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
             style="@style/LoginInput"
             android:layout_width="match_parent"
@@ -40,7 +40,7 @@
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/staruniverse">
 
-            <android.support.design.widget.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:foregroundTint="@color/staruniverse"
@@ -49,9 +49,9 @@
                 android:padding="8dp"
                 android:textColor="@color/staruniverse"
                 android:theme="@style/LoginInput.Edit" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout2"
             style="@style/LoginInput"
             android:layout_width="match_parent"
@@ -64,7 +64,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-            <android.support.design.widget.TextInputEditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/usuario_login"
@@ -72,7 +72,7 @@
                 android:padding="8dp"
                 android:textColor="@color/staruniverse"
                 android:theme="@style/LoginInput.Edit" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Switch
             android:id="@+id/switch1"
@@ -156,7 +156,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-    </androidx.constraintlayout.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
 

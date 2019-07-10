@@ -8,24 +8,24 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import br.com.digitalhouse.staruniverse.model.Personagem;
+import br.com.digitalhouse.staruniverse.model.Character;
 import io.reactivex.Flowable;
 
 @Dao
 public interface PersonagemDao{
 
         @Insert(onConflict = OnConflictStrategy.REPLACE)
-        void insert(Personagem personagem);
+        void insert(Character character);
 
         @Insert(onConflict = OnConflictStrategy.REPLACE)
-        void insertAll(List<Personagem> personagens);
+        void insertAll(List<Character> personagens);
 
         @Update
-        void update(Personagem personagem);
+        void update(Character character);
 
-        @Query("SELECT * FROM personagem limit 30")
-        List<Personagem> getAll();
+        @Query("SELECT * FROM Character limit 30")
+        List<Character> getAll();
 
-        @Query("SELECT * FROM personagem limit 30")
-        Flowable<List<Personagem>> getAllRxJava();
+        @Query("SELECT * FROM Character limit 30")
+        Flowable<List<Character>> getAllRxJava();
 }
