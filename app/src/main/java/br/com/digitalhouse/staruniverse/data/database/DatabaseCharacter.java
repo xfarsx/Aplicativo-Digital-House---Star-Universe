@@ -7,20 +7,20 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-import br.com.digitalhouse.staruniverse.data.database.dao.PersonagemDao;
+import br.com.digitalhouse.staruniverse.data.database.dao.CharacterDao;
 import br.com.digitalhouse.staruniverse.model.Character;
 
 @Database(entities = {Character.class}, version = 1, exportSchema = false)
 @TypeConverters(Converters.class)
-public abstract class DatabasePersonagem extends RoomDatabase {
-    private static volatile DatabasePersonagem INSTANCE;
-    public abstract PersonagemDao personagemDao();
+public abstract class DatabaseCharacter extends RoomDatabase {
+    private static volatile DatabaseCharacter INSTANCE;
+    public abstract CharacterDao characterDao();
 
-    public static DatabasePersonagem getDatabase(Context context) {
+    public static DatabaseCharacter getDatabase(Context context) {
         if (INSTANCE == null) {
-            synchronized (DatabasePersonagem.class) {
+            synchronized (DatabaseCharacter.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(context, DatabasePersonagem.class, "my_db")
+                    INSTANCE = Room.databaseBuilder(context, DatabaseCharacter.class, "my_db")
                             .fallbackToDestructiveMigration()
                             .build();
                 }

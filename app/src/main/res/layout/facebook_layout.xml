@@ -7,7 +7,7 @@
     android:fillViewport="true"
     android:background="#000000">
 
-    <androidx.constraintlayout.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -171,7 +171,7 @@
 
         </LinearLayout>
 
-    </androidx.constraintlayout.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
 

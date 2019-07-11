@@ -31,47 +31,47 @@ public class PersonagensFragment extends Fragment implements RecyclerViewClickLi
 
     private CharacterViewModel viewModel;
     private List<Character> characterList = new ArrayList<>();
-    private ProgressBar progressBar;
 
     public PersonagensFragment() {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_characters, container, false);
-
-
-        progressBar  = view.findViewById(R.id.progressBar);
+        ProgressBar progressBar = view.findViewById(R.id.progressBar);
         RecyclerView recyclerViewCharacters = view.findViewById(R.id.recyclerView);
+
+        // Inicializa Adapter
         PersonagemAdapter adapter = new PersonagemAdapter(characterList, this);
         recyclerViewCharacters.setAdapter(adapter);
         recyclerViewCharacters.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
-        // Fazer a inicialização do view model
+        // Inicializa ViewModel
         viewModel = ViewModelProviders.of(this).get(CharacterViewModel.class);
-        viewModel.getPersonagens();
+        viewModel.searchCharacter();
 
         // Adicionar os observables
         viewModel.getCharacterLiveData().observe(this, characters -> adapter.update(characters));
 
-        //Loading
+        //Observable Loading
         viewModel.getLoadingLiveData().observe(this, isLoading -> {
-            if (isLoading){
+            if (isLoading) {
                 progressBar.setVisibility(View.VISIBLE);
-            }else {
+            } else {
                 progressBar.setVisibility(View.GONE);
             }
         });
 
-        //Error
+        //Observable Error
         viewModel.getErrorLiveData().observe(this, throwable -> {
             Snackbar.make(recyclerViewCharacters, throwable.getMessage(), Snackbar.LENGTH_SHORT).show();
         });
+
         return view;
     }
 

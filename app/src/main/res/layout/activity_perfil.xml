@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".cadastro.PerfilActivity">
-    <android.support.design.widget.AppBarLayout
+
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/staruniverse"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
 
     <ImageView
@@ -53,8 +52,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_alteraremail"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
@@ -65,8 +63,8 @@
         android:layout_weight="1"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Alterar e-mail"
         android:paddingStart="16dp"
+        android:text="Alterar e-mail"
         android:textAlignment="viewStart"
         android:textAllCaps="false"
         android:textColor="@color/black"
@@ -82,7 +80,7 @@
         app:strokeWidth="4dp"
         tools:ignore="RtlCompat" />
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_alterarsenha"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
@@ -93,8 +91,8 @@
         android:layout_weight="1"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Alterar senha"
         android:paddingStart="16dp"
+        android:text="Alterar senha"
         android:textAlignment="viewStart"
         android:textAllCaps="false"
         android:textColor="@color/black"
@@ -110,7 +108,7 @@
         app:strokeWidth="4dp"
         tools:ignore="RtlCompat" />
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_favoritos"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
@@ -121,8 +119,8 @@
         android:layout_weight="1"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Favoritos"
         android:paddingStart="16dp"
+        android:text="Favoritos"
         android:textAlignment="viewStart"
         android:textAllCaps="false"
         android:textColor="@color/black"
@@ -138,7 +136,7 @@
         app:strokeWidth="4dp"
         tools:ignore="RtlCompat" />
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_indiqueumamigo"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="0dp"
@@ -149,9 +147,9 @@
         android:layout_weight="1"
         android:gravity="center"
         android:padding="10dp"
+        android:paddingStart="16dp"
         android:text="Indique um amigo"
         android:textAlignment="viewStart"
-        android:paddingStart="16dp"
         android:textAllCaps="false"
         android:textColor="@color/black"
         app:backgroundTint="@color/staruniverse"
@@ -166,7 +164,7 @@
         app:strokeWidth="4dp"
         tools:ignore="RtlCompat" />
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_sair"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="180dp"
@@ -184,10 +182,10 @@
         app:backgroundTint="@color/white"
         app:cornerRadius="100dp"
         app:icon="@drawable/ic_action_sair"
+        app:iconGravity="textStart"
         app:iconPadding="8dp"
         app:iconSize="18dp"
         app:iconTint="@color/black"
-        app:iconGravity="textStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -210,4 +208,4 @@
         app:layout_constraintVertical_bias="0.827" />
 
 
-</androidx.constraintlayout.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

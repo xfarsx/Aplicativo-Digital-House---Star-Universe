@@ -12,7 +12,7 @@ import br.com.digitalhouse.staruniverse.model.Character;
 import io.reactivex.Flowable;
 
 @Dao
-public interface PersonagemDao{
+public interface CharacterDao {
 
         @Insert(onConflict = OnConflictStrategy.REPLACE)
         void insert(Character character);

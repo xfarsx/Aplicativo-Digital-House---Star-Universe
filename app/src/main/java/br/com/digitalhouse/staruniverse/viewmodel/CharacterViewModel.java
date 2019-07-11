@@ -9,14 +9,19 @@ import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
 
+import br.com.digitalhouse.staruniverse.data.database.DatabaseCharacter;
+import br.com.digitalhouse.staruniverse.data.database.dao.CharacterDao;
 import br.com.digitalhouse.staruniverse.model.Character;
+import br.com.digitalhouse.staruniverse.model.CharacterResponse;
 import br.com.digitalhouse.staruniverse.repository.CharacterRepository;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
+import static br.com.digitalhouse.staruniverse.util.AppUtil.isNetworkConnected;
+
 public class CharacterViewModel extends AndroidViewModel {
-    private MutableLiveData<List<Character>> personagemLiveData = new MutableLiveData<>();
+    private MutableLiveData<List<Character>> characterLiveData = new MutableLiveData<>();
     private MutableLiveData<Throwable> errorLiveData = new MutableLiveData<>();
     private MutableLiveData<Boolean> loadingLiveData = new MutableLiveData<>();
 
@@ -28,7 +33,7 @@ public class CharacterViewModel extends AndroidViewModel {
     }
 
     public LiveData<List<Character>> getCharacterLiveData() {
-        return personagemLiveData;
+        return characterLiveData;
     }
 
     public LiveData<Boolean> getLoadingLiveData() {
@@ -39,15 +44,52 @@ public class CharacterViewModel extends AndroidViewModel {
         return errorLiveData;
     }
 
-    public void getPersonagens() {
+    public void searchCharacter() {
+        if (isNetworkConnected(getApplication())) {
+            getApiCharacter();
+        } else {
+            getLocalCharacter();
+        }
+    }
+
+    private void getLocalCharacter() {
         disposable.add(
-                repository.getPersonagemApi()
+                repository.getCharacterLocal(getApplication().getApplicationContext())
                         .subscribeOn(Schedulers.newThread())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .doOnSubscribe(disposable1 -> loadingLiveData.setValue(false))
+                        .doAfterTerminate(() -> loadingLiveData.setValue(false))
+                        .subscribe(characters -> characterLiveData.setValue(characters)
+                                , throwable -> errorLiveData.setValue(throwable))
+        );
+    }
+
+    private void getApiCharacter() {
+        disposable.add(
+                repository.getCharacterApi()
+                        .subscribeOn(Schedulers.newThread())
+                        .map(characterResponse -> saveItems(characterResponse))
                         .observeOn(AndroidSchedulers.mainThread())
                         .doOnSubscribe(disposable1 -> loadingLiveData.setValue(true))
                         .doAfterTerminate(() -> loadingLiveData.setValue(false))
-                        .subscribe(personagemResponse -> personagemLiveData.setValue(personagemResponse.getResults())
+                        .subscribe(characterResponse -> characterLiveData.setValue(characterResponse.getResults())
                                 , throwable -> errorLiveData.setValue(throwable))
         );
+    }
+
+    private CharacterResponse saveItems(CharacterResponse characterResponse) {
+        CharacterDao characterDao = DatabaseCharacter.getDatabase(getApplication()
+                .getApplicationContext())
+                .characterDao();
+
+        characterDao.insertAll(characterResponse.getResults());
+        return characterResponse;
+    }
+
+    // Limpa as chamadas que fizemos no RX
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        disposable.clear();
     }
 }

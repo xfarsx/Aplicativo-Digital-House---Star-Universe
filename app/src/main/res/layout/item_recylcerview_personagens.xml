@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="3dp"
-    android:backgroundTint="@color/staruniverse">
+    android:backgroundTint="@color/yellow">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
