@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rankMain"
-    android:fillViewport="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
+    android:fillViewport="true"
     android:orientation="vertical">
 
     <LinearLayout
@@ -23,13 +23,13 @@
 
             <Button
                 android:id="@+id/btnRank"
-                android:layout_width="match_parent"
                 style="@style/Base.Widget.AppCompat.Button.Borderless"
-                android:textAlignment="textEnd"
-                android:layout_marginRight="12dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="12dp"
                 android:layout_weight="1"
                 android:text="@string/ranking"
+                android:textAlignment="textEnd"
                 android:textColor="#f9db22"
                 android:textSize="28dp"
                 tools:layout_editor_absoluteX="162dp"
@@ -73,7 +73,7 @@
                     android:layout_weight="0.2"
                     android:src="@drawable/button_a" />
 
-                <android.support.design.button.MaterialButton
+                <com.google.android.material.button.MaterialButton
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
                     android:layout_weight="0.2"
                     android:src="@drawable/button_b" />
 
-                <android.support.design.button.MaterialButton
+                <com.google.android.material.button.MaterialButton
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -129,7 +129,7 @@
                     android:layout_weight="0.2"
                     android:src="@drawable/button_c" />
 
-                <android.support.design.button.MaterialButton
+                <com.google.android.material.button.MaterialButton
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -157,7 +157,7 @@
                     android:layout_weight="0.2"
                     android:src="@drawable/button_d" />
 
-                <android.support.design.button.MaterialButton
+                <com.google.android.material.button.MaterialButton
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -174,10 +174,11 @@
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5"/>
+            android:layout_weight="0.5" />
     </LinearLayout>
 
 </ScrollView>

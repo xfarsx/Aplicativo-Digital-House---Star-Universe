@@ -1,16 +1,17 @@
 package br.com.digitalhouse.staruniverse.splash;
 
 import android.content.Intent;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import br.com.digitalhouse.staruniverse.login.LoginActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.login.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

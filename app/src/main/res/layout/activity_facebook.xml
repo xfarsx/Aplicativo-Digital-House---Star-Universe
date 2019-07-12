@@ -8,11 +8,11 @@
     android:fillViewport="true"
     tools:context="br.com.digitalhouse.staruniverse.cadastro.FacebookActivity">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.design.widget.AppBarLayout
+        <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appFaceBack"
             android:layout_width="match_parent"
             android:layout_height="80dp"
@@ -36,7 +36,7 @@
                 android:text="@string/login_com_facebook"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
-        </android.support.design.widget.AppBarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
         <ImageView
             android:id="@+id/imageView"
@@ -171,6 +171,6 @@
 
         </LinearLayout>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
