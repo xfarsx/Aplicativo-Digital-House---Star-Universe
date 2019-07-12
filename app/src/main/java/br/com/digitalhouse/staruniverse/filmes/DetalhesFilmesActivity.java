@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.model.filme.Filme;
 
 public class DetalhesFilmesActivity extends AppCompatActivity {
 
@@ -21,11 +22,11 @@ public class DetalhesFilmesActivity extends AppCompatActivity {
 
         textViewDescricao = findViewById(R.id.textViewDescricaoFilme);
 
-        FilmesModelo filme = getIntent().getParcelableExtra("FILME");
+        Filme filme = getIntent().getParcelableExtra("FILME");
 
         if (filme != null) {
-            textViewDescricao.setText(filme.getDescricao());
-            toolbar.setTitle(filme.getNome());
+            textViewDescricao.setText(filme.getTitle());
+            toolbar.setTitle(filme.getTitle());
         }
 
         setSupportActionBar(toolbar);

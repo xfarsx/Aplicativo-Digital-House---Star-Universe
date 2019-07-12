@@ -25,7 +25,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="72dp"
+                android:layout_marginBottom="16dp"
                 android:gravity="center"
                 android:text="@string/torne_se_jedi_cadastro"
                 android:textColor="@color/staruniverse"
@@ -140,12 +140,12 @@
                 <Button
                     android:id="@+id/btnCadastro"
                     style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="120dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true"
                     android:layout_marginTop="8dp"
-                    android:layout_marginStart="48dp"
+                    android:layout_marginStart="16dp"
                     android:backgroundTint="@color/staruniverse"
                     android:text="@string/cadastrar"
                     android:textColor="@color/black" />
@@ -153,13 +153,13 @@
                 <Button
                     android:id="@+id/btnVoltar"
                     style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="120dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:layout_alignRight="@id/btnCadastro"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="48dp"
+                    android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/staruniverse"
                     android:text="@string/voltar"
                     android:textColor="@color/black" />

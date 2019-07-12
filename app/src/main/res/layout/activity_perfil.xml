@@ -51,6 +51,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_alteraremail"
         style="@style/Widget.AppCompat.Button.Colored"

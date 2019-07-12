@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.List;
 
 public class Converters {
-
     @TypeConverter
     public Date toDate(Long timestamp) {
         if (timestamp == null) {
@@ -25,7 +24,7 @@ public class Converters {
         return date.getTime();
     }
 
-    /// Type converter para uma lista de String
+    /// Type converter para uam lista de String
     @TypeConverter
     public List<String> fromString(String value) {
         Type listType = (Type) new TypeToken<List<String>>() {
@@ -38,4 +37,7 @@ public class Converters {
         Gson gson = new Gson();
         return gson.toJson(list);
     }
+
+
+
 }
