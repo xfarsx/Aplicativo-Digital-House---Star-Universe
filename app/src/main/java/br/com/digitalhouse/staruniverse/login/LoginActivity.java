@@ -14,7 +14,6 @@ import br.com.digitalhouse.staruniverse.home.HomeActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
-
     private Button buttonCadastrese;
     private Button buttonLogin;
     private Button buttonFacebook;
