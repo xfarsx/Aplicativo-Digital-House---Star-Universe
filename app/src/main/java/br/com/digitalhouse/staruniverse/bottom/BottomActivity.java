@@ -30,7 +30,7 @@ public class BottomActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent i = new Intent( BottomActivity.this,HomeActivity.class);
+                    Intent i = new Intent( BottomActivity.this, HomeActivity.class);
                     startActivity(i);
                     return true;
                 case R.id.navigation_filmes:

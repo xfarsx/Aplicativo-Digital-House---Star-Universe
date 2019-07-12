@@ -33,7 +33,7 @@ public class CadastroActivity extends AppCompatActivity {
         iniciarAsViews();
 
         btnCadastrar = findViewById(R.id.btnCadastro);
-        btnVoltar =findViewById(R.id.btnVoltar);
+        btnVoltar = findViewById(R.id.btnVoltar);
 
         botaoCadastrar();
 
@@ -70,7 +70,7 @@ public class CadastroActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (editTextEmail.getText().toString().equals("") || !editTextEmail.getText().toString().contains("@") || !editTextEmail.getText().toString().contains(".") ) {
+                if (editTextEmail.getText().toString().equals("") || !editTextEmail.getText().toString().contains("@") || !editTextEmail.getText().toString().contains(".")) {
                     Toast.makeText(CadastroActivity.this, "Digite um e-mail válido!", Toast.LENGTH_SHORT).show();
                     editTextEmail.requestFocus();
                     return;
@@ -102,7 +102,7 @@ public class CadastroActivity extends AppCompatActivity {
                     return;
                 }
 
-                Toast.makeText( CadastroActivity.this, "Usuário Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CadastroActivity.this, "Usuário Cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
 
             }
         });

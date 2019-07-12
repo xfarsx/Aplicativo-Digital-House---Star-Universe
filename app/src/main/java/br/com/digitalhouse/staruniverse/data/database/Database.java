@@ -2,25 +2,29 @@ package br.com.digitalhouse.staruniverse.data.database;
 
 import android.content.Context;
 
-import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 import br.com.digitalhouse.staruniverse.data.database.dao.CharacterDao;
+import br.com.digitalhouse.staruniverse.data.database.dao.FilmesDAO;
 import br.com.digitalhouse.staruniverse.model.Character;
+import br.com.digitalhouse.staruniverse.model.filme.Filme;
 
-@Database(entities = {Character.class}, version = 1, exportSchema = false)
+@androidx.room.Database(entities = {Filme.class, Character.class}, version = 2, exportSchema = false)
+
 @TypeConverters(Converters.class)
-public abstract class DatabaseCharacter extends RoomDatabase {
-    private static volatile DatabaseCharacter INSTANCE;
+public abstract class Database extends RoomDatabase {
+    private static volatile Database INSTANCE;
+
+    public abstract FilmesDAO filmesDAO();
     public abstract CharacterDao characterDao();
 
-    public static DatabaseCharacter getDatabase(Context context) {
+    public static Database getDatabase(Context context) {
         if (INSTANCE == null) {
-            synchronized (DatabaseCharacter.class) {
+            synchronized (Database.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(context, DatabaseCharacter.class, "my_db")
+                    INSTANCE = Room.databaseBuilder(context, Database.class, "my_db")
                             .fallbackToDestructiveMigration()
                             .build();
                 }
@@ -28,4 +32,6 @@ public abstract class DatabaseCharacter extends RoomDatabase {
         }
         return INSTANCE;
     }
+
+
 }
