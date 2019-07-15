@@ -69,6 +69,15 @@
     <string name="cadastre_se_login">Cadastre-se</string>
     <string name="torne_se_jedi_cadastro">Torne-se um Jedi</string>
     <string name="senha_login">Senha Login</string>
+    <string name="title_naves">Naves</string>
+
+    <string name="height_format">&lt;b>Height:&lt;b> %s</string>
+    <string name="mass_format">&lt;b>Mass:&lt;/b> %s</string>
+    <string name="hair_color_format">&lt;b>Hair Color:&lt;/b> %s</string>
+    <string name="skin_color_format">&lt;b>Skin Color:&lt;/b> %s</string>
+    <string name="eye_color_format">&lt;b>Eye Color:&lt;/b> %s</string>
+    <string name="birth_year_format">&lt;b>Birth Year:&lt;/b> %s</string>
+    <string name="gender_format">&lt;b>Gender:&lt;/b> %s</string>
 
 
 </resources>

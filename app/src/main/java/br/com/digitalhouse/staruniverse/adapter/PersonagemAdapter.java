@@ -65,9 +65,9 @@ public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.Vi
             super(itemView);
             textViewName = itemView.findViewById(R.id.textViewName);
         }
-        public void bind(Character Character){
+        public void bind(Character character){
 
-            textViewName.setText(Character.getName());
+            textViewName.setText(character.getName());
 
         }
     }

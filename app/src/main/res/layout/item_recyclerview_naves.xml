@@ -6,31 +6,30 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="3dp"
-    android:backgroundTint="@color/grey"
-    app:cardCornerRadius="15dp">
+    android:backgroundTint="#999797">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="2dp"
         android:background="@color/black"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:layout_marginBottom="2dp">
 
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgPersonagem"
+        <ImageView
+            android:id="@+id/imageViewNave"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:src="@drawable/character_a"
+            android:src="@drawable/naves"
+            android:tint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textViewName"
+            android:id="@+id/textViewNaveNome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -39,9 +38,9 @@
             android:textColor="@color/white"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgPersonagem"
+            app:layout_constraintStart_toEndOf="@+id/imageViewNave"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Luke Skywalker" />
+            tools:text="Sentinel-class landing craft" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
