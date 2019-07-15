@@ -8,14 +8,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListener;
-import br.com.digitalhouse.staruniverse.model.Character;
+import br.com.digitalhouse.staruniverse.model.personagem.Character;
 
 public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.ViewHolder>{
 

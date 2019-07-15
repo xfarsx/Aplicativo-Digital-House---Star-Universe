@@ -15,15 +15,14 @@
         android:padding="8dp"
         android:layout_marginBottom="2dp">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageViewNave"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:src="@drawable/naves"
-            android:tint="@color/white"
+            android:src="@drawable/ship_a"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,7 +35,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="@dimen/font_item"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageViewNave"
             app:layout_constraintTop_toTopOf="parent"

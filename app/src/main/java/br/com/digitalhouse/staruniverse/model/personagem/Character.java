@@ -1,5 +1,5 @@
 
-package br.com.digitalhouse.staruniverse.model;
+package br.com.digitalhouse.staruniverse.model.personagem;
 
 import android.os.Parcel;
 import android.os.Parcelable;

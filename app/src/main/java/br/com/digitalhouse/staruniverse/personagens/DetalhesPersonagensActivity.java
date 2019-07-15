@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.model.Character;
+import br.com.digitalhouse.staruniverse.model.personagem.Character;
 
 public class DetalhesPersonagensActivity extends AppCompatActivity {
 
@@ -43,34 +43,9 @@ public class DetalhesPersonagensActivity extends AppCompatActivity {
 
         if(person != null) {
 
-            String height = textViewHeight.getContext().getString(R.string.height_format, person.getHeight());
-            String mass = textViewMass.getContext().getString(R.string.mass_format, person.getMass());
-            String hair = textViewHairColor.getContext().getString(R.string.hair_color_format, person.getHairColor());
-            String skin = textViewSkinColor.getContext().getString(R.string.skin_color_format, person.getSkinColor());
-            String eye = textViewEyeColor.getContext().getString(R.string.eye_color_format, person.getEyeColor());
-            String birth = textViewBirthYear.getContext().getString(R.string.birth_year_format, person.getBirthYear());
-            String gender = textViewGender.getContext().getString(R.string.gender_format, person.getGender());
-
-
             textViewDescricao.setText(person.getName());
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                textViewHeight.setText(Html.fromHtml(height, Html.FROM_HTML_MODE_COMPACT));
-                textViewMass.setText(Html.fromHtml(mass, Html.FROM_HTML_MODE_COMPACT));
-                textViewHairColor.setText(Html.fromHtml(hair, Html.FROM_HTML_MODE_COMPACT));
-                textViewSkinColor.setText(Html.fromHtml(skin, Html.FROM_HTML_MODE_COMPACT));
-                textViewEyeColor.setText(Html.fromHtml(eye, Html.FROM_HTML_MODE_COMPACT));
-                textViewBirthYear.setText(Html.fromHtml(birth, Html.FROM_HTML_MODE_COMPACT));
-                textViewGender.setText(Html.fromHtml(gender, Html.FROM_HTML_MODE_COMPACT));
-            } else {
-                textViewHeight.setText(Html.fromHtml(height));
-                textViewMass.setText(Html.fromHtml(mass));
-                textViewHairColor.setText(Html.fromHtml(hair));
-                textViewSkinColor.setText(Html.fromHtml(skin));
-                textViewEyeColor.setText(Html.fromHtml(eye));
-                textViewBirthYear.setText(Html.fromHtml(birth));
-                textViewGender.setText(Html.fromHtml(gender));
-            }
+            formatText(person);
 
             toolbar.setTitle(person.getBirthYear());
         }
@@ -78,6 +53,35 @@ public class DetalhesPersonagensActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+    }
+
+    private void formatText(Character person) {
+        String a = textViewHeight.getContext().getString(R.string.height_format, person.getHeight());
+        String b = textViewMass.getContext().getString(R.string.mass_format, person.getMass());
+        String c = textViewHairColor.getContext().getString(R.string.hair_color_format, person.getHairColor());
+        String d = textViewSkinColor.getContext().getString(R.string.skin_color_format, person.getSkinColor());
+        String e = textViewEyeColor.getContext().getString(R.string.eye_color_format, person.getEyeColor());
+        String f = textViewBirthYear.getContext().getString(R.string.birth_year_format, person.getBirthYear());
+        String g = textViewGender.getContext().getString(R.string.gender_format, person.getGender());
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            textViewHeight.setText(Html.fromHtml(a, Html.FROM_HTML_MODE_COMPACT));
+            textViewMass.setText(Html.fromHtml(b, Html.FROM_HTML_MODE_COMPACT));
+            textViewHairColor.setText(Html.fromHtml(c, Html.FROM_HTML_MODE_COMPACT));
+            textViewSkinColor.setText(Html.fromHtml(d, Html.FROM_HTML_MODE_COMPACT));
+            textViewEyeColor.setText(Html.fromHtml(e, Html.FROM_HTML_MODE_COMPACT));
+            textViewBirthYear.setText(Html.fromHtml(f, Html.FROM_HTML_MODE_COMPACT));
+            textViewGender.setText(Html.fromHtml(g, Html.FROM_HTML_MODE_COMPACT));
+        } else {
+            textViewHeight.setText(Html.fromHtml(a));
+            textViewMass.setText(Html.fromHtml(b));
+            textViewHairColor.setText(Html.fromHtml(c));
+            textViewSkinColor.setText(Html.fromHtml(d));
+            textViewEyeColor.setText(Html.fromHtml(e));
+            textViewBirthYear.setText(Html.fromHtml(f));
+            textViewGender.setText(Html.fromHtml(g));
+        }
     }
 
     @Override

@@ -16,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.filmes.FilmesFragment;
 import br.com.digitalhouse.staruniverse.home.HomeActivity;
-import br.com.digitalhouse.staruniverse.naves.FragmentNaves;
+import br.com.digitalhouse.staruniverse.naves.NavesFragment;
 import br.com.digitalhouse.staruniverse.personagens.PersonagensFragment;
 import br.com.digitalhouse.staruniverse.quiz.QuizFragment;
 import br.com.digitalhouse.staruniverse.ranking.RankingReciclerViewMain;
@@ -44,7 +44,7 @@ public class BottomActivity extends AppCompatActivity {
                     replaceFragment(new QuizFragment());
                     return true;
                 case R.id.navigation_naves:
-                    replaceFragment(new FragmentNaves());
+                    replaceFragment(new NavesFragment());
                     return true;
             }
             return false;
@@ -81,7 +81,7 @@ public class BottomActivity extends AppCompatActivity {
 
             if (getIntent().getStringExtra("POSITION").equals("NAVES")){
 
-                replaceFragment(new FragmentNaves());
+                replaceFragment(new NavesFragment());
 
             }
         }
