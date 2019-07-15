@@ -1,16 +1,21 @@
 
 package br.com.digitalhouse.staruniverse.model.filme;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
 @Entity(tableName = "filmes")
-public class Filme {
+public class Filme implements Parcelable {
 
     @Expose
     @ColumnInfo(name = "characters")
@@ -30,11 +35,14 @@ public class Filme {
 
     @Expose
     @PrimaryKey
+    @NonNull
     @ColumnInfo(name = "episodeId")
+    @SerializedName("episode_id")
     private Long episodeId;
 
     @Expose
     @ColumnInfo(name = "openingCrawl")
+    @SerializedName("opening_crawl")
     private String openingCrawl;
 
     @Expose
@@ -47,6 +55,7 @@ public class Filme {
 
     @Expose
     @ColumnInfo(name = "releaseDate")
+    @SerializedName("release_date")
     private String releaseDate;
 
     @Expose
@@ -68,6 +77,70 @@ public class Filme {
     @Expose
     @ColumnInfo(name = "vehicles")
     private List<String> vehicles;
+
+    public Filme() {
+    }
+
+    protected Filme(Parcel in) {
+        characters = in.createStringArrayList();
+        created = in.readString();
+        director = in.readString();
+        edited = in.readString();
+        if (in.readByte() == 0) {
+            episodeId = null;
+        } else {
+            episodeId = in.readLong();
+        }
+        openingCrawl = in.readString();
+        planets = in.createStringArrayList();
+        producer = in.readString();
+        releaseDate = in.readString();
+        species = in.createStringArrayList();
+        starships = in.createStringArrayList();
+        title = in.readString();
+        url = in.readString();
+        vehicles = in.createStringArrayList();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeStringList(characters);
+        dest.writeString(created);
+        dest.writeString(director);
+        dest.writeString(edited);
+        if (episodeId == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeLong(episodeId);
+        }
+        dest.writeString(openingCrawl);
+        dest.writeStringList(planets);
+        dest.writeString(producer);
+        dest.writeString(releaseDate);
+        dest.writeStringList(species);
+        dest.writeStringList(starships);
+        dest.writeString(title);
+        dest.writeString(url);
+        dest.writeStringList(vehicles);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Filme> CREATOR = new Creator<Filme>() {
+        @Override
+        public Filme createFromParcel(Parcel in) {
+            return new Filme(in);
+        }
+
+        @Override
+        public Filme[] newArray(int size) {
+            return new Filme[size];
+        }
+    };
 
     public List<String> getCharacters() {
         return characters;
@@ -179,5 +252,9 @@ public class Filme {
 
     public void setVehicles(List<String> vehicles) {
         this.vehicles = vehicles;
+    }
+
+    public static Creator<Filme> getCREATOR() {
+        return CREATOR;
     }
 }

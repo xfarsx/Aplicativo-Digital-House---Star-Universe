@@ -21,6 +21,7 @@ import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.adapter.FilmesAdapter;
 import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListenerFilmes;
 import br.com.digitalhouse.staruniverse.model.filme.Filme;
+import br.com.digitalhouse.staruniverse.personagens.DetalhesPersonagensActivity;
 import br.com.digitalhouse.staruniverse.viewmodel.FilmeViewModel;
 
 public class FilmesFragment extends Fragment implements RecyclerViewClickListenerFilmes {
@@ -74,7 +75,7 @@ public class FilmesFragment extends Fragment implements RecyclerViewClickListene
     public void onClick(Filme filme) {
 
         Intent intent = new Intent(getContext(), DetalhesFilmesActivity.class);
-        //intent.putExtra("FILME", filme);
+        intent.putExtra("FILME", filme);
         startActivity(intent);
 
     }
