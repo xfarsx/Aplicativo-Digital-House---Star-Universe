@@ -10,30 +10,31 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.List;
 
 import br.com.digitalhouse.staruniverse.data.database.Database;
-import br.com.digitalhouse.staruniverse.data.database.dao.CharacterDao;
-import br.com.digitalhouse.staruniverse.model.Character;
-import br.com.digitalhouse.staruniverse.model.CharacterResponse;
-import br.com.digitalhouse.staruniverse.repository.CharacterRepository;
+import br.com.digitalhouse.staruniverse.data.database.dao.FilmesDAO;
+import br.com.digitalhouse.staruniverse.model.filme.Filme;
+import br.com.digitalhouse.staruniverse.model.filme.FilmeResult;
+import br.com.digitalhouse.staruniverse.repository.FilmeRepository;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
 import static br.com.digitalhouse.staruniverse.util.AppUtil.isNetworkConnected;
 
-public class CharacterViewModel extends AndroidViewModel {
-    private MutableLiveData<List<Character>> characterLiveData = new MutableLiveData<>();
+public class FilmeViewModel extends AndroidViewModel {
+
+    private MutableLiveData<List<Filme>> filmeLiveData = new MutableLiveData<>();
     private MutableLiveData<Throwable> errorLiveData = new MutableLiveData<>();
     private MutableLiveData<Boolean> loadingLiveData = new MutableLiveData<>();
 
     private CompositeDisposable disposable = new CompositeDisposable();
-    private CharacterRepository repository = new CharacterRepository();
+    private FilmeRepository repository = new FilmeRepository();
 
-    public CharacterViewModel(@NonNull Application application) {
+    public FilmeViewModel(@NonNull Application application) {
         super(application);
     }
 
-    public LiveData<List<Character>> getCharacterLiveData() {
-        return characterLiveData;
+    public LiveData<List<Filme>> getFilmeLiveData() {
+        return filmeLiveData;
     }
 
     public LiveData<Boolean> getLoadingLiveData() {
@@ -44,46 +45,46 @@ public class CharacterViewModel extends AndroidViewModel {
         return errorLiveData;
     }
 
-    public void searchCharacter() {
+    public void searchFilme() {
         if (isNetworkConnected(getApplication())) {
-            getApiCharacter();
+            getApiFilme();
         } else {
-            getLocalCharacter();
+            getLocalFilme();
         }
     }
 
-    private void getLocalCharacter() {
+    private void getLocalFilme() {
         disposable.add(
-                repository.getCharacterLocal(getApplication().getApplicationContext())
+                repository.getFilmeLocal(getApplication().getApplicationContext())
                         .subscribeOn(Schedulers.newThread())
                         .observeOn(AndroidSchedulers.mainThread())
                         .doOnSubscribe(disposable1 -> loadingLiveData.setValue(false))
                         .doAfterTerminate(() -> loadingLiveData.setValue(false))
-                        .subscribe(characters -> characterLiveData.setValue(characters)
+                        .subscribe(filmes -> filmeLiveData.setValue(filmes)
                                 , throwable -> errorLiveData.setValue(throwable))
         );
     }
 
-    private void getApiCharacter() {
+    private void getApiFilme() {
         disposable.add(
-                repository.getCharacterApi()
+                repository.getFilmeApi()
                         .subscribeOn(Schedulers.newThread())
-                        .map(characterResponse -> saveItems(characterResponse))
+                        .map(filmeResponse -> saveItems(filmeResponse))
                         .observeOn(AndroidSchedulers.mainThread())
                         .doOnSubscribe(disposable1 -> loadingLiveData.setValue(true))
                         .doAfterTerminate(() -> loadingLiveData.setValue(false))
-                        .subscribe(characterResponse -> characterLiveData.setValue(characterResponse.getResults())
+                        .subscribe(filmeResponse -> filmeLiveData.setValue(filmeResponse.getFilmes())
                                 , throwable -> errorLiveData.setValue(throwable))
         );
     }
 
-    private CharacterResponse saveItems(CharacterResponse characterResponse) {
-        CharacterDao characterDao = Database.getDatabase(getApplication()
+    private FilmeResult saveItems(FilmeResult filmeResponse) {
+        FilmesDAO filmesDao = Database.getDatabase(getApplication()
                 .getApplicationContext())
-                .characterDao();
+                .filmesDAO();
 
-        characterDao.insertAll(characterResponse.getResults());
-        return characterResponse;
+        filmesDao.insertAll(filmeResponse.getFilmes());
+        return filmeResponse;
     }
 
     // Limpa as chamadas que fizemos no RX

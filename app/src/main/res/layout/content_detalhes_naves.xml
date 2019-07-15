@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageViewImgDetalheNave"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:contentDescription="Imagem Nave"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:src="@drawable/naves"
+            android:tint="@color/white" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Name:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Name"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveNameLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveNameLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveModelLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Model:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveNameLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveName" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Model"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveModelLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveModelLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveManufacturerLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Manufacturer:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveModelLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveModel" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveManufacturer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Manufacturer"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveManufacturerLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveManufacturerLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveCostInCreditsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Cost in credits:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveManufacturerLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveManufacturer" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveCostInCredits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Cost in credits"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveCostInCreditsLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveCostInCreditsLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveLengthLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Length:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveCostInCreditsLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveCostInCredits" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveLength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Length"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveLengthLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveLengthLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveMaxAtmospheringSpeedLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Max atmosphering speed:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveLengthLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveLength" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveMaxAtmospheringSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Max atmosphering speed"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveMaxAtmospheringSpeedLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveMaxAtmospheringSpeedLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveCrewLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Crew:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveMaxAtmospheringSpeedLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveMaxAtmospheringSpeed" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveCrew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Crew"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveCrewLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveCrewLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNavePassengersLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Passengers:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveCrewLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveCrew" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNavePassengers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Passengers"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNavePassengersLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNavePassengersLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveCargoCapacityLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Cargo capacity:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNavePassengersLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNavePassengers" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveCargoCapacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Cargo capacity"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveCargoCapacityLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveCargoCapacityLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveConsumablesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Consumables:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveCargoCapacityLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveCargoCapacity" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveConsumables"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Consumables"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveConsumablesLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveConsumablesLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveHyperdriveRatingLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Hyperdrive rating:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveConsumablesLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveConsumables" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveHyperdriveRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Hyperdrive rating"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveHyperdriveRatingLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveHyperdriveRatingLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveMGLTLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="MGLT:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveHyperdriveRatingLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveHyperdriveRating" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveMGLT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="MGLT"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveMGLTLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveMGLTLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveStarshipClassLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Starship class:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveMGLTLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveMGLT" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveStarshipClass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Starship class"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveStarshipClassLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveStarshipClassLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveCreatedLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Created:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveStarshipClassLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveStarshipClass" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveCreated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Created"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveCreatedLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveCreatedLabel" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveEditedLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="top"
+                android:text="Edited:"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toStartOf="@+id/textViewDetalheNaveCreatedLabel"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheNaveCreated" />
+
+            <TextView
+                android:id="@+id/textViewDetalheNaveEdited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="top"
+                android:text="Edited"
+                android:textColor="@color/colorDetail"
+                android:textSize="@dimen/textSizeDetail"
+                app:layout_constraintStart_toEndOf="@+id/textViewDetalheNaveEditedLabel"
+                app:layout_constraintTop_toTopOf="@+id/textViewDetalheNaveEditedLabel" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</ScrollView>

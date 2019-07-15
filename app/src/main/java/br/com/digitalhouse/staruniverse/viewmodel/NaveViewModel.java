@@ -10,30 +10,31 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.List;
 
 import br.com.digitalhouse.staruniverse.data.database.Database;
-import br.com.digitalhouse.staruniverse.data.database.dao.CharacterDao;
-import br.com.digitalhouse.staruniverse.model.Character;
-import br.com.digitalhouse.staruniverse.model.CharacterResponse;
-import br.com.digitalhouse.staruniverse.repository.CharacterRepository;
+import br.com.digitalhouse.staruniverse.data.database.dao.NavesDAO;
+import br.com.digitalhouse.staruniverse.model.nave.Nave;
+import br.com.digitalhouse.staruniverse.model.nave.NaveResult;
+import br.com.digitalhouse.staruniverse.repository.NaveRepository;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
 import static br.com.digitalhouse.staruniverse.util.AppUtil.isNetworkConnected;
 
-public class CharacterViewModel extends AndroidViewModel {
-    private MutableLiveData<List<Character>> characterLiveData = new MutableLiveData<>();
+public class NaveViewModel extends AndroidViewModel {
+
+    private MutableLiveData<List<Nave>> naveLiveData = new MutableLiveData<>();
     private MutableLiveData<Throwable> errorLiveData = new MutableLiveData<>();
     private MutableLiveData<Boolean> loadingLiveData = new MutableLiveData<>();
 
     private CompositeDisposable disposable = new CompositeDisposable();
-    private CharacterRepository repository = new CharacterRepository();
+    private NaveRepository repository = new NaveRepository();
 
-    public CharacterViewModel(@NonNull Application application) {
+    public NaveViewModel(@NonNull Application application) {
         super(application);
     }
 
-    public LiveData<List<Character>> getCharacterLiveData() {
-        return characterLiveData;
+    public LiveData<List<Nave>> getNaveLiveData() {
+        return naveLiveData;
     }
 
     public LiveData<Boolean> getLoadingLiveData() {
@@ -44,46 +45,46 @@ public class CharacterViewModel extends AndroidViewModel {
         return errorLiveData;
     }
 
-    public void searchCharacter() {
+    public void searchNave() {
         if (isNetworkConnected(getApplication())) {
-            getApiCharacter();
+            getApiNave();
         } else {
-            getLocalCharacter();
+            getLocalNave();
         }
     }
 
-    private void getLocalCharacter() {
+    private void getLocalNave() {
         disposable.add(
-                repository.getCharacterLocal(getApplication().getApplicationContext())
+                repository.getNaveLocal(getApplication().getApplicationContext())
                         .subscribeOn(Schedulers.newThread())
                         .observeOn(AndroidSchedulers.mainThread())
                         .doOnSubscribe(disposable1 -> loadingLiveData.setValue(false))
                         .doAfterTerminate(() -> loadingLiveData.setValue(false))
-                        .subscribe(characters -> characterLiveData.setValue(characters)
+                        .subscribe(naves -> naveLiveData.setValue(naves)
                                 , throwable -> errorLiveData.setValue(throwable))
         );
     }
 
-    private void getApiCharacter() {
+    private void getApiNave() {
         disposable.add(
-                repository.getCharacterApi()
+                repository.getNaveApi()
                         .subscribeOn(Schedulers.newThread())
-                        .map(characterResponse -> saveItems(characterResponse))
+                        .map(naveResult -> saveItems(naveResult))
                         .observeOn(AndroidSchedulers.mainThread())
                         .doOnSubscribe(disposable1 -> loadingLiveData.setValue(true))
                         .doAfterTerminate(() -> loadingLiveData.setValue(false))
-                        .subscribe(characterResponse -> characterLiveData.setValue(characterResponse.getResults())
+                        .subscribe(naveResult -> naveLiveData.setValue(naveResult.getNaves())
                                 , throwable -> errorLiveData.setValue(throwable))
         );
     }
 
-    private CharacterResponse saveItems(CharacterResponse characterResponse) {
-        CharacterDao characterDao = Database.getDatabase(getApplication()
+    private NaveResult saveItems(NaveResult naveResult) {
+        NavesDAO navesDao = Database.getDatabase(getApplication()
                 .getApplicationContext())
-                .characterDao();
+                .navesDao();
 
-        characterDao.insertAll(characterResponse.getResults());
-        return characterResponse;
+        navesDao.insertAll(naveResult.getNaves());
+        return naveResult;
     }
 
     // Limpa as chamadas que fizemos no RX

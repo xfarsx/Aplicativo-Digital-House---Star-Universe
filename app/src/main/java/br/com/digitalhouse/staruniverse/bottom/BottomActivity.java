@@ -16,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.filmes.FilmesFragment;
 import br.com.digitalhouse.staruniverse.home.HomeActivity;
+import br.com.digitalhouse.staruniverse.naves.FragmentNaves;
 import br.com.digitalhouse.staruniverse.personagens.PersonagensFragment;
 import br.com.digitalhouse.staruniverse.quiz.QuizFragment;
 import br.com.digitalhouse.staruniverse.ranking.RankingReciclerViewMain;
@@ -30,7 +31,7 @@ public class BottomActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent i = new Intent( BottomActivity.this,HomeActivity.class);
+                    Intent i = new Intent( BottomActivity.this, HomeActivity.class);
                     startActivity(i);
                     return true;
                 case R.id.navigation_filmes:
@@ -42,9 +43,9 @@ public class BottomActivity extends AppCompatActivity {
                 case R.id.navigation_quiz:
                     replaceFragment(new QuizFragment());
                     return true;
-                case R.id.navigation_noticias:
-                    mTextMessage.setText(R.string.title_news);
-
+                case R.id.navigation_naves:
+                    replaceFragment(new FragmentNaves());
+                    return true;
             }
             return false;
         }
@@ -75,6 +76,12 @@ public class BottomActivity extends AppCompatActivity {
             if (getIntent().getStringExtra("POSITION").equals("FILMES")){
 
                 replaceFragment(new FilmesFragment());
+
+            }
+
+            if (getIntent().getStringExtra("POSITION").equals("NAVES")){
+
+                replaceFragment(new FragmentNaves());
 
             }
         }

@@ -74,7 +74,7 @@
         android:background="@drawable/round_button"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/layout_noticias"
+        app:layout_constraintEnd_toStartOf="@+id/layout_naves"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/layout_quiz"
         app:layout_constraintTop_toBottomOf="@+id/layout_filmes"
@@ -177,7 +177,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layout_noticias"
+        android:id="@+id/layout_naves"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="8dp"
@@ -192,16 +192,16 @@
         app:layout_constraintVertical_bias="0.108">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp">
 
             <ImageView
-                android:id="@+id/btn_noticias"
+                android:id="@+id/btn_naves"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/noticias" />
+                android:src="@drawable/naves" />
         </RelativeLayout>
 
         <TextView
@@ -209,7 +209,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="11sp"
-            android:text="Notícias"
+            android:text="@string/title_naves"
             android:textColor="#000000"
             android:textStyle="bold" />
 

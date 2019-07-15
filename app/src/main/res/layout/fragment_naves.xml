@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navesMain"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/filmesMain"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    android:layout_height="match_parent">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -34,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewNave"
         android:layout_width="371dp"
         android:layout_height="114dp"
         android:layout_marginTop="8dp"
@@ -45,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rankingAppbar" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleFilmes"
+        android:id="@+id/recycleNaves"
         android:layout_width="404dp"
         android:layout_height="399dp"
         android:layout_marginStart="8dp"
@@ -53,7 +52,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewNave" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

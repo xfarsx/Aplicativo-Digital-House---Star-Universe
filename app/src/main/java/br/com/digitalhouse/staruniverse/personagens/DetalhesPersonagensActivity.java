@@ -26,8 +26,8 @@ public class DetalhesPersonagensActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes_personagem);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         textViewDescricao = findViewById(R.id.textViewDescricaoPersonagem);
         textViewHeight = findViewById(R.id.textViewHeight);
@@ -77,6 +77,7 @@ public class DetalhesPersonagensActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override

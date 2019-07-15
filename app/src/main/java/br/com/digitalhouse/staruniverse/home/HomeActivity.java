@@ -22,7 +22,7 @@ import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
 import br.com.digitalhouse.staruniverse.cadastro.PerfilActivity;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNoticias, btnFilmes,btnRanking;
+    private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNaves, btnFilmes,btnRanking;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         botaoRanking();
 
-        botaoNoticias();
+        botaoNaves();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -64,11 +64,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
-    private void botaoNoticias() {
-        btnNoticias.setOnClickListener(new View.OnClickListener() {
+
+    private void botaoNaves() {
+        btnNaves.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                i.putExtra("POSITION", "NAVES");
                 startActivity(i);
             }
         });
@@ -125,7 +127,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnFavoritos = findViewById(R.id.btn_favoritos);
         btnFilmes = findViewById(R.id.btn_filmes);
         btnPersonagens = findViewById(R.id.btn_personagens);
-        btnNoticias = findViewById(R.id.btn_noticias);
+        btnNaves = findViewById(R.id.btn_naves);
         btnQuiz = findViewById(R.id.btn_quiz);
         btnRanking = findViewById(R.id.btn_ranking);
         return toolbar;
