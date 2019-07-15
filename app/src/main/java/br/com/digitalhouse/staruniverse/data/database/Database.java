@@ -9,7 +9,7 @@ import androidx.room.TypeConverters;
 import br.com.digitalhouse.staruniverse.data.database.dao.CharacterDao;
 import br.com.digitalhouse.staruniverse.data.database.dao.FilmesDAO;
 import br.com.digitalhouse.staruniverse.data.database.dao.NavesDAO;
-import br.com.digitalhouse.staruniverse.model.Character;
+import br.com.digitalhouse.staruniverse.model.personagem.Character;
 import br.com.digitalhouse.staruniverse.model.filme.Filme;
 import br.com.digitalhouse.staruniverse.model.nave.Nave;
 

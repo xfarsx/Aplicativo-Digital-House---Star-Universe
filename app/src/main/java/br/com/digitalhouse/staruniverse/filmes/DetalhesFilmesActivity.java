@@ -1,6 +1,8 @@
 package br.com.digitalhouse.staruniverse.filmes;
 
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,16 +37,8 @@ public class DetalhesFilmesActivity extends AppCompatActivity {
 
         if (filme != null) {
             toolbar.setTitle(filme.getTitle());
-
-            textViewDetalheFilmeEpisodeId.setText(filme.getEpisodeId().toString());
             textViewDetalheFilmeTitle.setText(filme.getTitle());
-            textViewDetalheFilmeReleaseDate.setText(filme.getReleaseDate());
-            textViewDetalheFilmeCreated.setText(filme.getCreated());
-            textViewDetalheFilmeDirector.setText(filme.getDirector());
-            textViewDetalheFilmeEdited.setText(filme.getEdited());
-            textViewDetalheFilmeOpeningCrawl.setText(filme.getOpeningCrawl());
-            textViewDetalheFilmeProducer.setText(filme.getProducer());
-
+            formatText(filme);
         }
 
         setSupportActionBar(toolbar);
@@ -57,11 +51,39 @@ public class DetalhesFilmesActivity extends AppCompatActivity {
         return true;
     }
 
+    private void formatText(Filme filme) {
+        String a = textViewDetalheFilmeEpisodeId.getContext().getString(R.string.fiml_episode_id_format, String.valueOf(filme.getEpisodeId()));
+        String b = textViewDetalheFilmeReleaseDate.getContext().getString(R.string.film_release_date_format, filme.getReleaseDate());
+        String c = textViewDetalheFilmeCreated.getContext().getString(R.string.film_created_format, filme.getCreated());
+        String d = textViewDetalheFilmeDirector.getContext().getString(R.string.film_director_format, filme.getDirector());
+        String e = textViewDetalheFilmeEdited.getContext().getString(R.string.film_edited_format, filme.getEdited());
+        String f = textViewDetalheFilmeOpeningCrawl.getContext().getString(R.string.film_opening_crawl_format, filme.getOpeningCrawl());
+        String g = textViewDetalheFilmeProducer.getContext().getString(R.string.film_producer_format, filme.getProducer());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            textViewDetalheFilmeEpisodeId.setText(Html.fromHtml(a, Html.FROM_HTML_MODE_COMPACT));
+            textViewDetalheFilmeReleaseDate.setText(Html.fromHtml(b, Html.FROM_HTML_MODE_COMPACT));
+            textViewDetalheFilmeCreated.setText(Html.fromHtml(c, Html.FROM_HTML_MODE_COMPACT));
+            textViewDetalheFilmeDirector.setText(Html.fromHtml(d, Html.FROM_HTML_MODE_COMPACT));
+            textViewDetalheFilmeEdited.setText(Html.fromHtml(e, Html.FROM_HTML_MODE_COMPACT));
+            textViewDetalheFilmeOpeningCrawl.setText(Html.fromHtml(f, Html.FROM_HTML_MODE_COMPACT));
+            textViewDetalheFilmeProducer.setText(Html.fromHtml(g, Html.FROM_HTML_MODE_COMPACT));
+        } else {
+            textViewDetalheFilmeEpisodeId.setText(Html.fromHtml(a));
+            textViewDetalheFilmeReleaseDate.setText(Html.fromHtml(b));
+            textViewDetalheFilmeCreated.setText(Html.fromHtml(c));
+            textViewDetalheFilmeDirector.setText(Html.fromHtml(d));
+            textViewDetalheFilmeEdited.setText(Html.fromHtml(e));
+            textViewDetalheFilmeOpeningCrawl.setText(Html.fromHtml(f));
+            textViewDetalheFilmeProducer.setText(Html.fromHtml(g));
+        }
+    }
+
     public void initViews() {
 
+        textViewDetalheFilmeTitle = findViewById(R.id.textViewDetalheFilmeTitle);
         imageViewImgDetalheFilme = findViewById(R.id.imageViewImgDetalheFilme);
         textViewDetalheFilmeEpisodeId = findViewById(R.id.textViewDetalheFilmeEpisodeId);
-        textViewDetalheFilmeTitle = findViewById(R.id.textViewDetalheFilmeTitle);
         textViewDetalheFilmeReleaseDate = findViewById(R.id.textViewDetalheFilmeReleaseDate);
         textViewDetalheFilmeCreated = findViewById(R.id.textViewDetalheFilmeCreated);
         textViewDetalheFilmeDirector = findViewById(R.id.textViewDetalheFilmeDirector);

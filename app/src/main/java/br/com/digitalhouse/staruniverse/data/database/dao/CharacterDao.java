@@ -8,7 +8,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import br.com.digitalhouse.staruniverse.model.Character;
+import br.com.digitalhouse.staruniverse.model.personagem.Character;
 import io.reactivex.Flowable;
 
 @Dao
