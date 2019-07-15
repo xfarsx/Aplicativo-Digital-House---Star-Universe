@@ -1,5 +1,5 @@
 
-package br.com.digitalhouse.staruniverse.model;
+package br.com.digitalhouse.staruniverse.model.personagem;
 
 import com.google.gson.annotations.Expose;
 

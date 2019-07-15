@@ -1,233 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:layout_marginTop="56dp"
+    android:background="@color/black"
+    tools:showIn="@layout/activity_descricao_filmes">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/imageViewStarWars"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/star_wars" />
 
-        <ImageView
-            android:id="@+id/imageViewImgDetalheFilme"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:contentDescription="Imagem Filme"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
-            android:src="@drawable/ic_filme" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewImgDetalheFilme"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/film_b"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewStarWars"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDetalheFilmeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_item"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewStarWars"
+        app:layout_constraintStart_toEndOf="@+id/imageViewImgDetalheFilme"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="A New Hope" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewStarWars">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textViewDetalheFilmeEpisodeIdLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:gravity="top"
-                android:text="Episode Id:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
             <TextView
                 android:id="@+id/textViewDetalheFilmeEpisodeId"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:gravity="top"
-                android:text="Episode Id:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toEndOf="@+id/textViewDetalheFilmeEpisodeIdLabel"
-                app:layout_constraintTop_toTopOf="@+id/textViewDetalheFilmeEpisodeIdLabel" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Episode Id: 4" />
 
-
-            <TextView
-                android:id="@+id/textViewDetalheFilmeTitleLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="top"
-                android:text="Title:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toStartOf="@+id/textViewDetalheFilmeEpisodeIdLabel"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeEpisodeId" />
-
-            <TextView
-                android:id="@+id/textViewDetalheFilmeTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:gravity="top"
-                android:text="Title:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toEndOf="@+id/textViewDetalheFilmeTitleLabel"
-                app:layout_constraintTop_toTopOf="@+id/textViewDetalheFilmeTitleLabel" />
-
-
-            <TextView
-                android:id="@+id/textViewDetalheFilmeReleaseDateLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="top"
-                android:text="Release Date:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toStartOf="@+id/textViewDetalheFilmeTitleLabel"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeTitle" />
 
             <TextView
                 android:id="@+id/textViewDetalheFilmeReleaseDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:gravity="top"
-                android:text="Release Date:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toEndOf="@+id/textViewDetalheFilmeReleaseDateLabel"
-                app:layout_constraintTop_toTopOf="@+id/textViewDetalheFilmeReleaseDateLabel" />
-
-
-            <TextView
-                android:id="@+id/textViewDetalheFilmeCreatedLabel"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:gravity="top"
-                android:text="Created:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toStartOf="@+id/textViewDetalheFilmeReleaseDateLabel"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeReleaseDate" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeEpisodeId"
+                tools:text="Release Date: 1977-05-25" />
 
             <TextView
                 android:id="@+id/textViewDetalheFilmeCreated"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:gravity="top"
-                android:text="Created:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toEndOf="@+id/textViewDetalheFilmeCreatedLabel"
-                app:layout_constraintTop_toTopOf="@+id/textViewDetalheFilmeCreatedLabel" />
-
-
-            <TextView
-                android:id="@+id/textViewDetalheFilmeDirectorLabel"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:gravity="top"
-                android:text="Director:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toStartOf="@+id/textViewDetalheFilmeCreatedLabel"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeCreated" />
-
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeReleaseDate"
+                tools:text="Created: 2014-12-10T14:23:31.880000" />
 
             <TextView
                 android:id="@+id/textViewDetalheFilmeDirector"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:gravity="top"
-                android:text="Director:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toEndOf="@+id/textViewDetalheFilmeDirectorLabel"
-                app:layout_constraintTop_toTopOf="@+id/textViewDetalheFilmeDirectorLabel" />
-
-
-            <TextView
-                android:id="@+id/textViewDetalheFilmeEditedLabel"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:gravity="top"
-                android:text="Edited:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toStartOf="@+id/textViewDetalheFilmeDirectorLabel"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeDirector" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeCreated"
+                tools:text="Director: George Lucas" />
 
             <TextView
                 android:id="@+id/textViewDetalheFilmeEdited"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:gravity="top"
-                android:text="Edited:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toEndOf="@+id/textViewDetalheFilmeEditedLabel"
-                app:layout_constraintTop_toTopOf="@+id/textViewDetalheFilmeEditedLabel" />
-
-
-            <TextView
-                android:id="@+id/textViewDetalheFilmeOpeningCrawlLabel"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:gravity="top"
-                android:text="Opening Crawl:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toStartOf="@+id/textViewDetalheFilmeEditedLabel"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeEdited" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeDirector"
+                tools:text="Edited: 2015-04-11T09:46:52.774897Z" />
 
             <TextView
                 android:id="@+id/textViewDetalheFilmeOpeningCrawl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:gravity="top"
-                android:text="Opening Crawl:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toEndOf="@+id/textViewDetalheFilmeOpeningCrawlLabel"
-                app:layout_constraintTop_toTopOf="@+id/textViewDetalheFilmeOpeningCrawlLabel" />
-
-
-            <TextView
-                android:id="@+id/textViewDetalheFilmeProducerLabel"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:gravity="top"
-                android:text="Producer:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toStartOf="@+id/textViewDetalheFilmeOpeningCrawlLabel"
-                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeOpeningCrawl" />
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeEdited"
+                tools:text="Opening Crawl: It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire." />
 
             <TextView
                 android:id="@+id/textViewDetalheFilmeProducer"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:gravity="top"
-                android:text="Producer:"
-                android:textColor="@color/colorDetail"
-                android:textSize="@dimen/textSizeDetail"
-                app:layout_constraintStart_toEndOf="@+id/textViewDetalheFilmeProducerLabel"
-                app:layout_constraintTop_toTopOf="@+id/textViewDetalheFilmeProducerLabel" />
-
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeOpeningCrawl"
+                tools:text="Producer: Gary Kurtz, Rick McCallum" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
-
-</ScrollView>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

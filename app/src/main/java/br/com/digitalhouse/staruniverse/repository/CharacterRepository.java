@@ -7,8 +7,8 @@ import java.util.List;
 import br.com.digitalhouse.staruniverse.data.database.Database;
 import br.com.digitalhouse.staruniverse.data.database.dao.CharacterDao;
 import br.com.digitalhouse.staruniverse.data.network.ApiService;
-import br.com.digitalhouse.staruniverse.model.Character;
-import br.com.digitalhouse.staruniverse.model.CharacterResponse;
+import br.com.digitalhouse.staruniverse.model.personagem.Character;
+import br.com.digitalhouse.staruniverse.model.personagem.CharacterResponse;
 import io.reactivex.Flowable;
 import io.reactivex.Single;
 

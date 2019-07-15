@@ -21,7 +21,7 @@ import java.util.List;
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.adapter.PersonagemAdapter;
 import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListener;
-import br.com.digitalhouse.staruniverse.model.Character;
+import br.com.digitalhouse.staruniverse.model.personagem.Character;
 import br.com.digitalhouse.staruniverse.viewmodel.CharacterViewModel;
 
 /**

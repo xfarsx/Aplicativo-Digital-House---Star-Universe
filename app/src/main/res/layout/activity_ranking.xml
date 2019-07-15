@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rankMain"
     android:layout_width="match_parent"
@@ -68,5 +66,5 @@
         android:layout_width="405dp"
         android:layout_height="53dp"
         android:layout_marginStart="8dp"
-        android:orientation="vertical"></LinearLayout>
-</androidx.constraintlayout.ConstraintLayout>
+        android:orientation="vertical"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

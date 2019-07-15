@@ -27,12 +27,12 @@ import br.com.digitalhouse.staruniverse.model.nave.Nave;
 import br.com.digitalhouse.staruniverse.viewmodel.NaveViewModel;
 
 
-public class FragmentNaves extends Fragment implements RecyclerViewClickListenerNaves {
+public class NavesFragment extends Fragment implements RecyclerViewClickListenerNaves {
 
     private NaveViewModel viewModel;
     private List<Nave> naveList = new ArrayList<>();
 
-    public FragmentNaves() {
+    public NavesFragment() {
         // Required empty public constructor
     }
 
