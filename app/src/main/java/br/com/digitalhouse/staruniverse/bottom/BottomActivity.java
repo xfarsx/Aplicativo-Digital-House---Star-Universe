@@ -13,13 +13,19 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.filmes.FilmesFragment;
 import br.com.digitalhouse.staruniverse.home.HomeActivity;
+import br.com.digitalhouse.staruniverse.model.quiz.Quiz;
 import br.com.digitalhouse.staruniverse.naves.NavesFragment;
 import br.com.digitalhouse.staruniverse.personagens.PersonagensFragment;
 import br.com.digitalhouse.staruniverse.quiz.QuizFragment;
 import br.com.digitalhouse.staruniverse.ranking.RankingReciclerViewMain;
+import br.com.digitalhouse.staruniverse.viewmodel.QuizViewModel;
 
 public class BottomActivity extends AppCompatActivity {
     private TextView mTextMessage;
@@ -41,6 +47,8 @@ public class BottomActivity extends AppCompatActivity {
                     replaceFragment(new PersonagensFragment());
                     return true;
                 case R.id.navigation_quiz:
+
+
                     replaceFragment(new QuizFragment());
                     return true;
                 case R.id.navigation_naves:
@@ -90,6 +98,13 @@ public class BottomActivity extends AppCompatActivity {
     public void replaceFragment(Fragment fragment){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(R.id.containerFragments, fragment);
+        transaction.commit();
+    }
+    public void replaceFragmentBundle(Fragment fragment,Bundle bundle){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        fragment.setArguments(bundle);
         transaction.replace(R.id.containerFragments, fragment);
         transaction.commit();
     }
