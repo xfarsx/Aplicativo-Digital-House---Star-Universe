@@ -36,7 +36,7 @@
                 tools:layout_editor_absoluteY="148dp" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textViewQuizPergunta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -74,6 +74,7 @@
                     android:src="@drawable/button_a" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ButtonAlterA"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -102,6 +103,7 @@
                     android:src="@drawable/button_b" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ButtonAlterB"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -130,6 +132,7 @@
                     android:src="@drawable/button_c" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ButtonAlterC"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -158,6 +161,7 @@
                     android:src="@drawable/button_d" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ButtonAlterD"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
