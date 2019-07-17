@@ -33,7 +33,7 @@
 
     <TextView
         android:id="@+id/textViewDetalheFilmeTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="16dp"
@@ -42,6 +42,7 @@
         android:textSize="@dimen/font_item"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewStarWars"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewStarWars"
         app:layout_constraintStart_toEndOf="@+id/imageViewImgDetalheFilme"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="A New Hope" />

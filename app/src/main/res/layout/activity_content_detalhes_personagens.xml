@@ -33,15 +33,17 @@
 
     <TextView
         android:id="@+id/textViewDescricaoPersonagem"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:text="TextView"
         android:textColor="@color/white"
         android:textSize="@dimen/font_item"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewDeathStar"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDeathStar"
         app:layout_constraintStart_toEndOf="@+id/circleImageView2"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Luke Skywalker" />
