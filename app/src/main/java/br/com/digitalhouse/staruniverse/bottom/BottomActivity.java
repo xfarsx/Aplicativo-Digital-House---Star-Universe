@@ -20,14 +20,16 @@ import java.util.List;
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.filmes.FilmesFragment;
 import br.com.digitalhouse.staruniverse.home.HomeActivity;
+import br.com.digitalhouse.staruniverse.interfaces.QuizComunicador;
 import br.com.digitalhouse.staruniverse.model.quiz.Quiz;
 import br.com.digitalhouse.staruniverse.naves.NavesFragment;
 import br.com.digitalhouse.staruniverse.personagens.PersonagensFragment;
 import br.com.digitalhouse.staruniverse.quiz.QuizFragment;
+import br.com.digitalhouse.staruniverse.quiz.QuizResultadoFragment;
 import br.com.digitalhouse.staruniverse.ranking.RankingReciclerViewMain;
 import br.com.digitalhouse.staruniverse.viewmodel.QuizViewModel;
 
-public class BottomActivity extends AppCompatActivity {
+public class BottomActivity extends AppCompatActivity implements QuizComunicador {
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -47,8 +49,6 @@ public class BottomActivity extends AppCompatActivity {
                     replaceFragment(new PersonagensFragment());
                     return true;
                 case R.id.navigation_quiz:
-
-
                     replaceFragment(new QuizFragment());
                     return true;
                 case R.id.navigation_naves:
@@ -95,18 +95,22 @@ public class BottomActivity extends AppCompatActivity {
         }
     }
 
-    public void replaceFragment(Fragment fragment){
+    public void     replaceFragment(Fragment fragment){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.containerFragments, fragment);
-        transaction.commit();
-    }
-    public void replaceFragmentBundle(Fragment fragment,Bundle bundle){
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        fragment.setArguments(bundle);
         transaction.replace(R.id.containerFragments, fragment);
         transaction.commit();
     }
 
+
+    @Override
+    public void receberMensagem(int pontuacao) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("PONTUACAO", pontuacao);
+
+        Fragment Quiz = new QuizResultadoFragment();
+        Quiz.setArguments(bundle);
+
+        replaceFragment(Quiz);
+    }
 }

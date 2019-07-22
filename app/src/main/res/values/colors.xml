@@ -10,5 +10,7 @@
     <color name="white">#ffffff</color>
     <color name="yellow">#E8E200</color>
     <color name="grey">#999797</color>
+    <color name="check">#134a13</color>
+
     <color name="colorDetail">#ffffff</color>
 </resources>

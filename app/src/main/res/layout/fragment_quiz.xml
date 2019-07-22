@@ -18,32 +18,17 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-
             android:orientation="vertical">
-
-            <Button
-                android:id="@+id/btnRank"
-                style="@style/Base.Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="12dp"
-                android:layout_weight="1"
-                android:text="@string/ranking"
-                android:textAlignment="textEnd"
-                android:textColor="#f9db22"
-                android:textSize="28dp"
-                tools:layout_editor_absoluteX="162dp"
-                tools:layout_editor_absoluteY="148dp" />
-
             <TextView
                 android:id="@+id/textViewQuizPergunta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
+                android:gravity="center"
                 android:layout_weight="1"
                 android:text="Quais são os troopers imperiais que operam em Scarif?"
-                android:textColor="#f9db22"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/nav_view"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -67,12 +52,6 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:src="@drawable/button_a" />
-
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/ButtonAlterA"
                     style="@style/Widget.AppCompat.Button.Colored"
@@ -83,7 +62,7 @@
                     android:padding="20dp"
                     android:text="Opção 1"
                     android:textAlignment="center"
-                    android:textColor="@color/staruniverse"
+                    android:textColor="@color/white"
                     app:cornerRadius="100dp"
                     app:strokeColor="@color/staruniverse"
                     app:strokeWidth="4dp" />
@@ -95,12 +74,6 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:src="@drawable/button_b" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/ButtonAlterB"
@@ -112,7 +85,7 @@
                     android:padding="20dp"
                     android:text="Opção 1"
                     android:textAlignment="center"
-                    android:textColor="@color/staruniverse"
+                    android:textColor="@color/white"
                     app:cornerRadius="100dp"
                     app:strokeColor="@color/staruniverse"
                     app:strokeWidth="4dp" />
@@ -125,11 +98,6 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:src="@drawable/button_c" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/ButtonAlterC"
@@ -141,7 +109,7 @@
                     android:padding="20dp"
                     android:text="Opção 1"
                     android:textAlignment="center"
-                    android:textColor="@color/staruniverse"
+                    android:textColor="@color/white"
                     app:cornerRadius="100dp"
                     app:strokeColor="@color/staruniverse"
                     app:strokeWidth="4dp" />
@@ -154,12 +122,6 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:src="@drawable/button_d" />
-
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/ButtonAlterD"
                     style="@style/Widget.AppCompat.Button.Colored"
@@ -170,7 +132,7 @@
                     android:padding="20dp"
                     android:text="Opção 1"
                     android:textAlignment="center"
-                    android:textColor="@color/staruniverse"
+                    android:textColor="@color/white"
                     app:cornerRadius="100dp"
                     app:strokeColor="@color/staruniverse"
                     app:strokeWidth="4dp" />
