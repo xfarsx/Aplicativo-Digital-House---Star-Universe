@@ -47,7 +47,7 @@ public class DetalhesPersonagensActivity extends AppCompatActivity {
 
             formatText(person);
 
-            toolbar.setTitle(person.getBirthYear());
+            toolbar.setTitle(person.getName());
         }
 
         setSupportActionBar(toolbar);
