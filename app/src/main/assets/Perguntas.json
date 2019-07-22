@@ -9,16 +9,6 @@
         "Illinium"
       ],
       "resposta": "Illinium"
-    },
-    {
-      "titulo": "Qual eai",
-      "alternativas": [
-        "adasd",
-        "Yodscscva",
-        "Ana dsvdkin",
-        "Goo d dgle"
-      ],
-      "resposta": "adasd"
     },{
       "titulo": "O número dado a Finn como Stormtrooper é:",
       "alternativas": [
@@ -38,7 +28,7 @@
       ],
       "resposta": "Yavin 4"
     },{
-      "titulo": "Complete: Han Solo transportava _________ em seu cargueiro.",
+      "titulo": "O que Han Solo transportava em seu cargueiro?",
       "alternativas": [
         "Kanjiklubs",
         "TaunTauns",

@@ -1,9 +1,7 @@
 package br.com.digitalhouse.staruniverse.quiz;
 
-
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,14 +9,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Timer;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
-
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.interfaces.QuizComunicador;
 import br.com.digitalhouse.staruniverse.model.quiz.Quiz;
 import br.com.digitalhouse.staruniverse.viewmodel.QuizViewModel;
 
@@ -27,22 +24,31 @@ import br.com.digitalhouse.staruniverse.viewmodel.QuizViewModel;
  */
 public class QuizFragment extends Fragment {
     private QuizViewModel quizViewModel;
-    public List<Quiz> perguntas = new ArrayList<>();
+    private List<Quiz> perguntas = new ArrayList<>();
     private List<Button> opcoes = new ArrayList<>();
     private int qtnPerguntas;
-    public TextView textViewPergunta;
+    private int pontuacao = 0;
+    private QuizComunicador comunicador;
+    private TextView textViewPergunta;
+    private Timer timer = new Timer();
 
     public QuizFragment() {
         // Required empty public constructor
     }
+    public void onAttach(Context context) {
+        super.onAttach(context);
 
-
+        try {
+            comunicador = (QuizComunicador) context;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
-        Button btnRank = view.findViewById(R.id.btnRank);
         textViewPergunta = view.findViewById(R.id.textViewQuizPergunta);
         Button buttonA = view.findViewById(R.id.ButtonAlterA);
         Button buttonB = view.findViewById(R.id.ButtonAlterB);
@@ -53,28 +59,15 @@ public class QuizFragment extends Fragment {
         opcoes.add(buttonC);
         opcoes.add(buttonD);
 
-
         // Inicializa ViewModel
         quizViewModel = ViewModelProviders.of(this).get(QuizViewModel.class);
         quizViewModel.buscarPerguntas();
 
         // Adicionar os observables
         quizViewModel.getQuizLiveData().observe(this, pergunta -> {
-            //textViewPergunta.setText(pergunta.get(0).getPergunta());
             getList(pergunta);
-
         });
 
-
-        proximaPergunta();
-        btnRank.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Adiconar o click para a pagina ranking do lucaa
-            }
-        });
-
-        Log.i("perguntas", perguntas.toString());
 
         return view;
     }
@@ -91,10 +84,13 @@ public class QuizFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     if (button.getText().equals(quiz.getResposta())) {
-                        Toast.makeText(getActivity().getApplicationContext(),"Acertou Miserave",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity().getApplicationContext(), "Acertou Miserave", Toast.LENGTH_SHORT).show();
+                        button.setBackgroundColor(getResources().getColor(R.color.check));
+                        gerarPontuacao(true);
                         proximaPergunta();
-                    }else {
-                        Toast.makeText(getActivity().getApplicationContext(),"Errou",Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity().getApplicationContext(), "Achou errado", Toast.LENGTH_SHORT).show();
+                        gerarPontuacao(false);
                         proximaPergunta();
                     }
                 }
@@ -102,24 +98,29 @@ public class QuizFragment extends Fragment {
         }
 
     }
-
     public void proximaPergunta() {
         if (qtnPerguntas != 0) {
-            setarPergunta(perguntas.get(qtnPerguntas-1), this.textViewPergunta, this.opcoes);
+            setarPergunta(perguntas.get(qtnPerguntas - 1), this.textViewPergunta, this.opcoes);
             qtnPerguntas--;
         } else {
-            Log.i("FIM", "FIM");
+            comunicador.receberMensagem(pontuacao);
+
+
         }
 
     }
-
-    private List<Quiz> getList(List<Quiz> teste) {
-        perguntas.addAll(teste);
+    private List<Quiz> getList(List<Quiz> quiz) {
+        perguntas.addAll(quiz);
         qtnPerguntas = perguntas.size();
         proximaPergunta();
-
         return perguntas;
     }
 
-
+    private void gerarPontuacao(Boolean acerto) {
+        if (acerto) {
+            this.pontuacao += 10;
+        } else {
+            this.pontuacao -= 5;
+        }
+    }
 }
