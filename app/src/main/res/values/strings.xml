@@ -25,6 +25,7 @@
     <string name="cadastrar">Cadastrar</string>
     <string name="confirmar_senha">Confirmar Senha</string>
     <string name="voltar">Voltar</string>
+
     <!--Bottom-->
     <string name="title_activity_bottom">BottomActivity</string>
     <string name="titulo_home">Home</string>
@@ -65,10 +66,45 @@
     <string name="desc">desc</string>
     <string name="sua_posi_o_103_lugar">Sua posição é -103º lugar</string>
     <string name="quiz">Quiz</string>
-    <string name="usuario_login">usuario_login</string>
-    <string name="cadastre_se_login">cadastre_se_login</string>
-    <string name="torne_se_jedi_cadastro">torne_se_jedi_cadastro</string>
-    <string name="senha_login">senha login</string>
+    <string name="usuario_login">Usuário Login</string>
+    <string name="cadastre_se_login">Cadastre-se</string>
+    <string name="torne_se_jedi_cadastro">Torne-se um Jedi</string>
+    <string name="senha_login">Senha Login</string>
+    <string name="title_naves">Naves</string>
 
+    <!--Character Detail Format-->
+    <string name="height_format">&lt;b>Height:&lt;b> %s</string>
+    <string name="mass_format">&lt;b>Mass:&lt;/b> %s</string>
+    <string name="hair_color_format">&lt;b>Hair Color:&lt;/b> %s</string>
+    <string name="skin_color_format">&lt;b>Skin Color:&lt;/b> %s</string>
+    <string name="eye_color_format">&lt;b>Eye Color:&lt;/b> %s</string>
+    <string name="birth_year_format">&lt;b>Birth Year:&lt;/b> %s</string>
+    <string name="gender_format">&lt;b>Gender:&lt;/b> %s</string>
+
+    <!--Ship Detail Format-->
+    <string name="ship_model_format">&lt;b>Model:&lt;/b> %s</string>
+    <string name="ship_manufacturer_format">&lt;b>Manufacturer:&lt;/b> %s</string>
+    <string name="ship_cost_in_credits_format">&lt;b>Cost in Credits:&lt;/b> %s</string>
+    <string name="ship_length_format">&lt;b>Length:&lt;/b> %s</string>
+    <string name="ship_max_atmosphering_format">&lt;b>Max Atmosphering Speed:&lt;/b> %s</string>
+    <string name="ship_crew_format">&lt;b>Crew:&lt;/b> %s</string>
+    <string name="ship_passengers_format">&lt;b>Passengers:&lt;/b> %s</string>
+    <string name="ship_cargo_capacity_format">&lt;b>Cargo Capacity:&lt;/b> %s</string>
+    <string name="ship_consumables_format">&lt;b>Consumables:&lt;/b> %s</string>
+    <string name="ship_hyperdrive_rating_format">&lt;b>Hyperdrive Rating:&lt;/b> %s</string>
+    <string name="ship_mglt_format">&lt;b>MGLT:&lt;/b> %s</string>
+    <string name="ship_starship_class_format">&lt;b>Starship Class:&lt;/b> %s</string>
+    <string name="ship_created_format">&lt;b>Created:&lt;/b> %s</string>
+    <string name="ship_edited_format">&lt;b>Edited:&lt;/b> %s</string>
+
+
+    <!--Film Detail Format-->
+    <string name="fiml_episode_id_format">&lt;b>Episode Id:&lt;b> %s</string>
+    <string name="film_release_date_format">&lt;b>Release Date:&lt;/b> %s</string>
+    <string name="film_created_format">&lt;b>Created:&lt;/b> %s</string>
+    <string name="film_director_format">&lt;b>Director:&lt;/b> %s</string>
+    <string name="film_edited_format">&lt;b>Edited:&lt;/b> %s</string>
+    <string name="film_opening_crawl_format">&lt;b>Opening Crawl:&lt;/b> %s</string>
+    <string name="film_producer_format">&lt;b>Producer:&lt;/b> %s</string>
 
 </resources>

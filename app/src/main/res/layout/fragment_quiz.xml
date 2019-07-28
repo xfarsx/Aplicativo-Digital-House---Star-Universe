@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rankMain"
-    android:fillViewport="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
+    android:fillViewport="true"
     android:orientation="vertical">
 
     <LinearLayout
@@ -18,32 +18,17 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-
             android:orientation="vertical">
-
-            <Button
-                android:id="@+id/btnRank"
-                android:layout_width="match_parent"
-                style="@style/Base.Widget.AppCompat.Button.Borderless"
-                android:textAlignment="textEnd"
-                android:layout_marginRight="12dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/ranking"
-                android:textColor="#f9db22"
-                android:textSize="28dp"
-                tools:layout_editor_absoluteX="162dp"
-                tools:layout_editor_absoluteY="148dp" />
-
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textViewQuizPergunta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
+                android:gravity="center"
                 android:layout_weight="1"
                 android:text="Quais são os troopers imperiais que operam em Scarif?"
-                android:textColor="#f9db22"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toTopOf="@+id/nav_view"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -67,13 +52,8 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:src="@drawable/button_a" />
-
-                <android.support.design.button.MaterialButton
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ButtonAlterA"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -82,7 +62,7 @@
                     android:padding="20dp"
                     android:text="Opção 1"
                     android:textAlignment="center"
-                    android:textColor="@color/staruniverse"
+                    android:textColor="@color/white"
                     app:cornerRadius="100dp"
                     app:strokeColor="@color/staruniverse"
                     app:strokeWidth="4dp" />
@@ -95,13 +75,8 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:src="@drawable/button_b" />
-
-                <android.support.design.button.MaterialButton
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ButtonAlterB"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -110,7 +85,7 @@
                     android:padding="20dp"
                     android:text="Opção 1"
                     android:textAlignment="center"
-                    android:textColor="@color/staruniverse"
+                    android:textColor="@color/white"
                     app:cornerRadius="100dp"
                     app:strokeColor="@color/staruniverse"
                     app:strokeWidth="4dp" />
@@ -123,13 +98,9 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:src="@drawable/button_c" />
 
-                <android.support.design.button.MaterialButton
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ButtonAlterC"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -138,7 +109,7 @@
                     android:padding="20dp"
                     android:text="Opção 1"
                     android:textAlignment="center"
-                    android:textColor="@color/staruniverse"
+                    android:textColor="@color/white"
                     app:cornerRadius="100dp"
                     app:strokeColor="@color/staruniverse"
                     app:strokeWidth="4dp" />
@@ -151,13 +122,8 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:src="@drawable/button_d" />
-
-                <android.support.design.button.MaterialButton
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ButtonAlterD"
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -166,7 +132,7 @@
                     android:padding="20dp"
                     android:text="Opção 1"
                     android:textAlignment="center"
-                    android:textColor="@color/staruniverse"
+                    android:textColor="@color/white"
                     app:cornerRadius="100dp"
                     app:strokeColor="@color/staruniverse"
                     app:strokeWidth="4dp" />
@@ -174,10 +140,11 @@
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5"/>
+            android:layout_weight="0.5" />
     </LinearLayout>
 
 </ScrollView>

@@ -1,0 +1,41 @@
+{
+  "perguntas": [
+    {
+      "titulo": " Base da Resistência fica localizada no Sistema:",
+      "alternativas": [
+        "Orla Exterior",
+        "Takodana",
+        "Jakku",
+        "Illinium"
+      ],
+      "resposta": "Illinium"
+    },{
+      "titulo": "O número dado a Finn como Stormtrooper é:",
+      "alternativas": [
+        "FN-2178",
+        "FN-2187",
+        "FN-1276",
+        "FN-2186"
+      ],
+      "resposta": "FN-2187"
+    },{
+      "titulo": "Qual Batalha foi utilizada como ponto de referência para a contagem do tempo ?",
+      "alternativas": [
+        "Yavin 4",
+        "Coruscant",
+        "Hoth",
+        "Endor"
+      ],
+      "resposta": "Yavin 4"
+    },{
+      "titulo": "O que Han Solo transportava em seu cargueiro?",
+      "alternativas": [
+        "Kanjiklubs",
+        "TaunTauns",
+        "Wampas",
+        "Rathtars"
+      ],
+      "resposta": "Rathtars"
+    }
+  ]
+}

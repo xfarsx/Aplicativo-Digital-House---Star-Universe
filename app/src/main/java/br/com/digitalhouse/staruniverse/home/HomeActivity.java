@@ -2,25 +2,27 @@ package br.com.digitalhouse.staruniverse.home;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
+
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
 import br.com.digitalhouse.staruniverse.cadastro.PerfilActivity;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNoticias, btnFilmes,btnRanking;
+    private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNaves, btnFilmes,btnRanking;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -41,7 +43,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         botaoRanking();
 
-        botaoNoticias();
+        botaoNaves();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -62,11 +64,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
-    private void botaoNoticias() {
-        btnNoticias.setOnClickListener(new View.OnClickListener() {
+
+    private void botaoNaves() {
+        btnNaves.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                i.putExtra("POSITION", "NAVES");
                 startActivity(i);
             }
         });
@@ -123,7 +127,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnFavoritos = findViewById(R.id.btn_favoritos);
         btnFilmes = findViewById(R.id.btn_filmes);
         btnPersonagens = findViewById(R.id.btn_personagens);
-        btnNoticias = findViewById(R.id.btn_noticias);
+        btnNaves = findViewById(R.id.btn_naves);
         btnQuiz = findViewById(R.id.btn_quiz);
         btnRanking = findViewById(R.id.btn_ranking);
         return toolbar;

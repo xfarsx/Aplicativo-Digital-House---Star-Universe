@@ -2,23 +2,34 @@ package br.com.digitalhouse.staruniverse.bottom;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.NonNull;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.filmes.FilmesFragment;
 import br.com.digitalhouse.staruniverse.home.HomeActivity;
+import br.com.digitalhouse.staruniverse.interfaces.QuizComunicador;
+import br.com.digitalhouse.staruniverse.model.quiz.Quiz;
+import br.com.digitalhouse.staruniverse.naves.NavesFragment;
 import br.com.digitalhouse.staruniverse.personagens.PersonagensFragment;
 import br.com.digitalhouse.staruniverse.quiz.QuizFragment;
+import br.com.digitalhouse.staruniverse.quiz.QuizResultadoFragment;
 import br.com.digitalhouse.staruniverse.ranking.RankingReciclerViewMain;
+import br.com.digitalhouse.staruniverse.viewmodel.QuizViewModel;
 
-public class BottomActivity extends AppCompatActivity {
+public class BottomActivity extends AppCompatActivity implements QuizComunicador {
     private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -28,7 +39,7 @@ public class BottomActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    Intent i = new Intent( BottomActivity.this,HomeActivity.class);
+                    Intent i = new Intent( BottomActivity.this, HomeActivity.class);
                     startActivity(i);
                     return true;
                 case R.id.navigation_filmes:
@@ -40,9 +51,9 @@ public class BottomActivity extends AppCompatActivity {
                 case R.id.navigation_quiz:
                     replaceFragment(new QuizFragment());
                     return true;
-                case R.id.navigation_noticias:
-                    mTextMessage.setText(R.string.title_news);
-
+                case R.id.navigation_naves:
+                    replaceFragment(new NavesFragment());
+                    return true;
             }
             return false;
         }
@@ -75,14 +86,31 @@ public class BottomActivity extends AppCompatActivity {
                 replaceFragment(new FilmesFragment());
 
             }
+
+            if (getIntent().getStringExtra("POSITION").equals("NAVES")){
+
+                replaceFragment(new NavesFragment());
+
+            }
         }
     }
 
-    public void replaceFragment(Fragment fragment){
+    public void     replaceFragment(Fragment fragment){
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.containerFragments, fragment);
         transaction.commit();
     }
 
+
+    @Override
+    public void receberMensagem(int pontuacao) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("PONTUACAO", pontuacao);
+
+        Fragment Quiz = new QuizResultadoFragment();
+        Quiz.setArguments(bundle);
+
+        replaceFragment(Quiz);
+    }
 }
