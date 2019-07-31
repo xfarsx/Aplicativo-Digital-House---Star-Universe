@@ -20,6 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
 import br.com.digitalhouse.staruniverse.cadastro.PerfilActivity;
+import br.com.digitalhouse.staruniverse.favoritos.FavoritosActivity;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNaves, btnFilmes,btnRanking;
@@ -103,9 +104,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnFavoritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
-                i.putExtra("POSITION", "QUIZ");
+                Intent i = new Intent(HomeActivity.this, FavoritosActivity.class);
                 startActivity(i);
+
             }
         });
     }
