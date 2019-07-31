@@ -107,8 +107,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnFavoritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, FavoritosActivity.class);
-                startActivity(i);
+             //   Intent i = new Intent(HomeActivity.this, FavoritosActivity.class);
+             //   startActivity(i);
             }
         });
     }

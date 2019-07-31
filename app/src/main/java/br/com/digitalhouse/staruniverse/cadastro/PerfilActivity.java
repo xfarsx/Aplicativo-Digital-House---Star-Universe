@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.home.FavoritosActivity;
 import br.com.digitalhouse.staruniverse.home.HomeActivity;
 import br.com.digitalhouse.staruniverse.login.LoginActivity;
 
@@ -55,8 +54,8 @@ public class PerfilActivity extends AppCompatActivity {
         favoritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent troca = new Intent(PerfilActivity.this, FavoritosActivity.class);
-                startActivity(troca);            }
+               /*Intent troca = new Intent(PerfilActivity.this, FavoritosActivity.class);
+                startActivity(troca);   */         }
         });
 
         indiqueUmAmigo = findViewById(R.id.btn_indiqueumamigo);
