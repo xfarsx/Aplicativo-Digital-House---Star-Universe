@@ -1,4 +1,3 @@
-
 package br.com.digitalhouse.staruniverse.model.filme;
 
 import android.os.Parcel;
@@ -14,8 +13,9 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-@Entity(tableName = "filmes")
-public class Filme implements Parcelable {
+@Entity(tableName = "filmesFavorito")
+public class FilmeFavotito implements Parcelable {
+
 
     @Expose
     @ColumnInfo(name = "characters")
@@ -90,10 +90,10 @@ public class Filme implements Parcelable {
         this.favorite = favorite;
     }
 
-    public Filme() {
+    public FilmeFavotito() {
     }
 
-    protected Filme(Parcel in) {
+    public FilmeFavotito(Parcel in) {
         characters = in.createStringArrayList();
         created = in.readString();
         director = in.readString();
@@ -144,7 +144,7 @@ public class Filme implements Parcelable {
         return 0;
     }
 
-    public static final Creator<Filme> CREATOR = new Creator<Filme>() {
+    public static final Parcelable.Creator<Filme> CREATOR = new Parcelable.Creator<Filme>() {
         @Override
         public Filme createFromParcel(Parcel in) {
             return new Filme(in);
@@ -268,7 +268,7 @@ public class Filme implements Parcelable {
         this.vehicles = vehicles;
     }
 
-    public static Creator<Filme> getCREATOR() {
+    public static Parcelable.Creator<Filme> getCREATOR() {
         return CREATOR;
     }
 }

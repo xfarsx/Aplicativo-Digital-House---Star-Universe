@@ -1,15 +1,14 @@
 package br.com.digitalhouse.staruniverse.quiz;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Timer;
 import androidx.fragment.app.Fragment;
@@ -17,6 +16,7 @@ import androidx.lifecycle.ViewModelProviders;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TimerTask;
+
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.interfaces.QuizComunicador;
@@ -36,6 +36,7 @@ public class QuizFragment extends Fragment {
     private TextView textViewPergunta, mTextField;
     private Button button;
     private CountDownTimer contador;
+    Handler myHandler;
 
 
     public QuizFragment() {
@@ -99,20 +100,15 @@ public class QuizFragment extends Fragment {
                         if (button.findViewById(R.id.ButtonAlterD).isPressed()){
                             button.findViewById(R.id.ButtonAlterD).setBackgroundTintList(getResources().getColorStateList(R.color.rightanswered));}
                       */  contador.cancel();
-                        Timer timer = new Timer();
-                        timer.schedule(new TimerTask() {
-                            @Override
-                            public void run() {
-                                proximaPergunta();
-                         if (button.findViewById(R.id.ButtonAlterA).isPressed()){
-                        button.findViewById(R.id.ButtonAlterA).setBackgroundTintList(getResources().getColorStateList(R.color.rightanswered));}
-                            }
-                        },2000);
-                        if(timer !=null)
-                        {
-                            timer.cancel();
-                        }
                         gerarPontuacao(true);
+                        Runnable r = new Runnable() {
+                          @Override
+                          public void run() {
+                              proximaPergunta();
+                          }
+                      };
+                      myHandler.postDelayed(r,1000);
+
 
                     } else {
                         button.setBackgroundTintList(getResources().getColorStateList(R.color.wronganswered));
@@ -188,5 +184,8 @@ public class QuizFragment extends Fragment {
     {
         textViewPergunta = view.findViewById(R.id.textViewQuizPergunta);
         mTextField = view.findViewById(R.id.contador);
+
     }
+
+
 }

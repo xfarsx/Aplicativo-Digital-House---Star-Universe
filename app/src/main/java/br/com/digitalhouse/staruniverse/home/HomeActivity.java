@@ -23,6 +23,7 @@ import com.google.android.material.navigation.NavigationView;
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
 import br.com.digitalhouse.staruniverse.cadastro.PerfilActivity;
+import br.com.digitalhouse.staruniverse.favoritos.FavoritosActivity;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNaves, btnFilmes,btnRanking;
@@ -51,8 +52,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close);
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
@@ -107,8 +107,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnFavoritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             //   Intent i = new Intent(HomeActivity.this, FavoritosActivity.class);
-             //   startActivity(i);
+                Intent i = new Intent(HomeActivity.this, FavoritosActivity.class);
+                startActivity(i);
+
             }
         });
     }

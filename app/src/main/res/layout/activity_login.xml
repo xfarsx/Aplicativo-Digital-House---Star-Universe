@@ -105,20 +105,21 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGmail"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="40dp"
-                android:layout_height="52dp"
+                android:layout_width="60dp"
+                android:layout_height="72dp"
                 android:layout_marginEnd="100dp"
                 android:foreground="@mipmap/ic_gmail"
                 android:foregroundTint="@color/white"
                 android:foregroundGravity="center"
+                app:iconSize="@dimen/gmail"
                 app:backgroundTint="@color/gmail"
                 app:cornerRadius="100dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogar"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_height="52dp"
-                android:layout_width="40dp"
+                android:layout_height="72dp"
+                android:layout_width="60dp"
                 android:background="@drawable/gmail_button"
                 android:foreground="@drawable/ic_arrow_forward_black_24dp"
                 app:cornerRadius="56dp"

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="br.com.digitalhouse.staruniverse">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,6 +12,7 @@
         android:roundIcon="@mipmap/logo_star_universe"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
+        <activity android:name=".favoritos.FavoritosActivity"></activity>
         <activity android:name=".naves.DetalhesNavesActivity" />
         <activity android:name=".cadastro.TrocaEmailActivity" />
         <activity android:name=".cadastro.PerfilActivity" />

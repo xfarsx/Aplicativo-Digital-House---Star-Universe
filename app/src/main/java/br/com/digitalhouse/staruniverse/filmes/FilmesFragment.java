@@ -21,13 +21,13 @@ import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.adapter.FilmesAdapter;
 import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListenerFilmes;
 import br.com.digitalhouse.staruniverse.model.filme.Filme;
-import br.com.digitalhouse.staruniverse.personagens.DetalhesPersonagensActivity;
 import br.com.digitalhouse.staruniverse.viewmodel.FilmeViewModel;
 
 public class FilmesFragment extends Fragment implements RecyclerViewClickListenerFilmes {
 
     private FilmeViewModel viewModel;
     private List<Filme> filmeList = new ArrayList<>();
+
 
     public FilmesFragment() {
         // Required empty public constructor
@@ -58,6 +58,7 @@ public class FilmesFragment extends Fragment implements RecyclerViewClickListene
         viewModel.getLoadingLiveData().observe(this, isLoading -> {
             if (isLoading) {
                 progressBar.setVisibility(View.VISIBLE);
+
             } else {
                 progressBar.setVisibility(View.GONE);
             }

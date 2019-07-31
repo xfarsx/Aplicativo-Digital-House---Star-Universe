@@ -1,6 +1,7 @@
 package br.com.digitalhouse.staruniverse.cadastro;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.home.HomeActivity;
 
 public class TrocaSenhaActivity extends AppCompatActivity {
 
@@ -39,6 +41,17 @@ public class TrocaSenhaActivity extends AppCompatActivity {
 
     public void validarSenha (EditText senhaA, EditText novaSenha, EditText confSenha)
     {
+        if (senhaA.getText().toString().isEmpty() || novaSenha.getText().toString().isEmpty() ||
+        confSenha.getText().toString().isEmpty()){
+            Toast.makeText(TrocaSenhaActivity.this, "Campo não foi preenchido", Toast.LENGTH_SHORT).show();
+            senhaA.requestFocus();
+            return;} if (novaSenha.getText().toString().isEmpty()){
+            Toast.makeText(TrocaSenhaActivity.this, "Campo não foi preenchido", Toast.LENGTH_SHORT).show();
+            novaSenha.requestFocus();
+            return;} if (confSenha.getText().toString().isEmpty()){
+            Toast.makeText(TrocaSenhaActivity.this, "Campo não foi preenchido", Toast.LENGTH_SHORT).show();
+            confSenha.requestFocus();
+            return;}
         if (senhaA.getText().toString().equals(novaSenha.getText().toString()))
         {
             Toast.makeText(TrocaSenhaActivity.this, "Nova senha deve ser diferente da anterior", Toast.LENGTH_SHORT).show();
@@ -57,7 +70,8 @@ public class TrocaSenhaActivity extends AppCompatActivity {
             novaSenha.requestFocus();
             return;
         }
-
+        Intent i = new Intent(TrocaSenhaActivity.this, HomeActivity.class);
+        startActivity(i);
     }
 
 
