@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Collection;
 import java.util.Timer;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
@@ -72,13 +73,13 @@ public class QuizFragment extends Fragment {
         return view;
     }
 
-    public void setarPergunta(Quiz quiz, TextView pergunta, List<Button> alternativas) {
+    public void setarPergunta(final Quiz quiz, TextView pergunta, List<Button> alternativas) {
 
         //setando pergunta na tela
         pergunta.setText(quiz.getPergunta());
         for (int i = 0; i < quiz.getAlternativas().size(); i++) {
             String alternativa = quiz.getAlternativas().get(i);
-            Button button = alternativas.get(i);
+            final Button button = alternativas.get(i);
             button.setText(alternativa);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -109,8 +110,8 @@ public class QuizFragment extends Fragment {
         }
 
     }
-    private List<Quiz> getList(List<Quiz> quiz) {
-        perguntas.addAll(quiz);
+    private List<Quiz> getList(Object quiz) {
+        perguntas.addAll((Collection<? extends Quiz>) quiz);
         qtnPerguntas = perguntas.size();
         proximaPergunta();
         return perguntas;

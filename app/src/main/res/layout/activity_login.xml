@@ -27,7 +27,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout2"
+            android:id="@+id/textInputLayoutEmailLogin"
             style="@style/LoginInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
+            android:id="@+id/textInputLayoutSenhaLogin"
             style="@style/LoginInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,9 +58,9 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
             app:hintTextAppearance="@style/LoginInputLabel"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
-            app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutEmailLogin"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayoutEmailLogin"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmailLogin"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/staruniverse">
 
@@ -84,8 +84,8 @@
             android:text="@string/lembrar_senha_"
             android:textColor="@color/staruniverse"
             android:thumbTint="@color/staruniverse"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutSenhaLogin"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutSenhaLogin" />
 
         <LinearLayout
             android:id="@+id/linearLayout7"
@@ -98,8 +98,8 @@
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayoutSenhaLogin"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayoutSenhaLogin"
             app:layout_constraintTop_toBottomOf="@+id/switch1">
 
             <Button
