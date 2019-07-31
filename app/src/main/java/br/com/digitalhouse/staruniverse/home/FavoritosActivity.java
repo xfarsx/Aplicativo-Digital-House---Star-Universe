@@ -2,7 +2,6 @@ package br.com.digitalhouse.staruniverse.home;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,8 +12,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.res.ResourcesCompat;
-import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -24,21 +21,21 @@ import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
 import br.com.digitalhouse.staruniverse.cadastro.PerfilActivity;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNaves, btnFilmes,btnRanking;
+public class FavoritosActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+    private ImageView btnMenu, btnPersonagens, btnQuiz, btnNaves, btnFilmes,btnRanking;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_favoritos);
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = iniciarAsViews();
 
         botaoFilmes();
 
-        botaoFavoritos();
+        botaoMenu();
 
         botaoPersonagens();
 
@@ -62,7 +59,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnRanking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                Intent i = new Intent(FavoritosActivity.this, BottomActivity.class);
                 i.putExtra("POSITION", "RANKING");
                 startActivity(i);
             }
@@ -73,7 +70,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnNaves.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                Intent i = new Intent(FavoritosActivity.this, BottomActivity.class);
                 i.putExtra("POSITION", "NAVES");
                 startActivity(i);
             }
@@ -84,7 +81,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                Intent i = new Intent(FavoritosActivity.this, BottomActivity.class);
                 i.putExtra("POSITION", "QUIZ");
                 startActivity(i);
             }
@@ -95,7 +92,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnPersonagens.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                Intent i = new Intent(FavoritosActivity.this, BottomActivity.class);
                 i.putExtra("POSITION", "PERSON");
                 startActivity(i);
 
@@ -103,21 +100,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    private void botaoFavoritos() {
-        btnFavoritos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, FavoritosActivity.class);
-                startActivity(i);
-            }
-        });
+    private void botaoMenu() {
+
+
     }
 
     private void botaoFilmes() {
         btnFilmes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
+                Intent i = new Intent(FavoritosActivity.this, BottomActivity.class);
                 i.putExtra("POSITION", "FILMES");
                 startActivity(i);
             }
@@ -127,7 +119,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar iniciarAsViews() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        btnFavoritos = findViewById(R.id.btn_favoritos);
+        btnMenu = findViewById(R.id.btn_home);
         btnFilmes = findViewById(R.id.btn_filmes);
         btnPersonagens = findViewById(R.id.btn_personagens);
         btnNaves = findViewById(R.id.btn_naves);
@@ -178,14 +170,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, PerfilActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_menu) {
-            Intent intent = new Intent(this, HomeActivity.class);
+            Intent intent = new Intent(this, FavoritosActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_avalie) {
             //vai para loja avaliação
-            Toast.makeText(HomeActivity.this, "Avalie - Vai para a loja", Toast.LENGTH_SHORT).show();
+            Toast.makeText(FavoritosActivity.this, "Avalie - Vai para a loja", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_indique) {
             //abre whatsapp com link
-            Toast.makeText(HomeActivity.this, "Indique um amigo - Vai para WhatsApp", Toast.LENGTH_SHORT).show();
+            Toast.makeText(FavoritosActivity.this, "Indique um amigo - Vai para WhatsApp", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_end) {

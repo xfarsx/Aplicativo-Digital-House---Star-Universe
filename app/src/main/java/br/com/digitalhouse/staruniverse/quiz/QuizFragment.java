@@ -1,7 +1,9 @@
 package br.com.digitalhouse.staruniverse.quiz;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.TimerTask;
+
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.interfaces.QuizComunicador;
 import br.com.digitalhouse.staruniverse.model.quiz.Quiz;
@@ -29,8 +33,10 @@ public class QuizFragment extends Fragment {
     private int qtnPerguntas;
     private int pontuacao = 0;
     private QuizComunicador comunicador;
-    private TextView textViewPergunta;
-    private Timer timer = new Timer();
+    private TextView textViewPergunta, mTextField;
+    private Button button;
+    private CountDownTimer contador;
+
 
     public QuizFragment() {
         // Required empty public constructor
@@ -49,17 +55,14 @@ public class QuizFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
-        textViewPergunta = view.findViewById(R.id.textViewQuizPergunta);
-        Button buttonA = view.findViewById(R.id.ButtonAlterA);
-        Button buttonB = view.findViewById(R.id.ButtonAlterB);
-        Button buttonC = view.findViewById(R.id.ButtonAlterC);
-        Button buttonD = view.findViewById(R.id.ButtonAlterD);
-        opcoes.add(buttonA);
-        opcoes.add(buttonB);
-        opcoes.add(buttonC);
-        opcoes.add(buttonD);
+        iniciarViews(view);
+        opcoes.add(view.findViewById(R.id.ButtonAlterA));
+        opcoes.add(view.findViewById(R.id.ButtonAlterB));
+        opcoes.add(view.findViewById(R.id.ButtonAlterC));
+        opcoes.add(view.findViewById(R.id.ButtonAlterD));
 
         // Inicializa ViewModel
+
         quizViewModel = ViewModelProviders.of(this).get(QuizViewModel.class);
         quizViewModel.buscarPerguntas();
 
@@ -76,39 +79,88 @@ public class QuizFragment extends Fragment {
 
         //setando pergunta na tela
         pergunta.setText(quiz.getPergunta());
+        contador();
         for (int i = 0; i < quiz.getAlternativas().size(); i++) {
             String alternativa = quiz.getAlternativas().get(i);
-            Button button = alternativas.get(i);
+            Button button;
+            button = alternativas.get(i);
             button.setText(alternativa);
+           button.setBackgroundTintList(getResources().getColorStateList(R.color.black));
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (button.getText().equals(quiz.getResposta())) {
-                        Toast.makeText(getActivity().getApplicationContext(), "Acertou Miserave", Toast.LENGTH_SHORT).show();
-                        button.setBackgroundColor(getResources().getColor(R.color.check));
+                    if (button.getText().toString().equals(quiz.getResposta())) {
+                        button.setBackgroundTintList(getResources().getColorStateList(R.color.rightanswered));
+                        contador.cancel();
+                        Timer timer = new Timer();
+                        timer.schedule(new TimerTask() {
+                            @Override
+                            public void run() {
+                                proximaPergunta();
+
+                            }
+                        },2000);
+                        if(timer !=null)
+                        {
+                            timer.cancel();
+                        }
                         gerarPontuacao(true);
-                        proximaPergunta();
+
                     } else {
-                        Toast.makeText(getActivity().getApplicationContext(), "Achou errado", Toast.LENGTH_SHORT).show();
-                        gerarPontuacao(false);
+                        button.setBackgroundTintList(getResources().getColorStateList(R.color.wronganswered));
+                        Timer timer = new Timer();
+                        timer.schedule(new TimerTask() {
+                            @Override
+                            public void run() {
+                                proximaPergunta();
+                            }
+                        },2000);
+                        if(timer !=null)
+                        {
+                            timer.cancel();
+                        }
+                        contador.cancel();
                         proximaPergunta();
+                        gerarPontuacao(true);
+
                     }
                 }
             });
         }
 
+
     }
-    public void proximaPergunta() {
+    public void contador()
+    {
+
+        CountDownTimer contadorM = new CountDownTimer(10000,1000){
+            @Override
+            public void onTick(long millisUntilFinished) {
+                mTextField.setText("" + millisUntilFinished / 1000);
+            }
+
+            @Override
+            public void onFinish() {
+                    mTextField.setText("");
+                proximaPergunta();
+
+            }
+
+        }.start();
+
+        contador = contadorM;
+    }
+
+    public void proximaPergunta ( ) {
         if (qtnPerguntas != 0) {
             setarPergunta(perguntas.get(qtnPerguntas - 1), this.textViewPergunta, this.opcoes);
             qtnPerguntas--;
         } else {
             comunicador.receberMensagem(pontuacao);
-
-
         }
 
     }
+
     private List<Quiz> getList(List<Quiz> quiz) {
         perguntas.addAll(quiz);
         qtnPerguntas = perguntas.size();
@@ -122,5 +174,11 @@ public class QuizFragment extends Fragment {
         } else {
             this.pontuacao -= 5;
         }
+    }
+
+    public void iniciarViews(View view)
+    {
+        textViewPergunta = view.findViewById(R.id.textViewQuizPergunta);
+        mTextField = view.findViewById(R.id.contador);
     }
 }

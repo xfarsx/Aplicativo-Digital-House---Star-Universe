@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="br.com.digitalhouse.staruniverse">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,7 +13,8 @@
         android:roundIcon="@mipmap/logo_star_universe"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
-        <activity android:name=".naves.DetalhesNavesActivity"></activity>
+        <activity android:name=".home.FavoritosActivity"/>
+        <activity android:name=".naves.DetalhesNavesActivity" />
         <activity android:name=".cadastro.TrocaEmailActivity" />
         <activity android:name=".cadastro.PerfilActivity" />
         <activity android:name=".cadastro.TrocaSenhaActivity" />
@@ -22,8 +24,8 @@
             android:label="@string/title_activity_bottom" />
         <activity android:name=".home.HomeActivity" />
         <activity android:name=".login.LoginActivity" />
-        <activity android:name=".cadastro.FacebookActivity" />
-        <activity android:name=".cadastro.GmailActivity" />
+        <activity android:name=".cadastro.CadastroActivity" />
+        <activity android:name=".filmes.DetalhesFilmesActivity" />
         <activity
             android:name=".splash.SplashActivity"
             android:label="Star Universe"
@@ -34,8 +36,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".cadastro.CadastroActivity" />
-        <activity android:name=".filmes.DetalhesFilmesActivity" />
     </application>
 
 </manifest>

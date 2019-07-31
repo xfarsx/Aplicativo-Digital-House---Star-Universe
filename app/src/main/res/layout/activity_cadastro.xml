@@ -14,6 +14,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -29,7 +30,8 @@
                 android:gravity="center"
                 android:text="@string/torne_se_jedi_cadastro"
                 android:textColor="@color/staruniverse"
-                android:textSize="28sp" />
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -39,27 +41,10 @@
                 app:hintTextAppearance="@style/LoginInputLabel">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Nome"
+                    android:id="@+id/Jedi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nome"
-                    android:inputType="text"
-                    android:textColor="@color/staruniverse"
-                    android:theme="@style/LoginInput.Edit" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:textColorHint="@color/staruniverse"
-                app:hintTextAppearance="@style/LoginInputLabel">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Sobrenome"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/sobrenome"
+                    android:hint="@string/nome_jedi"
                     android:inputType="text"
                     android:textColor="@color/staruniverse"
                     android:theme="@style/LoginInput.Edit" />
@@ -78,23 +63,6 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/e_mail"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/staruniverse"
-                    android:theme="@style/LoginInput.Edit" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:textColorHint="@color/staruniverse"
-                app:hintTextAppearance="@style/LoginInputLabel">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/Jedi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/nome_jedi"
-                    android:inputType="text"
                     android:textColor="@color/staruniverse"
                     android:theme="@style/LoginInput.Edit" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -127,47 +95,28 @@
                     android:id="@+id/ConfirmarSenha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
                     android:hint="@string/confirmar_senha"
                     android:inputType="textPassword"
                     android:textColor="@color/staruniverse"
                     android:theme="@style/LoginInput.Edit" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/btnCadastro"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="16dp"
-                    android:backgroundTint="@color/staruniverse"
-                    android:text="@string/cadastrar"
-                    android:textColor="@color/black" />
-
-                <Button
-                    android:id="@+id/btnVoltar"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignRight="@id/btnCadastro"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:backgroundTint="@color/staruniverse"
-                    android:text="@string/voltar"
-                    android:textColor="@color/black" />
-
-            </RelativeLayout>
-
-
         </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCadastro"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="@color/staruniverse"
+            android:text="@string/cadastrar"
+            android:textColor="@color/black"
+            app:cornerRadius="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -16,7 +16,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button buttonCadastrese;
     private Button buttonLogin;
-    private Button buttonFacebook;
+
     private Button buttonGmail;
 
     @Override
@@ -30,24 +30,8 @@ public class LoginActivity extends AppCompatActivity {
 
         botaoLogin();
 
-
         botaoGmail();
 
-        botaoFacebook();
-
-    }
-
-    private void botaoFacebook() {
-        buttonFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //startActivity(new Intent(LoginActivity.this, FacebookActivity.class));
-                Toast.makeText(LoginActivity.this, "View ainda em construção! Aguarde!", Toast.LENGTH_SHORT).show();
-
-
-            }
-        });
     }
 
     private void botaoGmail() {
@@ -88,7 +72,6 @@ public class LoginActivity extends AppCompatActivity {
     private void iniciarViews() {
         buttonCadastrese = findViewById(R.id.btnCadastrese);
         buttonLogin = findViewById(R.id.btnLogar);
-        buttonFacebook = findViewById(R.id.btnFace);
         buttonGmail = findViewById(R.id.btnGmail);
     }
 
