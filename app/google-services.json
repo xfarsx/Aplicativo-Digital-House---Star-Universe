@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "811147690881",
+    "firebase_url": "https://star-wars-universe-d649c.firebaseio.com",
+    "project_id": "star-wars-universe-d649c",
+    "storage_bucket": "star-wars-universe-d649c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811147690881:android:2a7de6513eedb77b",
+        "android_client_info": {
+          "package_name": "br.com.digitalhouse.staruniverse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811147690881-g2v7quoi9b7tmschr8fbuf2ggrpnti6u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.digitalhouse.staruniverse",
+            "certificate_hash": "41b9f659cede14bd52383da74ed702ba06c84e27"
+          }
+        },
+        {
+          "client_id": "811147690881-uoi6snpov5da4hkbtamtmoanem4fro4m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAH3OtSvMr7eEUatdnjIoWR8smFWwv05k0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "811147690881-uoi6snpov5da4hkbtamtmoanem4fro4m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

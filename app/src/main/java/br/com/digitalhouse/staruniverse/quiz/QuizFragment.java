@@ -101,28 +101,9 @@ public class QuizFragment extends Fragment {
                             button.findViewById(R.id.ButtonAlterD).setBackgroundTintList(getResources().getColorStateList(R.color.rightanswered));}
                       */  contador.cancel();
                         gerarPontuacao(true);
-                        Runnable r = new Runnable() {
-                          @Override
-                          public void run() {
                               proximaPergunta();
-                          }
-                      };
-                      myHandler.postDelayed(r,1000);
-
-
                     } else {
                         button.setBackgroundTintList(getResources().getColorStateList(R.color.wronganswered));
-                        Timer timer = new Timer();
-                        timer.schedule(new TimerTask() {
-                            @Override
-                            public void run() {
-                                proximaPergunta();
-                            }
-                        },2000);
-                        if(timer !=null)
-                        {
-                            timer.cancel();
-                        }
                         contador.cancel();
                         proximaPergunta();
                         gerarPontuacao(true);
