@@ -12,15 +12,13 @@
         android:roundIcon="@mipmap/logo_star_universe"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
-        <activity android:name=".favoritos.FavoritosActivity"></activity>
+        <activity android:name=".favoritos.FavoritosActivity"/>
         <activity android:name=".naves.DetalhesNavesActivity" />
         <activity android:name=".cadastro.TrocaEmailActivity" />
         <activity android:name=".cadastro.PerfilActivity" />
         <activity android:name=".cadastro.TrocaSenhaActivity" />
         <activity android:name=".personagens.DetalhesPersonagensActivity" />
-        <activity
-            android:name=".bottom.BottomActivity"
-            android:label="@string/title_activity_bottom" />
+        <activity android:name=".bottom.BottomActivity" android:label="@string/title_activity_bottom" />
         <activity android:name=".home.HomeActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".cadastro.CadastroActivity" />
@@ -31,7 +29,6 @@
             android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

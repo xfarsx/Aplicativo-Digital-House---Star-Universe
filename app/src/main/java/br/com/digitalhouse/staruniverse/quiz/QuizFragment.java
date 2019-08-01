@@ -91,15 +91,8 @@ public class QuizFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     if (button.getText().toString().equals(quiz.getResposta())) {
-                      /*  if (button.findViewById(R.id.ButtonAlterA).isPressed()){
-                        button.findViewById(R.id.ButtonAlterA).setBackgroundTintList(getResources().getColorStateList(R.color.rightanswered));}
-                        if (button.findViewById(R.id.ButtonAlterB).isPressed()){
-                            button.findViewById(R.id.ButtonAlterB).setBackgroundTintList(getResources().getColorStateList(R.color.rightanswered));}
-                        if (button.findViewById(R.id.ButtonAlterC).isPressed()){
-                            button.findViewById(R.id.ButtonAlterC).setBackgroundTintList(getResources().getColorStateList(R.color.rightanswered));}
-                        if (button.findViewById(R.id.ButtonAlterD).isPressed()){
-                            button.findViewById(R.id.ButtonAlterD).setBackgroundTintList(getResources().getColorStateList(R.color.rightanswered));}
-                      */  contador.cancel();
+                        button.setBackgroundTintList(getResources().getColorStateList(R.color.rightanswered));
+                       contador.cancel();
                         gerarPontuacao(true);
                               proximaPergunta();
                     } else {
