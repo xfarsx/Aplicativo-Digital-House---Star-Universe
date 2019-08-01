@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/fundo"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:padding="20dp"
-android:background="@drawable/starwarsbackground">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fundo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:fillViewport="true"
+    android:background="@drawable/starwarsbackground">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -34,7 +39,7 @@ android:background="@drawable/starwarsbackground">
 <LinearLayout
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/rounded_box_2"
     android:padding="16dp"
@@ -43,6 +48,14 @@ android:background="@drawable/starwarsbackground">
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="E-mail Antigo"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/edtOldEmail"
@@ -58,6 +71,15 @@ android:background="@drawable/starwarsbackground">
         android:textColor="@color/staruniverse"
         android:textStyle="italic" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Novo E-mail"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
     <EditText
         android:id="@+id/edtNewEmail"
         android:layout_width="match_parent"
@@ -71,6 +93,15 @@ android:background="@drawable/starwarsbackground">
         android:textColorHint="#80FFD65E"
         android:textColor="@color/staruniverse"
         android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Confirmar Novo E-mail"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/edtNewConfEmail"
@@ -104,3 +135,4 @@ android:background="@drawable/starwarsbackground">
 </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
