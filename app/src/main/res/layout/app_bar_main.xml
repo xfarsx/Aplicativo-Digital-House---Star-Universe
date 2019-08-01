@@ -17,13 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/staruniverse"
+            app:titleTextColor="#000000"
             app:popupTheme="@style/AppTheme.AppBarOverlay"
             tools:ignore="MissingConstraints" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
-
-
     <include layout="@layout/activity_home"/>
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

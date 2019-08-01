@@ -6,4 +6,5 @@
     <dimen name="textSizeDetail">18sp</dimen>
     <dimen name="font_item">22sp</dimen>
     <dimen name="font_detail">18sp</dimen>
+    <dimen name="gmail">48dp</dimen>
 </resources>

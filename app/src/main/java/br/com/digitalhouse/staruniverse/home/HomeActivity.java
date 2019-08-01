@@ -2,6 +2,7 @@ package br.com.digitalhouse.staruniverse.home;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,6 +13,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -20,6 +23,7 @@ import com.google.android.material.navigation.NavigationView;
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.bottom.BottomActivity;
 import br.com.digitalhouse.staruniverse.cadastro.PerfilActivity;
+import br.com.digitalhouse.staruniverse.favoritos.FavoritosActivity;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNaves, btnFilmes,btnRanking;
@@ -103,9 +107,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnFavoritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
-                i.putExtra("POSITION", "QUIZ");
+                Intent i = new Intent(HomeActivity.this, FavoritosActivity.class);
                 startActivity(i);
+
             }
         });
     }
