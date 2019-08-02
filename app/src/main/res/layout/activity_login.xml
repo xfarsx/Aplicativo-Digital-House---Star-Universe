@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:fillViewport="true"
+    android:padding="16dp"
+    tools:context="br.com.digitalhouse.staruniverse.login.LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/logostaruniverse"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="@android:integer/config_mediumAnimTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            style="@style/LoginInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="8dp"
+            app:hintTextAppearance="@style/LoginInputLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputLayoutEmailLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/usuario_login"
+                android:inputType="text"
+                android:padding="8dp"
+                android:textColor="@color/staruniverse"
+                android:theme="@style/LoginInput.Edit" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/LoginInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            app:hintTextAppearance="@style/LoginInputLabel"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/staruniverse">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputLayoutSenhaLogin"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:foregroundTint="@color/staruniverse"
+                android:hint="@string/senha_login"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:textColor="@color/staruniverse"
+                android:theme="@style/LoginInput.Edit" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/lembrar_senha_"
+            android:textColor="@color/staruniverse"
+            android:thumbTint="@color/staruniverse"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/switch1">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGmail"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="60dp"
+                android:layout_height="72dp"
+                android:layout_marginEnd="100dp"
+                android:foreground="@mipmap/ic_gmail"
+                android:foregroundTint="@color/white"
+                android:foregroundGravity="center"
+                app:iconSize="@dimen/gmail"
+                app:backgroundTint="@color/gmail"
+                app:cornerRadius="100dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogar"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_height="72dp"
+                android:layout_width="60dp"
+                android:background="@drawable/gmail_button"
+                android:foreground="@drawable/ic_arrow_forward_black_24dp"
+                app:cornerRadius="56dp"
+                android:backgroundTint="@color/staruniverse"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.565"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/fraseCadastro"
+                style="@style/StringStyleStarUniverse2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/que_se_tornar_um_jedi" />
+
+            <Button
+                android:id="@+id/btnCadastrese"
+                style="@style/StringStyleStarUniverse2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:background="#000000"
+                android:gravity="center"
+                android:text="@string/cadastre_se_login"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+

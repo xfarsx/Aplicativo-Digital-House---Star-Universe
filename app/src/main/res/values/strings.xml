@@ -1,3 +1,99 @@
 <resources>
-    <string name="app_name">StarUniverse</string>
+    <string name="app_name">Star Universe</string>
+    <string name="continuar">Continuar</string>
+
+    <!--LOGIN-->
+    <string name="que_se_tornar_um_jedi">Que se tornar um Jedi ?</string>
+    <string name="lembrar_senha_">Lembrar senha ?</string>
+    <string name="login_com_facebook">Login com Facebook</string>
+
+    <!--CADASTRO-->
+    <string name="e_mail">E-mail</string>
+    <string name="nome_jedi">Nome Jedi</string>
+    <string name="senha">Senha</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="confirmar_senha">Confirmar Senha</string>
+    <string name="voltar">Voltar</string>
+
+    <!--Bottom-->
+    <string name="title_activity_bottom">BottomActivity</string>
+    <string name="titulo_home">Home</string>
+    <string name="titulo_filmes">Filmes</string>
+    <string name="titulo_personagens">Personagens</string>
+    <string name="titulo_quiz">Quiz</string>
+    <string name="titulo_noticias">Noticias</string>
+    <string name="title_home">Home</string>
+    <string name="title_movies">Filmes</string>
+    <string name="title_characters">Personagens</string>
+    <string name="title_quiz">Quiz</string>
+    <string name="title_news">Noticias</string>
+    <string name="usuario_1_1502_pontos">Usuario 1 - 1502 pontos</string>
+    <string name="filmes">FILMES</string>
+    <string name="star_wars">STAR WARS</string>
+    <string name="sinopsefilme">Quando a maquiavélica Federação Comercial planeja invadir o pacífico planeta Naboo, o guerreiro Jedi Qui-Gon Jinn (Liam Neeson) e seu aprendiz Obi-Wan Kenobi (Ewan McGregor) embarcam em uma aventura para tentar salvar o planeta. Viajam com eles a jovem Rainha Amidala (Natalie Portman), que é visada pela Federação pois querem forçá-la a assinar um tratado político. Eles têm de viajar para os distantes planetas Tatooine e Coruscant em uma desesperada tentativa de salvar o mundo de Darth Sidious (Ian McDiarmid), o demoníaco líder da Federação que sempre surge em imagens tridimensionais (a ameaça fantasma). Durante a viagem, Qui-Gon Jinn conhece um garoto de nove anos que deseja treiná-lo para ser tornar um Jedi, pois o menino tem todas as qualidades para isto. Mas o tempo revelará que nem sempre as coisas são o que aparentam.</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_home_container">HomeContainer</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <!--Menu-->
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="ranking">Ranking</string>
+    <string name="RANK">RANKING</string>
+    <string name="desc">desc</string>
+    <string name="sua_posi_o_103_lugar">Sua posição é -103º lugar</string>
+    <string name="quiz">Quiz</string>
+    <string name="usuario_login">Usuário</string>
+    <string name="cadastre_se_login">Cadastre-se</string>
+    <string name="torne_se_jedi_cadastro">Torne-se um Jedi</string>
+    <string name="senha_login">Senha</string>
+    <string name="title_naves">Naves</string>
+
+    <!--Character Detail Format-->
+    <string name="height_format">&lt;b>Height:&lt;b> %s</string>
+    <string name="mass_format">&lt;b>Mass:&lt;/b> %s</string>
+    <string name="hair_color_format">&lt;b>Hair Color:&lt;/b> %s</string>
+    <string name="skin_color_format">&lt;b>Skin Color:&lt;/b> %s</string>
+    <string name="eye_color_format">&lt;b>Eye Color:&lt;/b> %s</string>
+    <string name="birth_year_format">&lt;b>Birth Year:&lt;/b> %s</string>
+    <string name="gender_format">&lt;b>Gender:&lt;/b> %s</string>
+
+    <!--Ship Detail Format-->
+    <string name="ship_model_format">&lt;b>Model:&lt;/b> %s</string>
+    <string name="ship_manufacturer_format">&lt;b>Manufacturer:&lt;/b> %s</string>
+    <string name="ship_cost_in_credits_format">&lt;b>Cost in Credits:&lt;/b> %s</string>
+    <string name="ship_length_format">&lt;b>Length:&lt;/b> %s</string>
+    <string name="ship_max_atmosphering_format">&lt;b>Max Atmosphering Speed:&lt;/b> %s</string>
+    <string name="ship_crew_format">&lt;b>Crew:&lt;/b> %s</string>
+    <string name="ship_passengers_format">&lt;b>Passengers:&lt;/b> %s</string>
+    <string name="ship_cargo_capacity_format">&lt;b>Cargo Capacity:&lt;/b> %s</string>
+    <string name="ship_consumables_format">&lt;b>Consumables:&lt;/b> %s</string>
+    <string name="ship_hyperdrive_rating_format">&lt;b>Hyperdrive Rating:&lt;/b> %s</string>
+    <string name="ship_mglt_format">&lt;b>MGLT:&lt;/b> %s</string>
+    <string name="ship_starship_class_format">&lt;b>Starship Class:&lt;/b> %s</string>
+    <string name="ship_created_format">&lt;b>Created:&lt;/b> %s</string>
+    <string name="ship_edited_format">&lt;b>Edited:&lt;/b> %s</string>
+
+
+    <!--Film Detail Format-->
+    <string name="fiml_episode_id_format">&lt;b>Episode Id:&lt;b> %s</string>
+    <string name="film_release_date_format">&lt;b>Release Date:&lt;/b> %s</string>
+    <string name="film_created_format">&lt;b>Created:&lt;/b> %s</string>
+    <string name="film_director_format">&lt;b>Director:&lt;/b> %s</string>
+    <string name="film_edited_format">&lt;b>Edited:&lt;/b> %s</string>
+    <string name="film_opening_crawl_format">&lt;b>Opening Crawl:&lt;/b> %s</string>
+    <string name="film_producer_format">&lt;b>Producer:&lt;/b> %s</string>
+
 </resources>

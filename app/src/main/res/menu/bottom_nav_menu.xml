@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_filmes"
+        android:icon="@drawable/filmes"
+        android:title="@string/title_movies" />
+
+    <item
+        android:id="@+id/navigation_personagens"
+        android:icon="@drawable/personagens"
+        android:title="@string/title_characters" />
+
+    <item
+        android:id="@+id/navigation_naves"
+        android:icon="@drawable/naves"
+        android:title="@string/title_naves" />
+
+    <item
+        android:id="@+id/navigation_quiz"
+        android:icon="@drawable/quiz"
+        android:title="@string/title_quiz" />
+
+
+</menu>

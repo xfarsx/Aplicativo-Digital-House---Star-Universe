@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimary">#5F5B02</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#000000</color>
+    <color name="staruniverse">#FFF5BD13</color>
+    <color name="facebook">#3B5998</color>
+    <color name="gmail">#C71610</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="yellow">#E8E200</color>
+    <color name="grey">#999797</color>
+    <color name="rightanswered">#02F102</color>
+    <color name="wronganswered">#FF0303</color>
+
+    <color name="colorDetail">#ffffff</color>
 </resources>

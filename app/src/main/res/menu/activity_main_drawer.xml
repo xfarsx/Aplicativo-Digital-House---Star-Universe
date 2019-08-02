@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+
+            android:title="Perfil" />
+        <item
+            android:id="@+id/nav_menu"
+
+            android:title="Menu" />
+        <item
+            android:id="@+id/nav_avalie"
+
+            android:title="Avalie-nos" />
+        <item
+            android:id="@+id/nav_indique"
+
+            android:title="Indique a um amigo" />
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+
+                android:title="" />
+            <item
+                android:id="@+id/nav_end"
+
+                android:title="Sair" />
+        </menu>
+    </item>
+
+</menu>

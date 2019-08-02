@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="56dp"
+    android:background="@color/black"
+    tools:showIn="@layout/activity_descricao_filmes">
+
+    <ImageView
+        android:id="@+id/imageViewStarWars"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/star_wars" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewImgDetalheFilme"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/film_b"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewStarWars"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDetalheFilmeTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_item"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewStarWars"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewStarWars"
+        app:layout_constraintStart_toEndOf="@+id/imageViewImgDetalheFilme"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="A New Hope" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewStarWars">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewDetalheFilmeEpisodeId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Episode Id: 4" />
+
+
+            <TextView
+                android:id="@+id/textViewDetalheFilmeReleaseDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeEpisodeId"
+                tools:text="Release Date: 1977-05-25" />
+
+            <TextView
+                android:id="@+id/textViewDetalheFilmeCreated"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeReleaseDate"
+                tools:text="Created: 2014-12-10T14:23:31.880000" />
+
+            <TextView
+                android:id="@+id/textViewDetalheFilmeDirector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeCreated"
+                tools:text="Director: George Lucas" />
+
+            <TextView
+                android:id="@+id/textViewDetalheFilmeEdited"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeDirector"
+                tools:text="Edited: 2015-04-11T09:46:52.774897Z" />
+
+            <TextView
+                android:id="@+id/textViewDetalheFilmeOpeningCrawl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeEdited"
+                tools:text="Opening Crawl: It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire." />
+
+            <TextView
+                android:id="@+id/textViewDetalheFilmeProducer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_detail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetalheFilmeOpeningCrawl"
+                tools:text="Producer: Gary Kurtz, Rick McCallum" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

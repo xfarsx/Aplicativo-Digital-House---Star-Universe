@@ -2,17 +2,33 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.digitalhouse.staruniverse">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo_star_universe"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo_star_universe"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/FullScreen">
+        <activity android:name=".favoritos.FavoritosActivity"/>
+        <activity android:name=".naves.DetalhesNavesActivity" />
+        <activity android:name=".cadastro.TrocaEmailActivity" />
+        <activity android:name=".cadastro.PerfilActivity" />
+        <activity android:name=".cadastro.TrocaSenhaActivity" />
+        <activity android:name=".personagens.DetalhesPersonagensActivity" />
+        <activity android:name=".bottom.BottomActivity" android:label="@string/title_activity_bottom" />
+        <activity android:name=".home.HomeActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".cadastro.CadastroActivity" />
+        <activity android:name=".filmes.DetalhesFilmesActivity" />
+        <activity
+            android:name=".splash.SplashActivity"
+            android:label="Star Universe"
+            android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
