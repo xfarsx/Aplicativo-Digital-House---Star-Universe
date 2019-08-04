@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:padding="16dp"
-    tools:context="br.com.digitalhouse.staruniverse.home.HomeActivity"
+    tools:context=".view.home.HomeActivity"
     tools:showIn="@layout/app_bar_main">
 
     <ImageView

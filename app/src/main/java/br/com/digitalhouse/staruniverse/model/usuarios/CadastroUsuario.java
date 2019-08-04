@@ -4,7 +4,7 @@ package br.com.digitalhouse.staruniverse.model.usuarios;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
-import br.com.digitalhouse.staruniverse.validadorFirebase.ValidarFirebase;
+import br.com.digitalhouse.staruniverse.view.cadastro.validadorFirebase.ValidarFirebase;
 
 public class CadastroUsuario {
 
