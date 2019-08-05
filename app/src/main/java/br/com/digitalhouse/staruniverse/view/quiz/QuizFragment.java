@@ -101,8 +101,8 @@ public class QuizFragment extends Fragment {
             Button button;
             button = alternativas.get(i);
             button.setText(alternativa);
-           button.setBackgroundTintList(getResources().getColorStateList(R.color.black));
-           proximaPergunta.setVisibility(View.GONE);
+             button.setBackgroundTintList(getResources().getColorStateList(R.color.black));
+             proximaPergunta.setVisibility(View.GONE);
             button.setEnabled(true);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -145,7 +145,6 @@ public class QuizFragment extends Fragment {
 
             @Override
             public void onFinish() {
-                    mTextField.setText("");
                 proximaPergunta();
 
             }

@@ -73,8 +73,8 @@ public class TrocaSenhaActivity extends AppCompatActivity {
             novaSenha.requestFocus();
             return;
         }
-        Intent i = new Intent(TrocaSenhaActivity.this, HomeActivity.class);
-        startActivity(i);
+        startActivity (new Intent(getApplicationContext(), PerfilActivity.class))
+        ;
     }
 
 

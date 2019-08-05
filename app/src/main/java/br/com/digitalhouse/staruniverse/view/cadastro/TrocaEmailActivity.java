@@ -1,5 +1,6 @@
 package br.com.digitalhouse.staruniverse.view.cadastro;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -61,18 +62,19 @@ public class TrocaEmailActivity extends AppCompatActivity {
             emailNC.requestFocus();
             return;
         }
-        if (emailAntigo == emailNovo )
+        if (emailV.getText().toString().equals(emailN.getText().toString()))
         {
-            sUToastShort ("E-mails são iguais",16);
+            sUToastShort ("E-mail antigo e novo e-email são idênticos.",16);
             emailN.requestFocus();
             return;
         }
-        if (emailNovo != emailNovoConfirmar)
+        if (!emailN.getText().toString().equals(emailNC.getText().toString()))
         {
-            sUToastShort ("E-mails não conferem",16);
+            sUToastShort ("E-mails não conferem.",16);
             emailN.requestFocus();
             return;
         }
+        startActivity(new Intent(getApplicationContext(),PerfilActivity.class));
 
     }
 
