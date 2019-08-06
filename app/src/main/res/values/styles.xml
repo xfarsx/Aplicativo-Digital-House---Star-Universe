@@ -3,57 +3,48 @@
     <!-- Base application theme. -->
 <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
     <!-- Customize your theme here. -->
-    <item name="actionBarTheme">@style/BarStarUniverse</item>
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
     <item name="drawerArrowStyle">@style/DrawIcon</item>
 </style>
 
-    Login
-<style name="LoginInput" parent="Widget.Design.TextInputLayout">
-<item name="android:textColor">@color/staruniverse</item>
-<item name="android:textColorHint">@color/staruniverse</item>
-</style>
-
-<style name="LoginInput.Edit" parent="Widget.AppCompat.EditText">
-<item name="colorControlActivated">@color/staruniverse</item>
-<item name="colorControlNormal">@color/staruniverse</item>
-<item name="colorControlHighlight">@color/staruniverse</item>
-</style>
-
-<style name="LoginInputLabel" parent="@android:style/TextAppearance">
-<item name="android:textColor">@color/staruniverse</item>
-</style>
-<style name="StringStyleStandard">
+    <!-- String padrão do app. -->
+    <style name="StringStyleStandard">
 <item name="android:textAllCaps">false</item>
 <item name="android:textColor">#ffffff</item>
 <item name="android:textSize">18sp</item>
 </style>
 
-<style name="StringStyleStarUniverse">
-<item name="android:textAllCaps">false</item>
-<item name="android:textColor">@color/staruniverse</item>
-<item name="android:textSize">18sp</item>
+    <!-- EditText Padrão App. -->
+<style name="StringStyleStarUniverse" parent="Widget.AppCompat.EditText">
+    <item name="android:cursorVisible">false</item>
+    <item name="android:paddingStart">20dp</item>
+    <item name="android:textSize">20sp</item>
+    <item name="android:textColor">@color/staruniverse</item>
+    <item name="android:textColorHint">#96803E</item>
+    <item name="android:textColorHighlight">@color/black</item>
 </style>
-<style name="StringStyleStarUniverse2">
+
+    <!-- String padrão Bottom. -->
+
+    <style name="TextViewLogin">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/staruniverse</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingStart">12dp</item>
+    </style>
+
+
+    <!-- String padrão Bottom. -->
+
+    <style name="StringStyleStarUniverse2">
 <item name="android:textAllCaps">false</item>
 <item name="android:textColor">@color/staruniverse</item>
 <item name="android:textSize">16sp</item>
 </style>
-<style name="StringStyleBlack">
-<item name="android:textAllCaps">false</item>
-<item name="android:textColor">#000000</item>
-<item name="android:textSize">18sp</item>
-</style>
-<style name="BarStarUniverse">
-<item name="android:textAllCaps">false</item>
-<item name="android:textColor">#000000</item>
-<item name="android:background">@color/staruniverse</item>
-</style>
 
-
-    <!-- Change Color Hamburguer menu -->
+    <!-- Icon bar Padrão App -->
     <style name="DrawIcon" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@color/black</item>
         <item name="spinBars">true</item>
@@ -68,7 +59,6 @@
 </style>
 
     <!-- Base application theme. -->
-
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>

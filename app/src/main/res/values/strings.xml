@@ -95,5 +95,8 @@
     <string name="film_edited_format">&lt;b>Edited:&lt;/b> %s</string>
     <string name="film_opening_crawl_format">&lt;b>Opening Crawl:&lt;/b> %s</string>
     <string name="film_producer_format">&lt;b>Producer:&lt;/b> %s</string>
+    <string name="alterar_e_mail">Alterar e-mail</string>
+    <string name="alterar_senha">Alterar senha</string>
+    <string name="usu_rio">Usuário</string>
 
 </resources>

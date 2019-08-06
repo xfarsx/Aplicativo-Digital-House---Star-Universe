@@ -7,7 +7,7 @@
     android:background="@color/black"
     android:fillViewport="true"
     android:padding="16dp"
-    tools:context="br.com.digitalhouse.staruniverse.cadastro.CadastroActivity">
+    tools:context=".view.cadastro.CadastroActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -26,99 +26,89 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="72dp"
                 android:gravity="center"
                 android:text="@string/torne_se_jedi_cadastro"
                 android:textColor="@color/staruniverse"
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:textColorHint="@color/staruniverse"
-                app:hintTextAppearance="@style/LoginInputLabel">
+                android:text="@string/nome_jedi"
+                style="@style/TextViewLogin"/>
 
-                <com.google.android.material.textfield.TextInputEditText
+                    <EditText
                     android:id="@+id/Jedi"
+                    style="@style/StringStyleStarUniverse"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/nome_jedi"
+                    android:layout_height="56dp"
+                    android:background="@drawable/rounded_edittext"
                     android:inputType="text"
-                    android:textColor="@color/staruniverse"
-                    android:theme="@style/LoginInput.Edit" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:textColor="@color/staruniverse"/>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:textColorHint="@color/staruniverse"
-                app:hintTextAppearance="@style/LoginInputLabel">
+                android:text="@string/e_mail"
+                style="@style/TextViewLogin"/>
 
-                <com.google.android.material.textfield.TextInputEditText
+
+            <EditText
                     android:id="@+id/Email"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/e_mail"
+                    android:layout_height="56dp"
+                    android:background="@drawable/rounded_edittext"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/staruniverse"
-                    android:theme="@style/LoginInput.Edit" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    style="@style/StringStyleStarUniverse"
+                    android:textColor="@color/staruniverse"/>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:textColorHint="@color/staruniverse"
-                app:hintTextAppearance="@style/LoginInputLabel">
+                android:text="@string/senha"
+                style="@style/TextViewLogin"/>
 
-                <com.google.android.material.textfield.TextInputEditText
+            <EditText
                     android:id="@+id/Senha"
+                    style="@style/StringStyleStarUniverse"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/senha"
+                    android:layout_height="56dp"
+                    android:background="@drawable/rounded_edittext"
                     android:inputType="textPassword"
-                    android:textColor="@color/staruniverse"
-                    android:theme="@style/LoginInput.Edit" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:textColor="@color/staruniverse"/>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:textColorHint="@color/staruniverse"
-                app:hintTextAppearance="@style/LoginInputLabel">
+                android:text="@string/confirmar_senha"
+                style="@style/TextViewLogin"/>
 
-                <com.google.android.material.textfield.TextInputEditText
+            <EditText
                     android:id="@+id/ConfirmarSenha"
+                    style="@style/StringStyleStarUniverse"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="56dp"
                     android:layout_marginBottom="32dp"
-                    android:hint="@string/confirmar_senha"
                     android:inputType="textPassword"
+                    android:background="@drawable/rounded_edittext"
                     android:textColor="@color/staruniverse"
-                    android:theme="@style/LoginInput.Edit" />
-            </com.google.android.material.textfield.TextInputLayout>
+                     />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCadastro"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/staruniverse"
+                android:text="@string/cadastrar"
+                android:textColor="@color/black"
+                app:cornerRadius="30dp"/>
         </LinearLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnCadastro"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:backgroundTint="@color/staruniverse"
-            android:text="@string/cadastrar"
-            android:textColor="@color/black"
-            app:cornerRadius="30dp"
-            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </ScrollView>

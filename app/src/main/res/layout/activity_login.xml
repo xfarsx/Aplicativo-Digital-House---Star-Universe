@@ -7,7 +7,7 @@
     android:background="#000000"
     android:fillViewport="true"
     android:padding="16dp"
-    tools:context="br.com.digitalhouse.staruniverse.login.LoginActivity">
+    tools:context=".view.login.LoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,70 +25,66 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout2"
-            style="@style/LoginInput"
+        <LinearLayout
+            android:id="@+id/linearLayout9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="8dp"
-            app:hintTextAppearance="@style/LoginInputLabel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintVertical_bias="0.36">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/e_mail"
+                android:layout_gravity="left"
+                style="@style/TextViewLogin"/>
+
+            <EditText
                 android:id="@+id/textInputLayoutEmailLogin"
                 android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_edittext"
+                android:inputType="textEmailAddress"
+                style="@style/StringStyleStarUniverse"
+                android:textColor="@color/staruniverse" />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/usuario_login"
-                android:inputType="text"
-                android:padding="8dp"
-                android:textColor="@color/staruniverse"
-                android:theme="@style/LoginInput.Edit" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:text="@string/senha_login"
+                android:layout_gravity="left"
+                style="@style/TextViewLogin"/>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout"
-            style="@style/LoginInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            app:hintTextAppearance="@style/LoginInputLabel"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
-            app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/staruniverse">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/textInputLayoutSenhaLogin"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:foregroundTint="@color/staruniverse"
-                android:hint="@string/senha_login"
+                android:background="@drawable/rounded_edittext"
                 android:inputType="textPassword"
-                android:padding="8dp"
-                android:textColor="@color/staruniverse"
-                android:theme="@style/LoginInput.Edit" />
-        </com.google.android.material.textfield.TextInputLayout>
+                style="@style/StringStyleStarUniverse"
+                android:textColor="@color/staruniverse" />
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:text="@string/lembrar_senha_"
-            android:textColor="@color/staruniverse"
-            android:thumbTint="@color/staruniverse"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="11dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="end"
+                android:text="@string/lembrar_senha_"
+                android:textColor="@color/staruniverse"
+                android:thumbTint="@color/staruniverse"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
 
         <LinearLayout
             android:id="@+id/linearLayout7"
@@ -101,9 +97,7 @@
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-            app:layout_constraintTop_toBottomOf="@+id/switch1">
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGmail"
@@ -112,21 +106,21 @@
                 android:layout_height="72dp"
                 android:layout_marginEnd="100dp"
                 android:foreground="@mipmap/ic_gmail"
-                android:foregroundTint="@color/white"
                 android:foregroundGravity="center"
-                app:iconSize="@dimen/gmail"
+                android:foregroundTint="@color/white"
                 app:backgroundTint="@color/gmail"
-                app:cornerRadius="100dp"/>
+                app:cornerRadius="100dp"
+                app:iconSize="@dimen/gmail" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogar"
                 style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_height="72dp"
                 android:layout_width="60dp"
+                android:layout_height="72dp"
                 android:background="@drawable/gmail_button"
+                android:backgroundTint="@color/staruniverse"
                 android:foreground="@drawable/ic_arrow_forward_black_24dp"
-                app:cornerRadius="56dp"
-                android:backgroundTint="@color/staruniverse"/>
+                app:cornerRadius="56dp" />
 
         </LinearLayout>
 

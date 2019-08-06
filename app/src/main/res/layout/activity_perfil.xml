@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".cadastro.PerfilActivity">
+    tools:context=".view.cadastro.PerfilActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -64,7 +64,7 @@
         android:gravity="center"
         android:padding="10dp"
         android:paddingStart="16dp"
-        android:text="Alterar e-mail"
+        android:text="@string/alterar_e_mail"
         android:textAlignment="viewStart"
         android:textAllCaps="false"
         android:textColor="@color/black"
@@ -92,7 +92,7 @@
         android:gravity="center"
         android:padding="10dp"
         android:paddingStart="16dp"
-        android:text="Alterar senha"
+        android:text="@string/alterar_senha"
         android:textAlignment="viewStart"
         android:textAllCaps="false"
         android:textColor="@color/black"
