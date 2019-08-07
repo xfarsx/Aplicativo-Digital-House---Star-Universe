@@ -30,10 +30,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.view.cadastro.CadastroActivity;
-import br.com.digitalhouse.staruniverse.view.home.HomeActivity;
 import br.com.digitalhouse.staruniverse.model.usuarios.CadastroUsuario;
+import br.com.digitalhouse.staruniverse.view.cadastro.CadastroActivity;
 import br.com.digitalhouse.staruniverse.view.cadastro.validadorFirebase.ValidarFirebase;
+import br.com.digitalhouse.staruniverse.view.home.HomeActivity;
 
 
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {

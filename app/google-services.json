@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "811147690881-m12tcvplq1k2a80vqi9qmehbvtgu3kab.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.digitalhouse.staruniverse",
+            "certificate_hash": "c6cf09fb36dd4f247b1fc586a28401d90476dcc3"
+          }
+        },
+        {
           "client_id": "811147690881-g2v7quoi9b7tmschr8fbuf2ggrpnti6u.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

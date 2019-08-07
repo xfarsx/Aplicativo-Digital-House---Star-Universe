@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:versionCode="1"
     package="br.com.digitalhouse.staruniverse">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,7 +15,11 @@
         <activity android:name=".view.favoritos.FavoritosActivity"/>
         <activity android:name=".view.naves.DetalhesNavesActivity" />
         <activity android:name=".view.cadastro.TrocaEmailActivity" />
-        <activity android:name=".view.cadastro.PerfilActivity">
+        <activity android:name=".view.cadastro.PerfilActivity"/>
+        <activity android:name=".view.cadastro.TrocaSenhaActivity" />
+        <activity android:name=".view.personagens.DetalhesPersonagensActivity" />
+        <activity android:name=".view.bottom.BottomActivity" android:label="@string/title_activity_bottom" />
+        <activity android:name=".view.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -26,10 +29,6 @@
                     android:scheme="https"/>
             </intent-filter>
         </activity>
-        <activity android:name=".view.cadastro.TrocaSenhaActivity" />
-        <activity android:name=".view.personagens.DetalhesPersonagensActivity" />
-        <activity android:name=".view.bottom.BottomActivity" android:label="@string/title_activity_bottom" />
-        <activity android:name=".view.home.HomeActivity" />
         <activity android:name=".view.login.LoginActivity" />
         <activity android:name=".view.cadastro.CadastroActivity" />
         <activity android:name=".view.filmes.DetalhesFilmesActivity" />

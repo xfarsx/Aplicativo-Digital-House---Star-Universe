@@ -80,7 +80,7 @@ public class Filme implements Parcelable {
 
     @Expose
     @ColumnInfo(name = "favorite")
-    private boolean favorite;
+    private boolean favorite = false;
 
     public boolean isFavorite() {
         return favorite;
@@ -112,7 +112,6 @@ public class Filme implements Parcelable {
         title = in.readString();
         url = in.readString();
         vehicles = in.createStringArrayList();
-        favorite = in.readByte() != 0;
     }
 
     @Override
@@ -136,7 +135,6 @@ public class Filme implements Parcelable {
         dest.writeString(title);
         dest.writeString(url);
         dest.writeStringList(vehicles);
-        dest.writeByte((byte) (favorite ? 1 : 0));
     }
 
     @Override

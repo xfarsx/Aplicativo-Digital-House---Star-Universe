@@ -105,5 +105,6 @@
     <string name="invitation_cta">Star Universe.</string>
     <string name="frase">frase</string>
     <string name="indique_um_amigo">Indique um Amigo</string>
+   <!-- <string name="default_web_client_id">1:811147690881:android:2a7de6513eedb77b</string> -->
 
 </resources>

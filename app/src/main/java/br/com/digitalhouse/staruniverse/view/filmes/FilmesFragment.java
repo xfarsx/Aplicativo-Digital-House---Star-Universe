@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
@@ -19,7 +20,9 @@ import java.util.List;
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.adapter.FilmesAdapter;
+import br.com.digitalhouse.staruniverse.data.database.Database;
 import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListenerFilmes;
+import br.com.digitalhouse.staruniverse.model.Favoritos.Favoritos;
 import br.com.digitalhouse.staruniverse.model.filme.Filme;
 import br.com.digitalhouse.staruniverse.viewmodel.FilmeViewModel;
 
@@ -54,6 +57,7 @@ public class FilmesFragment extends Fragment implements RecyclerViewClickListene
         // Adicionar os observables
         viewModel.getFilmeLiveData().observe(this, filmes -> adapter.update(filmes));
 
+
         //Observable Loading
         viewModel.getLoadingLiveData().observe(this, isLoading -> {
             if (isLoading) {
@@ -74,7 +78,6 @@ public class FilmesFragment extends Fragment implements RecyclerViewClickListene
 
     @Override
     public void onClick(Filme filme) {
-
         Intent intent = new Intent(getContext(), DetalhesFilmesActivity.class);
         intent.putExtra("FILME", filme);
         startActivity(intent);

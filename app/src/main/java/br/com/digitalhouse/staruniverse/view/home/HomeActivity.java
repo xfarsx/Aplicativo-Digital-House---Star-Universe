@@ -31,9 +31,9 @@ import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
 import com.google.firebase.dynamiclinks.PendingDynamicLinkData;
 
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.view.favoritos.FavoritosActivity;
 import br.com.digitalhouse.staruniverse.view.bottom.BottomActivity;
 import br.com.digitalhouse.staruniverse.view.cadastro.PerfilActivity;
-import br.com.digitalhouse.staruniverse.view.favoritos.FavoritosActivity;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
     private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNaves, btnFilmes,btnIndiqueUmAmigo;
@@ -101,7 +101,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 });
 
     }
-
 
     private void botaoNaves() {
         btnNaves.setOnClickListener(new View.OnClickListener() {
@@ -268,8 +267,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         }
     }
-
-
     public void sUToastShort (String texto, float tamanho)  {
 
         LayoutInflater inflater = getLayoutInflater();

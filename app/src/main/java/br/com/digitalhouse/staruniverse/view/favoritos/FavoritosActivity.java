@@ -1,11 +1,14 @@
 package br.com.digitalhouse.staruniverse.view.favoritos;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -13,16 +16,19 @@ import java.util.List;
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.adapter.FavoritosAdapter;
+import br.com.digitalhouse.staruniverse.data.database.Database;
+import br.com.digitalhouse.staruniverse.data.database.dao.FavoritosDAO;
+import br.com.digitalhouse.staruniverse.model.Favoritos.Favoritos;
 import br.com.digitalhouse.staruniverse.view.home.HomeActivity;
-import br.com.digitalhouse.staruniverse.model.filme.Filme;
-import br.com.digitalhouse.staruniverse.model.filme.FilmeFavotito;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class FavoritosActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private List<FilmeFavotito> filmeFavotitos = new ArrayList<>();
-    private List<Filme> filme = new ArrayList<>();
+    private List<Favoritos> filmeFavotitos = new ArrayList<>();
     private FavoritosAdapter adapter;
+    private FavoritosDAO dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +39,29 @@ public class FavoritosActivity extends AppCompatActivity {
 
 
         recyclerView = findViewById(R.id.recycleFavoritos);
-        adapter = new FavoritosAdapter(filmeFavotitos);
 
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
+        recyclerView.setLayoutManager(layoutManager);
 
+        adapter = new FavoritosAdapter(filmeFavotitos,this);
+
+        recyclerView.setAdapter(adapter);
+
+        dao = Database.getDatabase(this).favoritosDAO();
+
+        buscarTodosOsFilmes();
+
+    }
+
+    @SuppressLint("CheckResult")
+    private void buscarTodosOsFilmes() {
+        dao.getAllRxJava()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(favoritos -> {
+                    adapter.update(filmeFavotitos);
+                }, throwable -> Log.i("TAG", "buscarTodosOsFilmesFavoritos: " + throwable.getMessage()));
     }
 
 

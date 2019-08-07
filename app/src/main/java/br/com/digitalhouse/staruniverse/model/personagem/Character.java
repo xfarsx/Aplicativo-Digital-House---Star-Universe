@@ -4,6 +4,7 @@ package br.com.digitalhouse.staruniverse.model.personagem;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -51,6 +52,18 @@ public class Character implements Parcelable {
     private String url;
     @Expose
     private List<String> vehicles;
+
+    @Expose
+    @ColumnInfo(name = "favorite")
+    private boolean favorite = false;
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
 
     public Character() {
     }
