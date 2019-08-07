@@ -5,15 +5,19 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.transition.Scene;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -193,6 +197,14 @@ public class QuizFragment extends Fragment {
                 proximaPergunta();
             }
         });
+
+    }
+
+    public void LayoutTransition()
+    {
+        Scene primeiraCena;
+        Scene novaCena;
+
 
     }
 

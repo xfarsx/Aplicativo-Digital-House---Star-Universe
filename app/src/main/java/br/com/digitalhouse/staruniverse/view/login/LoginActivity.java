@@ -1,8 +1,5 @@
 package br.com.digitalhouse.staruniverse.view.login;
 
-import android.app.Activity;
-import android.app.Application;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,10 +7,8 @@ import android.util.Base64;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,7 +47,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private CadastroUsuario usuario;
     private FirebaseAuth auth;
     private GoogleApiClient mGoogleApiClient;
-    private String encriptarPassword;
+    private String decriptarPassword;
     private String usuarioBundle;
 
 
@@ -197,7 +192,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private void preferences() {
         final SharedPreferences preferences = getSharedPreferences("APP_REGISTER", MODE_PRIVATE);
 
-        encriptarPassword = decrypt(preferences.getString("PASSWORD", ""));
+        decriptarPassword = decrypt(preferences.getString("PASSWORD", ""));
         usuarioBundle = preferences.getString("E-MAIL", "");
 
         textInputEditTextLogin.setText(preferences.getString("E-MAIL", ""));
@@ -211,7 +206,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     public void sUToastLong (String texto, float tamanho)  {
 
         LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.toas_layout,
+        View layout = inflater.inflate(R.layout.toast_layout,
                 findViewById(R.id.toast_layout_root));
 
         TextView text = layout.findViewById(R.id.text);

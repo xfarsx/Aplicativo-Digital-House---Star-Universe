@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
     package="br.com.digitalhouse.staruniverse">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,7 +16,16 @@
         <activity android:name=".view.favoritos.FavoritosActivity"/>
         <activity android:name=".view.naves.DetalhesNavesActivity" />
         <activity android:name=".view.cadastro.TrocaEmailActivity" />
-        <activity android:name=".view.cadastro.PerfilActivity" />
+        <activity android:name=".view.cadastro.PerfilActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:host="example.com"
+                    android:scheme="https"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".view.cadastro.TrocaSenhaActivity" />
         <activity android:name=".view.personagens.DetalhesPersonagensActivity" />
         <activity android:name=".view.bottom.BottomActivity" android:label="@string/title_activity_bottom" />

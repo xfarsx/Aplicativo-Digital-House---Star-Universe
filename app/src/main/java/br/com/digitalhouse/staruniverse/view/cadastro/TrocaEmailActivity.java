@@ -88,7 +88,7 @@ public class TrocaEmailActivity extends AppCompatActivity {
     public void sUToastShort (String texto, float tamanho)  {
 
         LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.toas_layout,
+        View layout = inflater.inflate(R.layout.toast_layout,
                 findViewById(R.id.toast_layout_root));
 
         TextView text = layout.findViewById(R.id.text);

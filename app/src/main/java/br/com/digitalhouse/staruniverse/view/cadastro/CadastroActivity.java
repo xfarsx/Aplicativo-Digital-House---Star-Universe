@@ -19,9 +19,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.view.home.HomeActivity;
 import br.com.digitalhouse.staruniverse.model.usuarios.CadastroUsuario;
 import br.com.digitalhouse.staruniverse.view.cadastro.validadorFirebase.ValidarFirebase;
+import br.com.digitalhouse.staruniverse.view.login.LoginActivity;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -128,15 +128,14 @@ public class CadastroActivity extends AppCompatActivity {
             editTextConfirmarSenha.requestFocus();
             return;
         }
-        String email = editTextEmail.getText().toString();
-        String user = editTextNomeJedi.getText().toString();
-        String password = editTextSenha.getText().toString();
 
-        preferences.edit().putString("EMAIL",email).commit();
-        preferences.edit().putString("USER",user).commit();
-        preferences.edit().putString("PASSWORD",encrypt(password)).commit();
+
+        preferences.edit().putString("EMAIL",editTextEmail.getText().toString()).apply();
+        preferences.edit().putString("USER",editTextNomeJedi.getText().toString()).apply();
+        preferences.edit().putString("PASSWORD",encrypt(editTextSenha.getText().toString())).apply();
 
         AutenticarCadastroFirenbase();
+
     }
     public String encrypt(String input) {
         return Base64.encodeToString(input.getBytes(), Base64.DEFAULT);
@@ -170,8 +169,7 @@ public class CadastroActivity extends AppCompatActivity {
                     auth.signOut();
                     finish();
 
-                    Intent intent = new Intent(CadastroActivity.this, HomeActivity.class);
-                    startActivity(intent);
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
 
                 } else {
 
@@ -191,7 +189,7 @@ public class CadastroActivity extends AppCompatActivity {
     public void sUToastShort (String texto, float tamanho)  {
 
         LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.toas_layout,
+        View layout = inflater.inflate(R.layout.toast_layout,
                 findViewById(R.id.toast_layout_root));
 
         TextView text = layout.findViewById(R.id.text);

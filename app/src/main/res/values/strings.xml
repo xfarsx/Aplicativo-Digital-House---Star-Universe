@@ -98,5 +98,12 @@
     <string name="alterar_e_mail">Alterar e-mail</string>
     <string name="alterar_senha">Alterar senha</string>
     <string name="usu_rio">Usuário</string>
+    <string name="invitation_title">A força te chama! Star Universe App.</string>
+    <string name="invitation_message">Olá, conheça o aplicativo Star Universe. Um aplicativo que tem tudo sobre o mundo Star Wars.</string>
+    <string name="invitation_deep_link">Indique um amigo para o uso do aplicativo Star Universe.</string>
+    <string name="invitation_custom_image">https://i.imgur.com/GDLQLji.png</string>
+    <string name="invitation_cta">Star Universe.</string>
+    <string name="frase">frase</string>
+    <string name="indique_um_amigo">Indique um Amigo</string>
 
 </resources>

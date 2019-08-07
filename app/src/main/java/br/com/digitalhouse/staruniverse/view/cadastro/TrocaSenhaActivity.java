@@ -14,7 +14,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.view.home.HomeActivity;
 
 public class TrocaSenhaActivity extends AppCompatActivity {
 
@@ -88,7 +87,7 @@ public class TrocaSenhaActivity extends AppCompatActivity {
     public void sUToastShort (String texto, float tamanho)  {
 
         LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.toas_layout,
+        View layout = inflater.inflate(R.layout.toast_layout,
                 findViewById(R.id.toast_layout_root));
 
         TextView text = layout.findViewById(R.id.text);
