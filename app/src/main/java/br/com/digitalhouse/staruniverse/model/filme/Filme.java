@@ -80,7 +80,7 @@ public class Filme implements Parcelable {
 
     @Expose
     @ColumnInfo(name = "favorite")
-    private boolean favorite;
+    private boolean favorite = false;
 
     public boolean isFavorite() {
         return favorite;

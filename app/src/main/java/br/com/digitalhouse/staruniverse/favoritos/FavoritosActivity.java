@@ -2,39 +2,36 @@ package br.com.digitalhouse.staruniverse.favoritos;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.adapter.FavoritosAdapter;
-import br.com.digitalhouse.staruniverse.adapter.FilmesAdapter;
-import br.com.digitalhouse.staruniverse.filmes.DetalhesFilmesActivity;
+import br.com.digitalhouse.staruniverse.data.database.Database;
+import br.com.digitalhouse.staruniverse.data.database.dao.FavoritosDAO;
+import br.com.digitalhouse.staruniverse.data.database.dao.FilmesDAO;
 import br.com.digitalhouse.staruniverse.home.HomeActivity;
-import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListenerFilmes;
+import br.com.digitalhouse.staruniverse.model.Favoritos.Favoritos;
 import br.com.digitalhouse.staruniverse.model.filme.Filme;
-import br.com.digitalhouse.staruniverse.model.filme.FilmeFavotito;
-import br.com.digitalhouse.staruniverse.viewmodel.FilmeViewModel;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class FavoritosActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private List<FilmeFavotito> filmeFavotitos = new ArrayList<>();
-    private List<Filme> filme = new ArrayList<>();
+    private List<Favoritos> filmeFavotitos = new ArrayList<>();
     private FavoritosAdapter adapter;
+    private FavoritosDAO dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +42,28 @@ public class FavoritosActivity extends AppCompatActivity {
 
 
         recyclerView = findViewById(R.id.recycleFavoritos);
-        adapter = new FavoritosAdapter(filmeFavotitos);
 
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
+        recyclerView.setLayoutManager(layoutManager);
 
+        adapter = new FavoritosAdapter(filmeFavotitos, this);
+
+        recyclerView.setAdapter(adapter);
+
+        dao = Database.getDatabase(this).favoritosDAO();
+
+        buscarTodosOsFilmes();
+
+    }
+
+    private void buscarTodosOsFilmes() {
+        dao.getAllRxJava()
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(favoritos -> {
+                    adapter.update(filmeFavotitos);
+                }, throwable -> Log.i("TAG", "buscarTodosOsFilmesFavoritos: " + throwable.getMessage()));
     }
 
 
