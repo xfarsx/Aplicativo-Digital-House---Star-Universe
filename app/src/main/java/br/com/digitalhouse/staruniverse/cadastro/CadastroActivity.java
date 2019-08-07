@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +14,10 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
 import br.com.digitalhouse.staruniverse.R;
@@ -61,33 +64,33 @@ public class CadastroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (editTextNomeJedi.getText().toString().equals("")) {
-                    Toast.makeText(CadastroActivity.this, "Digite seu nome Jedi!", Toast.LENGTH_SHORT).show();
-                    editTextNomeJedi.requestFocus();
-                    return;
-                }
-                if (editTextEmail.getText().toString().equals("") || !editTextEmail.getText().toString().contains("@") || !editTextEmail.getText().toString().contains(".")) {
-                    Toast.makeText(CadastroActivity.this, "Digite um e-mail válido!", Toast.LENGTH_SHORT).show();
-                    editTextEmail.requestFocus();
-                    return;
-                }
-                if (editTextSenha.getText().toString().length() < 6) {
-                    Toast.makeText(CadastroActivity.this, "Sua senha não pode ser menor que 6 caracteres!", Toast.LENGTH_SHORT).show();
-                    editTextSenha.requestFocus();
-                    return;
-                }
+                    if (editTextNomeJedi.getText().toString().equals("")) {
+                        Toast.makeText(CadastroActivity.this, "Digite seu nome Jedi!", Toast.LENGTH_SHORT).show();
+                        editTextNomeJedi.requestFocus();
+                        return;
+                    }
+                    if (editTextEmail.getText().toString().equals("") || !editTextEmail.getText().toString().contains("@") || !editTextEmail.getText().toString().contains(".")) {
+                        Toast.makeText(CadastroActivity.this, "Digite um e-mail válido!", Toast.LENGTH_SHORT).show();
+                        editTextEmail.requestFocus();
+                        return;
+                    }
+                    if (editTextSenha.getText().toString().length() < 6) {
+                        Toast.makeText(CadastroActivity.this, "Sua senha não pode ser menor que 6 caracteres!", Toast.LENGTH_SHORT).show();
+                        editTextSenha.requestFocus();
+                        return;
+                    }
 
-                if (editTextSenha.getText().toString().equals("123456")) {
-                    Toast.makeText(CadastroActivity.this, "Senha muito fraca!", Toast.LENGTH_SHORT).show();
-                    editTextSenha.requestFocus();
-                    return;
-                }
+                    if (editTextSenha.getText().toString().equals("123456")) {
+                        Toast.makeText(CadastroActivity.this, "Senha muito fraca!", Toast.LENGTH_SHORT).show();
+                        editTextSenha.requestFocus();
+                        return;
+                    }
 
-                if (!editTextSenha.getText().toString().equals(editTextConfirmarSenha.getText().toString())) {
-                    Toast.makeText(CadastroActivity.this, "As senhas não são iguais!", Toast.LENGTH_SHORT).show();
-                    editTextConfirmarSenha.requestFocus();
-                    return;
-                }
+                    if (!editTextSenha.getText().toString().equals(editTextConfirmarSenha.getText().toString())) {
+                        Toast.makeText(CadastroActivity.this, "As senhas não são iguais!", Toast.LENGTH_SHORT).show();
+                        editTextConfirmarSenha.requestFocus();
+                        return;
+                    }
                 usuario = new CadastroUsuario();
                 usuario.setEmail(editTextEmail.getText().toString());
                 usuario.setNomeJedi(editTextNomeJedi.getText().toString());
@@ -124,6 +127,20 @@ public class CadastroActivity extends AppCompatActivity {
                             try {
                                 throw task.getException();
 
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                            try {
+                                throw task.getException();
+                            } catch ( FirebaseAuthWeakPasswordException e) {
+                                erroExcecao = "Digite uma senha mais forte, Contendo pelo menos 8 caracteres com letras e números";
+                            } catch (FirebaseAuthInvalidCredentialsException e) {
+                                erroExcecao = "O email digitado é inválido";
+                            } catch (FirebaseAuthUserCollisionException e) {
+                                erroExcecao = "Email já cadastrado";
+                            } catch (FirebaseAuthInvalidUserException e){
+                                erroExcecao = "Usuário já cadastrado";
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
