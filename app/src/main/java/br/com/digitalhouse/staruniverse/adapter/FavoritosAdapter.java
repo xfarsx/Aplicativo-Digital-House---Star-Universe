@@ -68,7 +68,15 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.View
 
         public void bind(Favoritos filmeAdapter) {
             textViewTipoFavorito.setText(filmeAdapter.getTipoFavorito());
-            textViewFilmeNome.setText(filmeAdapter.getFilmeFavorito().getTitle());
+            if (filmeAdapter.getTipoFavorito().equals("Nave")) {
+                textViewFilmeNome.setText(filmeAdapter.getNaveFavorita().getName());
+            }
+            if (filmeAdapter.getTipoFavorito().equals("Filme")) {
+                textViewFilmeNome.setText(filmeAdapter.getFilmeFavorito().getTitle());
+            }
+            if (filmeAdapter.getTipoFavorito().equals("Personagem")) {
+                textViewFilmeNome.setText(filmeAdapter.getPersonagemFavorito().getName());
+            }
         }
     }
 
