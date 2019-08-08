@@ -1,5 +1,6 @@
 package br.com.digitalhouse.staruniverse.adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.data.database.dao.FavoritosDAO;
 import br.com.digitalhouse.staruniverse.favoritos.FavoritosActivity;
-import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListenerFilmes;
 import br.com.digitalhouse.staruniverse.model.Favoritos.Favoritos;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.ViewHolder> {
 
@@ -26,6 +29,7 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.View
         //this.listener = listener;
     }
 
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -37,8 +41,9 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
         final Favoritos novoFavorito = listaFavoritos.get(i);
-        viewHolder.bind(novoFavorito);
 
+        viewHolder.textViewTipoFavorito.setText(novoFavorito.getTipoFavorito());
+        viewHolder.bind(novoFavorito);
 
     }
 
@@ -68,6 +73,7 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.View
 
         public void bind(Favoritos filmeAdapter) {
             textViewTipoFavorito.setText(filmeAdapter.getTipoFavorito());
+
             if (filmeAdapter.getTipoFavorito().equals("Nave")) {
                 textViewFilmeNome.setText(filmeAdapter.getNaveFavorita().getName());
             }

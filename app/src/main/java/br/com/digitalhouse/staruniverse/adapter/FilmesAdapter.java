@@ -1,5 +1,6 @@
 package br.com.digitalhouse.staruniverse.adapter;
 
+import android.icu.text.AlphabeticIndex;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,12 +51,7 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
 
         Filme novoFilme = listaFilme.get(i);
         viewHolder.bind(novoFilme);
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listener.onClick(novoFilme);
-            }
-        });
+
 
         viewHolder.imageViewFavorite.setOnClickListener(new View.OnClickListener() {
 
@@ -78,6 +74,12 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
                 }
                 // configura um novo valor para o favorito
                 novoFilme.setFavorite(!novoFilme.isFavorite());
+            }
+        });
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onClick(novoFilme);
             }
         });
     }

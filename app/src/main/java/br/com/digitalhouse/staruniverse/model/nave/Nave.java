@@ -72,7 +72,7 @@ public class Nave implements Parcelable {
 
     @Expose
     @ColumnInfo(name = "favorite")
-    private boolean favorite = false;
+    private boolean favorite = true;
 
     public boolean isFavorite() {
         return favorite;
