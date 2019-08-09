@@ -23,9 +23,6 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.View
     public FavoritosAdapter(List<Favoritos> filmeFavotitos, FavoritosActivity favoritosActivity) {
         this.listaFavoritos = filmeFavotitos;
     }
-  public FavoritosAdapter(List<Favoritos> filmeFavotitos) {
-        this.listaFavoritos = filmeFavotitos;
-    }
 
     @NonNull
     @Override

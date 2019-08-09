@@ -61,6 +61,7 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    style="@style/StringStyleStarUniverse"
                     android:id="@+id/edtOldEmail"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -81,6 +82,7 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    style="@style/StringStyleStarUniverse"
                     android:id="@+id/edtNewEmail"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -101,6 +103,7 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    style="@style/StringStyleStarUniverse"
                     android:id="@+id/edtNewConfEmail"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"

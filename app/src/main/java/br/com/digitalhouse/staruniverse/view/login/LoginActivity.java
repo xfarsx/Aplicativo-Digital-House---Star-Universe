@@ -60,7 +60,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         botaoCadastrar();
 
-        auth = FirebaseAuth.getInstance();
+        preferences();
+
+         auth = FirebaseAuth.getInstance();
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -83,7 +85,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     usuario.setEmail(textInputEditTextLogin.getText().toString());
                 usuario.setSenha(textInputEditTextSenha.getText().toString());
                     validarLogin();
-                    sUToastLong("BEM VINDO!",24);
                 }
                 else
                     {
@@ -159,9 +160,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         ).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 goHome();
-                Toast.makeText(LoginActivity.this, "Sucesso ao fazer Login", Toast.LENGTH_LONG).show();
+                sUToastLong("BEM VINDO!",24);
+                finish();
             } else {
-                Toast.makeText(LoginActivity.this, "Erro ao efetuar Login", Toast.LENGTH_LONG).show();
+                sUToastLong("Erro ao efetuar Login!", 16 );
             }
         });
     }
@@ -177,6 +179,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
     private void iniciarViews() {
+
         buttonCadastrese = findViewById(R.id.btnCadastrese);
         buttonLogin = findViewById(R.id.btnLogar);
         buttonGmail = findViewById(R.id.btnGmail);

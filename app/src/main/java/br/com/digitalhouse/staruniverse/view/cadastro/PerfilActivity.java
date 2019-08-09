@@ -10,7 +10,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.data.database.Usuario;
 import br.com.digitalhouse.staruniverse.view.favoritos.FavoritosActivity;
 import br.com.digitalhouse.staruniverse.view.home.HomeActivity;
 import br.com.digitalhouse.staruniverse.view.login.LoginActivity;
@@ -20,9 +25,11 @@ public class PerfilActivity extends AppCompatActivity {
     private Button alteraEmail;
     private Button alteraSenha;
     private Button favoritos;
-
+    private DatabaseReference mFirebaseDatabase;
+    private FirebaseDatabase mFirebaseInstance;
     private Button sair;
     private TextView user;
+    private String userId;
 
     private SharedPreferences preferences;
 
@@ -31,9 +38,15 @@ public class PerfilActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
+        mFirebaseInstance = FirebaseDatabase.getInstance();
+        mFirebaseDatabase = mFirebaseInstance.getReference("usuario");
+        userId = mFirebaseDatabase.push().getKey();
+        Usuario usuario = new Usuario();
+        mFirebaseDatabase.child(userId).setValue(usuario);
+
 
         setUpToolbar();
-        setTitle("Olá,");
+        setTitle("Olá, " + usuario.usuario);
         user = findViewById(R.id.textViewUser);
       //  user.setText(preferences.getString("USER",""));
 

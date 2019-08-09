@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.model.usuarios.CadastroUsuario;
 import br.com.digitalhouse.staruniverse.view.cadastro.validadorFirebase.ValidarFirebase;
+import br.com.digitalhouse.staruniverse.view.home.HomeActivity;
 import br.com.digitalhouse.staruniverse.view.login.LoginActivity;
 
 public class CadastroActivity extends AppCompatActivity {
@@ -84,7 +85,6 @@ public class CadastroActivity extends AppCompatActivity {
     public void validarCamposDoCadastroeCadastrar()
     {
 
-
         if (editTextNomeJedi.getText().toString().isEmpty()) {
             sUToastShort("Digite seu nome Jedi!",16);
             editTextNomeJedi.requestFocus();
@@ -135,6 +135,8 @@ public class CadastroActivity extends AppCompatActivity {
         preferences.edit().putString("PASSWORD",encrypt(editTextSenha.getText().toString())).apply();
 
         AutenticarCadastroFirenbase();
+
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 
     }
     public String encrypt(String input) {
