@@ -59,12 +59,15 @@ public class NavesAdapter extends RecyclerView.Adapter<NavesAdapter.ViewHolder> 
                         viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_select);
 
                         new Thread(() -> {
-                            dao.insert( new Favoritos("Nave" , filmeFavorito, novaNave, personagemFavorito));
+                            dao.insert( new Favoritos(novaNave.getName(),"Nave" , filmeFavorito, novaNave, personagemFavorito));
                         }).start();
 
 
                     }else {
                         viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_unselect);
+                        new Thread(() -> {
+                            dao.delete( new Favoritos(novaNave.getName(),"Nave" , filmeFavorito, novaNave, personagemFavorito));
+                        }).start();
 
                     }
                     // configura um novo valor para o favorito

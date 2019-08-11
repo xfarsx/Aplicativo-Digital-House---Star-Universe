@@ -3,6 +3,7 @@ package br.com.digitalhouse.staruniverse.model.Favoritos;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -14,8 +15,9 @@ import br.com.digitalhouse.staruniverse.model.personagem.Character;
 @Entity(tableName = "favoritos")
 public class Favoritos implements Parcelable {
 
-    @PrimaryKey(autoGenerate = true)
-    private long id;
+    @PrimaryKey
+    @NonNull
+    private String id;
 
     @ColumnInfo(name = "tipoFavorito")
     private String tipoFavorito;
@@ -29,10 +31,11 @@ public class Favoritos implements Parcelable {
     @ColumnInfo(name = "personagemFavorito")
     private Character personagemFavorito;
 
-    public Favoritos() {
-    }
+//    public Favoritos() {
+//    }
 
-    public Favoritos(String tipoFavorito, Filme filmeFavorito, Nave naveFavorita, Character personagemFavorito) {
+    public Favoritos(String id, String tipoFavorito, Filme filmeFavorito, Nave naveFavorita, Character personagemFavorito) {
+        this.id = id;
         this.tipoFavorito = tipoFavorito;
         this.filmeFavorito = filmeFavorito;
         this.naveFavorita = naveFavorita;
@@ -40,7 +43,7 @@ public class Favoritos implements Parcelable {
     }
 
     protected Favoritos(Parcel in) {
-        id = in.readLong();
+        id = in.readString();
         tipoFavorito = in.readString();
         filmeFavorito = in.readParcelable(Filme.class.getClassLoader());
         naveFavorita = in.readParcelable(Nave.class.getClassLoader());
@@ -59,11 +62,11 @@ public class Favoritos implements Parcelable {
         }
     };
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -106,7 +109,7 @@ public class Favoritos implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(id);
+        dest.writeString(id);
         dest.writeString(tipoFavorito);
         dest.writeParcelable(filmeFavorito, flags);
         dest.writeParcelable(naveFavorita, flags);

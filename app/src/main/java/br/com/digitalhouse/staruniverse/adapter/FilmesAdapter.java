@@ -1,6 +1,5 @@
 package br.com.digitalhouse.staruniverse.adapter;
 
-import android.icu.text.AlphabeticIndex;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,10 +29,9 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
     private Character personagemFavorito = null;
 
 
-
     public FilmesAdapter(List<Filme> listaFilme, RecyclerViewClickListenerFilmes listener) {
         this.listaFilme = listaFilme;
-        this.listener =  listener;
+        this.listener = listener;
 
     }
 
@@ -50,6 +48,7 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
 
 
         Filme novoFilme = listaFilme.get(i);
+
         viewHolder.bind(novoFilme);
 
 
@@ -59,17 +58,24 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
             public void onClick(View view) {
 
                 dao = Database.getDatabase(view.getContext()).favoritosDAO();
+
                 // Se for favorito muda a imagem
-                if (novoFilme.isFavorite()){
+                if (novoFilme.isFavorite()) {
                     viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_select);
+                    novoFilme.setFavorite(true);
 
                     new Thread(() -> {
-                        dao.insert( new Favoritos("Filme" , novoFilme, naveFavorita, personagemFavorito));
+                        dao.insert(new Favoritos(novoFilme.getTitle(), "Filme", novoFilme, naveFavorita, personagemFavorito));
                     }).start();
 
 
-                }else {
+                } else {
                     viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_unselect);
+                    novoFilme.setFavorite(false);
+
+                    new Thread(() -> {
+                        dao.delete(new Favoritos(novoFilme.getTitle(), "Filme", novoFilme, naveFavorita, personagemFavorito));
+                    }).start();
 
                 }
                 // configura um novo valor para o favorito
@@ -83,6 +89,7 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
             }
         });
     }
+
 
     public void update(List<Filme> listaFilme) {
         this.listaFilme = listaFilme;

@@ -61,12 +61,15 @@ public class PersonagemAdapter extends RecyclerView.Adapter<PersonagemAdapter.Vi
                     viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_select);
 
                     new Thread(() -> {
-                        dao.insert( new Favoritos("Personagem" , filmeFavorito, naveFavorita, novoPerson));
+                        dao.insert( new Favoritos(novoPerson.getName(),"Personagem" , filmeFavorito, naveFavorita, novoPerson));
                     }).start();
 
 
                 }else {
                     viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_unselect);
+                    new Thread(() -> {
+                        dao.delete( new Favoritos(novoPerson.getName(),"Personagem" , filmeFavorito, naveFavorita, novoPerson));
+                    }).start();
 
                 }
                 // configura um novo valor para o favorito
