@@ -5,7 +5,6 @@ import android.os.Parcelable;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import br.com.digitalhouse.staruniverse.model.filme.Filme;
@@ -18,19 +17,15 @@ public class Favoritos implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     private long id;
 
-
     @ColumnInfo(name = "tipoFavorito")
     private String tipoFavorito;
 
-    @Ignore
     @ColumnInfo(name = "filmeFavorito")
     private Filme filmeFavorito;
 
-    @Ignore
     @ColumnInfo(name = "naveFavorita")
     private Nave naveFavorita;
 
-    @Ignore
     @ColumnInfo(name = "personagemFavorito")
     private Character personagemFavorito;
 

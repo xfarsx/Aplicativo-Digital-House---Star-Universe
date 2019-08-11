@@ -4,7 +4,6 @@ package br.com.digitalhouse.staruniverse.view.cadastro;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,7 +22,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.data.database.Usuario;
+import br.com.digitalhouse.staruniverse.model.usuarios.CadastroUsuario;
+import br.com.digitalhouse.staruniverse.view.cadastro.validadorFirebase.ValidarFirebase;
 
 public class TrocaSenhaActivity extends AppCompatActivity {
 
@@ -33,8 +34,8 @@ public class TrocaSenhaActivity extends AppCompatActivity {
     private Button btnConfirmarNovoPassword;
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
-    private String userId, password;
-    Usuario usuario = new Usuario();
+    private String userId;
+    private FirebaseAuth usuario;
 
 
     @Override
@@ -42,16 +43,15 @@ public class TrocaSenhaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_troca_senha);
 
-
         initViews();
 
         mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("usuario");
+        usuario = FirebaseAuth.getInstance();
+        usuario = ValidarFirebase.getFirebaseAuth();
+        userId =  usuario.getCurrentUser().getUid();
 
-        btnConfirmarNovoPassword.setText(userId);
-
-
-        mFirebaseInstance.getReference("app_title").addValueEventListener(new ValueEventListener() {
+      /*mFirebaseInstance.getReference("app_title").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.e(TAG, "App title updated");
@@ -65,37 +65,28 @@ public class TrocaSenhaActivity extends AppCompatActivity {
                 // Failed to read value
                 Log.e(TAG, "Failed to read app title value.", error.toException());
             }
-        });
-
-
-        userId = mFirebaseDatabase.push().getKey();
-        Usuario usuario = new Usuario(password);
-        mFirebaseDatabase.child(userId).setValue(usuario);
+        });*/
 
         btnConfirmarNovoPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 validarSenha(editTextSenhaAntiga,editTextNovaSenha,editTextConfirmarNovaSenha);
-
                 String novasenha = editTextNovaSenha.getText().toString();
-
-                    updateUsuario(novasenha); }
+                    updateUsuario(novasenha);
+            }
         });
 
 
     }
 
-    private void createUsuario(String password) {
-
-        if (TextUtils.isEmpty(userId)) {
-            userId = mFirebaseDatabase.push().getKey();
+    private void updateUsuario(String password) {
+        // updating the user via child nodes
+        if (!TextUtils.isEmpty(password));{
+            mFirebaseDatabase.child(userId).child("senha").removeValue();
+            mFirebaseDatabase.child(userId).child("senha").setValue(password);
+            usuario.getCurrentUser().updatePassword(password);
         }
-
-        Usuario usuario = new Usuario(password);
-
-        mFirebaseDatabase.child(userId).setValue(usuario);
-
         addUserChangeListener();
     }
 
@@ -103,7 +94,7 @@ public class TrocaSenhaActivity extends AppCompatActivity {
         mFirebaseDatabase.child(userId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Usuario usuario = dataSnapshot.getValue(Usuario.class);
+                CadastroUsuario usuario = dataSnapshot.getValue(CadastroUsuario.class);
 
                 if (usuario == null) {
                     sUToastShort("Usuário não existe!",16);
@@ -120,12 +111,6 @@ public class TrocaSenhaActivity extends AppCompatActivity {
         });
     }
 
-    private void updateUsuario(String password) {
-        // updating the user via child nodes
-        if (!TextUtils.isEmpty(password))
-            mFirebaseDatabase.child(userId).child("senha").setValue(password);
-        addUserChangeListener();
-    }
 
     public void validarSenha (EditText senhaA, EditText novaSenha, EditText confSenha)
     {
@@ -184,6 +169,7 @@ public class TrocaSenhaActivity extends AppCompatActivity {
         toast.setView(layout);
         toast.show();
     }
+
     public void sUToastShortException (String texto, float tamanho, Exception e)  {
 
         LayoutInflater inflater = getLayoutInflater();
@@ -199,7 +185,5 @@ public class TrocaSenhaActivity extends AppCompatActivity {
         toast.setView(layout);
         toast.show();
     }
-
-
 
 }

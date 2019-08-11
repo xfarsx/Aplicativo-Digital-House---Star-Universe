@@ -46,6 +46,8 @@ public class FavoritosActivity extends AppCompatActivity {
 
         adapter = new FavoritosAdapter(filmeFavotitos,this);
 
+        adapter.notifyDataSetChanged();
+
         recyclerView.setAdapter(adapter);
 
         dao = Database.getDatabase(this).favoritosDAO();
@@ -59,8 +61,8 @@ public class FavoritosActivity extends AppCompatActivity {
         dao.getAllRxJava()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(favoritos -> {
-                    adapter.update(filmeFavotitos);
+                .subscribe(filmeFavoritos2 -> {
+                    adapter.update(filmeFavoritos2);
                 }, throwable -> Log.i("TAG", "buscarTodosOsFilmesFavoritos: " + throwable.getMessage()));
     }
 

@@ -149,7 +149,6 @@ public class CadastroActivity extends AppCompatActivity {
         usuario.setEmail(editTextEmail.getText().toString());
         usuario.setNomeJedi(editTextNomeJedi.getText().toString());
         usuario.setSenha(editTextSenha.getText().toString());
-        usuario.setConfirmarSenha(editTextConfirmarSenha.getText().toString());
 
 
         auth = ValidarFirebase.getFirebaseAuth();

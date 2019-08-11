@@ -50,12 +50,7 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
 
         Filme novoFilme = listaFilme.get(i);
         viewHolder.bind(novoFilme);
-        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listener.onClick(novoFilme);
-            }
-        });
+
 
         viewHolder.imageViewFavorite.setOnClickListener(new View.OnClickListener() {
 
@@ -75,6 +70,12 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
 
                 }
                 // configura um novo valor para o favorito
+            }
+        });
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onClick(novoFilme);
             }
         });
     }

@@ -2,6 +2,7 @@ package br.com.digitalhouse.staruniverse.view.cadastro;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.model.usuarios.CadastroUsuario;
+import br.com.digitalhouse.staruniverse.view.cadastro.validadorFirebase.ValidarFirebase;
 
 public class TrocaEmailActivity extends AppCompatActivity {
 
@@ -20,6 +30,12 @@ public class TrocaEmailActivity extends AppCompatActivity {
     private EditText editTextEmailAntigo;
     private EditText editTextNovoEmail;
     private EditText editTextConfirmarEmail;
+    private DatabaseReference mFirebaseDatabase;
+    private FirebaseDatabase mFirebaseInstance;
+    private String userId;
+    private FirebaseAuth usuario;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +44,55 @@ public class TrocaEmailActivity extends AppCompatActivity {
 
         initViews();
 
+        mFirebaseInstance = FirebaseDatabase.getInstance();
+        mFirebaseDatabase = mFirebaseInstance.getReference("usuario");
+        usuario = FirebaseAuth.getInstance();
+        usuario = ValidarFirebase.getFirebaseAuth();
+        userId =  usuario.getCurrentUser().getUid();
+
         btnConfirmarEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 validarEmail(editTextEmailAntigo,editTextNovoEmail,editTextConfirmarEmail);
+                String novasenha = editTextNovoEmail.getText().toString();
+                updateUsuario(novasenha);
 
             }
         });
 
     }
 
+    private void updateUsuario(String password) {
+        // updating the user via child nodes
+        if (!TextUtils.isEmpty(password));{
+            mFirebaseDatabase.child(userId).child("email").removeValue();
+            mFirebaseDatabase.child(userId).child("email").setValue(password);
+            usuario.getCurrentUser().updatePassword(password);
+        }
+        addUserChangeListener();
+    }
+
+    private void addUserChangeListener() {
+        mFirebaseDatabase.child(userId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                CadastroUsuario usuario = dataSnapshot.getValue(CadastroUsuario.class);
+
+                if (usuario == null) {
+                    sUToastShort("Usuário não existe!",16);
+                    return;
+                }
+                sUToastShort("e-mail alterado com sucesso!",16);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                sUToastShortException("Falha na leitura do usuário!",16, error.toException());
+            }
+        });
+    }
 
 
     public void validarEmail(EditText emailV, EditText emailN, EditText emailNC)
@@ -86,6 +140,22 @@ public class TrocaEmailActivity extends AppCompatActivity {
         editTextConfirmarEmail = findViewById(R.id.edtNewConfEmail);
     }
     public void sUToastShort (String texto, float tamanho)  {
+
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_layout,
+                findViewById(R.id.toast_layout_root));
+
+        TextView text = layout.findViewById(R.id.text);
+        text.setText(texto);
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 12, 120);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+        toast.show();
+    }
+
+    public void sUToastShortException (String texto, float tamanho, Exception e)  {
 
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast_layout,

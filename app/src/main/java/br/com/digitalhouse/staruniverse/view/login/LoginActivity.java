@@ -49,6 +49,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private GoogleApiClient mGoogleApiClient;
     private String decriptarPassword;
     private String usuarioBundle;
+    FirebaseAuth.AuthStateListener authStateListener;
 
 
     @Override
@@ -74,7 +75,16 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
                 .build();
 
-
+        /*authStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if(user == null){
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    finish();
+                }
+            }
+        };*/
 
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
@@ -222,7 +232,21 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         toast.setView(layout);
         toast.show();
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        //auth.addAuthStateListener(authStateListener);
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(authStateListener!=null){
+            auth.removeAuthStateListener(authStateListener);
+            auth.signOut();
+        }
+    }
+}
 
 
 

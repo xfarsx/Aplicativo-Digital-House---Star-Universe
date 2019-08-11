@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.view.favoritos.FavoritosActivity;
 import br.com.digitalhouse.staruniverse.model.Favoritos.Favoritos;
+import br.com.digitalhouse.staruniverse.view.favoritos.FavoritosActivity;
 
 public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.ViewHolder> {
 
@@ -22,12 +22,14 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.View
 
     public FavoritosAdapter(List<Favoritos> filmeFavotitos, FavoritosActivity favoritosActivity) {
         this.listaFavoritos = filmeFavotitos;
+        //this.listener = listener;
     }
+
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_recyclerview_favoritos, viewGroup, true);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_recyclerview_favoritos, viewGroup, false);
         return new ViewHolder(view);
     }
 
@@ -35,8 +37,9 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
         final Favoritos novoFavorito = listaFavoritos.get(i);
-        viewHolder.bind(novoFavorito);
 
+        viewHolder.textViewTipoFavorito.setText(novoFavorito.getTipoFavorito());
+        viewHolder.bind(novoFavorito);
 
     }
 
@@ -65,9 +68,17 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.View
         }
 
         public void bind(Favoritos filmeAdapter) {
-
             textViewTipoFavorito.setText(filmeAdapter.getTipoFavorito());
-            textViewFilmeNome.setText(filmeAdapter.getFilmeFavorito().getTitle());
+
+            if (filmeAdapter.getTipoFavorito().equals("Nave")) {
+                textViewFilmeNome.setText(filmeAdapter.getNaveFavorita().getName());
+            }
+            if (filmeAdapter.getTipoFavorito().equals("Filme")) {
+                textViewFilmeNome.setText(filmeAdapter.getFilmeFavorito().getTitle());
+            }
+            if (filmeAdapter.getTipoFavorito().equals("Personagem")) {
+                textViewFilmeNome.setText(filmeAdapter.getPersonagemFavorito().getName());
+            }
         }
     }
 
