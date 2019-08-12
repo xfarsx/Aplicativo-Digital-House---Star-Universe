@@ -32,7 +32,6 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleFavoritos"
-                tools:listitem="@layout/item_recyclerview_favoritos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
