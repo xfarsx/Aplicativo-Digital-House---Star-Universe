@@ -25,7 +25,6 @@ import br.com.digitalhouse.staruniverse.model.usuarios.CadastroUsuario;
 
 public class TrocaSenhaActivity extends AppCompatActivity {
 
-    private static final String TAG = TrocaSenhaActivity.class.getSimpleName();
     private EditText editTextSenhaAntiga;
     private EditText editTextNovaSenha;
     private EditText editTextConfirmarNovaSenha;
@@ -51,8 +50,8 @@ public class TrocaSenhaActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 validarSenha(editTextSenhaAntiga,editTextNovaSenha,editTextConfirmarNovaSenha);
-               String novasenha = editTextNovaSenha.getText().toString();
-                updateUsuario(novasenha);
+               //String novasenha = editTextNovaSenha.getText().toString();
+               // updateUsuario(novasenha);
             }
         });
     }

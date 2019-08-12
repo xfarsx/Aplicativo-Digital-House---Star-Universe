@@ -2,7 +2,6 @@ package br.com.digitalhouse.staruniverse.view.cadastro;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +53,7 @@ public class TrocaEmailActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 validarEmail(editTextEmailAntigo,editTextNovoEmail,editTextConfirmarEmail);
-                String novasenha = editTextNovoEmail.getText().toString();
+                //String novasenha = editTextNovoEmail.getText().toString();
                // updateUsuario(novasenha);
 
             }
@@ -62,14 +61,14 @@ public class TrocaEmailActivity extends AppCompatActivity {
 
     }
 
-    private void updateUsuario(String password) {
+   /* private void updateUsuario(String password) {
         // updating the user via child nodes
         if (!TextUtils.isEmpty(password));{
             mFirebaseDatabase.child(userId).child("email").removeValue();
             mFirebaseDatabase.child(userId).child("email").setValue(password);
         }
         addUserChangeListener();
-    }
+    }*/
 
     private void addUserChangeListener() {
         mFirebaseDatabase.child(userId).addValueEventListener(new ValueEventListener() {

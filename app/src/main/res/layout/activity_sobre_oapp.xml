@@ -8,8 +8,6 @@
     android:background="@drawable/starwarsbackground"
     tools:context=".view.login.SobreOAppActivity">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,7 +28,7 @@
             android:background="@drawable/rounded_box"
             android:text="@string/sobre_o_app"
             android:textColor="@color/black"
-            android:textSize="40sp"
+            android:textSize="32sp"
             android:textStyle="bold" />
 
         <TextView
@@ -46,9 +44,8 @@
             android:gravity="left"
             android:text="@string/sobre_o_app_explicacao"
             android:textColor="@color/black"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
-
 
     </LinearLayout>
 
