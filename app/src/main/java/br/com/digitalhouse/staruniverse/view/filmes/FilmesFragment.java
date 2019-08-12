@@ -54,6 +54,7 @@ public class FilmesFragment extends Fragment implements RecyclerViewClickListene
         // Adicionar os observables
         viewModel.getFilmeLiveData().observe(this, filmes -> adapter.update(filmes));
 
+
         //Observable Loading
         viewModel.getLoadingLiveData().observe(this, isLoading -> {
             if (isLoading) {
@@ -74,7 +75,6 @@ public class FilmesFragment extends Fragment implements RecyclerViewClickListene
 
     @Override
     public void onClick(Filme filme) {
-
         Intent intent = new Intent(getContext(), DetalhesFilmesActivity.class);
         intent.putExtra("FILME", filme);
         startActivity(intent);

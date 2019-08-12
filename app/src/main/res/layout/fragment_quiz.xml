@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rankMain"
     android:layout_width="match_parent"
@@ -8,178 +8,140 @@
     android:fillViewport="true"
     android:orientation="vertical">
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/contador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:textColor="@color/staruniverse"
+            android:textSize="42sp" />
+
+        <TextView
+            android:id="@+id/textViewQuizPergunta"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/contador"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_margin="8dp"
-                android:background="@drawable/circle"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:textColor="@color/staruniverse"
-                android:textSize="42sp"/>
-            <TextView
-                android:id="@+id/textViewQuizPergunta"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rounded_box"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:text="Quais são os troopers imperiais que operam em Scarif?"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/nav_view"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.476"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:layout_constraintVertical_bias="0.046" />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/rounded_box"
+            android:gravity="center"
+            android:text="Quais são os troopers imperiais que operam em Scarif?"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:orientation="vertical"
-            android:padding="12dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/ButtonAlterA"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Opção 1"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    app:cornerRadius="100dp"
-                    app:strokeColor="@color/staruniverse"
-                    app:strokeWidth="4dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/ButtonAlterB"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Opção 1"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    app:cornerRadius="100dp"
-                    app:strokeColor="@color/staruniverse"
-                    app:strokeWidth="4dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/ButtonAlterC"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Opção 1"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    app:cornerRadius="100dp"
-                    app:strokeColor="@color/staruniverse"
-                    app:strokeWidth="4dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/ButtonAlterD"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Opção 1"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    app:cornerRadius="100dp"
-                    app:strokeColor="@color/staruniverse"
-                    app:strokeWidth="4dp" />
-            </LinearLayout>
-
-        </LinearLayout>
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
-    android:layout_weight="0.5"
-    android:orientation="vertical">
+    android:layout_weight="3"
+    android:orientation="vertical"
+    android:gravity="center">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ButtonAlterA"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Opção 1"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:cornerRadius="100dp"
+            app:strokeColor="@color/staruniverse"
+            app:strokeWidth="4dp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/proximaPergunta"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="Próxima"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="18dp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        app:backgroundTint="@color/staruniverse"
-        app:cornerRadius="100dp"
-        android:visibility="invisible"
-        />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ButtonAlterB"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Opção 1"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:cornerRadius="100dp"
+            app:strokeColor="@color/staruniverse"
+            app:strokeWidth="4dp" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ButtonAlterC"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Opção 1"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:cornerRadius="100dp"
+            app:strokeColor="@color/staruniverse"
+            app:strokeWidth="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ButtonAlterD"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="Opção 1"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:cornerRadius="100dp"
+            app:strokeColor="@color/staruniverse"
+            app:strokeWidth="4dp" />
 </LinearLayout>
-
         <LinearLayout
+            android:id="@+id/botoesQuiz"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5" />
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/proximaPergunta"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/pr_xima"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:backgroundTint="@color/staruniverse"
+                app:cornerRadius="100dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/encerrarQuiz"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:gravity="center"
+                android:text="@string/desistir"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:backgroundTint="@color/staruniverse"
+                app:cornerRadius="100dp" />
+
+        </LinearLayout>
     </LinearLayout>
-
-</ScrollView>
+</LinearLayout>

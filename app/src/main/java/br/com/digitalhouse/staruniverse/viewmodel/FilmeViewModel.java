@@ -47,7 +47,10 @@ public class FilmeViewModel extends AndroidViewModel {
 
     public void searchFilme() {
         if (isNetworkConnected(getApplication())) {
+            getLocalFilme();
+            //ver se é favorito
             getApiFilme();
+
         } else {
             getLocalFilme();
         }

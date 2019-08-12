@@ -68,8 +68,11 @@
                 android:layout_height="56dp"
                 android:background="@drawable/rounded_edittext"
                 android:inputType="textPassword"
+                app:passwordToggleEnabled="true"
                 style="@style/StringStyleStarUniverse"
-                android:textColor="@color/staruniverse" />
+                android:textColor="@color/staruniverse"
+                app:passwordToggleTint="@color/staruniverse"
+                />
 
             <Switch
                 android:id="@+id/switch1"
@@ -81,7 +84,7 @@
                 android:text="@string/lembrar_senha_"
                 android:textColor="@color/staruniverse"
                 android:thumbTint="@color/staruniverse"
-                android:visibility="visible" />
+                android:visibility="gone" />
         </LinearLayout>
 
 

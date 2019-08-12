@@ -65,6 +65,7 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    style="@style/StringStyleStarUniverse"
                     android:id="@+id/edtOldPassword"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -85,6 +86,7 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    style="@style/StringStyleStarUniverse"
                     android:id="@+id/edtNewPassword"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -105,6 +107,7 @@
                     android:textStyle="bold" />
 
                 <EditText
+                    style="@style/StringStyleStarUniverse"
                     android:id="@+id/edtNewConfPassword"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"

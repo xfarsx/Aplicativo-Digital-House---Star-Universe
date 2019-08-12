@@ -18,7 +18,7 @@
 
     <!-- EditText Padrão App. -->
 <style name="StringStyleStarUniverse" parent="Widget.AppCompat.EditText">
-    <item name="android:cursorVisible">false</item>
+    <item name="android:textCursorDrawable">@color/staruniverse</item>
     <item name="android:paddingStart">20dp</item>
     <item name="android:textSize">20sp</item>
     <item name="android:textColor">@color/staruniverse</item>

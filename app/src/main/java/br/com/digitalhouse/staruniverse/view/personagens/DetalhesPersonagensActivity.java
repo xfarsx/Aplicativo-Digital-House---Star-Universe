@@ -27,7 +27,7 @@ public class DetalhesPersonagensActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes_personagem);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
 
         textViewDescricao = findViewById(R.id.textViewDescricaoPersonagem);
         textViewHeight = findViewById(R.id.textViewHeight);

@@ -2,28 +2,53 @@ package br.com.digitalhouse.staruniverse.view.home;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.gms.appinvite.AppInviteInvitation;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
+import com.google.firebase.dynamiclinks.PendingDynamicLinkData;
 
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.view.cadastro.validadorFirebase.ValidarFirebase;
+import br.com.digitalhouse.staruniverse.view.favoritos.FavoritosActivity;
 import br.com.digitalhouse.staruniverse.view.bottom.BottomActivity;
 import br.com.digitalhouse.staruniverse.view.cadastro.PerfilActivity;
-import br.com.digitalhouse.staruniverse.view.favoritos.FavoritosActivity;
+import br.com.digitalhouse.staruniverse.view.login.LoginActivity;
+import br.com.digitalhouse.staruniverse.view.login.SobreOAppActivity;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNaves, btnFilmes,btnRanking;
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
+    private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNaves, btnFilmes,btnIndiqueUmAmigo;
+    private final String TAG = PerfilActivity.class.getSimpleName();
+    private final int REQUEST_INVITE = 0;
+    private String userId, nomeJedi;
+    private FirebaseAuth usuario;
+    private DatabaseReference mFirebaseDatabase;
+    private FirebaseDatabase mFirebaseInstance;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -33,6 +58,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = iniciarAsViews();
+        findViewById(R.id.btn_indiqueUmamigo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onInviteClicked();
+            }
+        });
+
+        validarconta();
 
         botaoFilmes();
 
@@ -41,8 +74,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         botaoPersonagens();
 
         botaoQuiz();
-
-        botaoRanking();
 
         botaoNaves();
 
@@ -54,16 +85,33 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-    }
-    private void botaoRanking() {
-        btnRanking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, BottomActivity.class);
-                i.putExtra("POSITION", "RANKING");
-                startActivity(i);
-            }
-        });
+        FirebaseDynamicLinks.getInstance()
+                .getDynamicLink(getIntent())
+                .addOnSuccessListener(this, new OnSuccessListener<PendingDynamicLinkData>() {
+                    @Override
+                    public void onSuccess(PendingDynamicLinkData pendingDynamicLinkData) {
+                        // Get deep link from result (may be null if no link is found)
+                        Uri deepLink = null;
+                        if (pendingDynamicLinkData != null) {
+                            deepLink = pendingDynamicLinkData.getLink();
+                        }
+
+
+                        // Handle the deep link. For example, open the linked
+                        // content, or apply promotional credit to the user's
+                        // account.
+                        // ...
+
+                        // ...
+                    }
+                })
+                .addOnFailureListener(this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Erro ao pegar DynamicLink", e);
+                    }
+                });
+
     }
 
     private void botaoNaves() {
@@ -130,7 +178,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnPersonagens = findViewById(R.id.btn_personagens);
         btnNaves = findViewById(R.id.btn_naves);
         btnQuiz = findViewById(R.id.btn_quiz);
-        btnRanking = findViewById(R.id.btn_ranking);
+        btnIndiqueUmAmigo = findViewById(R.id.btn_indiqueUmamigo);
         return toolbar;
     }
 
@@ -176,18 +224,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, PerfilActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_menu) {
-            Intent intent = new Intent(this, HomeActivity.class);
+            Intent intent = new Intent(this, SobreOAppActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_avalie) {
             //vai para loja avaliação
-            Toast.makeText(HomeActivity.this, "Avalie - Vai para a loja", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.nav_indique) {
-            //abre whatsapp com link
-            Toast.makeText(HomeActivity.this, "Indique um amigo - Vai para WhatsApp", Toast.LENGTH_SHORT).show();
+            sUToastShort( "Avalie - Vai para a loja", 16);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_end) {
-            finishAffinity();
+            usuario.signOut();
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -195,5 +241,78 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        Log.d(TAG, "Problema de conexão! " + connectionResult);
+        sUToastShort("Erro ao contatar o Google Play Services",16);
+    }
 
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
+    private void onInviteClicked() {
+        Intent intent = new AppInviteInvitation.IntentBuilder(getString(R.string.invitation_title))
+                .setMessage(getString(R.string.invitation_message))
+                .setDeepLink(Uri.parse(getString(R.string.invitation_deep_link)))
+                .setCustomImage(Uri.parse(getString(R.string.invitation_custom_image)))
+                .setCallToActionText(getString(R.string.invitation_cta))
+                .build();
+        startActivityForResult(intent, REQUEST_INVITE);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d(TAG, "onActivityResult: requestCode=" + requestCode + ", resultCode=" + resultCode);
+
+        if (requestCode == REQUEST_INVITE) {
+            if (resultCode == RESULT_OK) {
+                // Get the invitation IDs of all sent messages
+                String[] ids = AppInviteInvitation.getInvitationIds(resultCode, data);
+                for (String id : ids) {
+                    Log.d(TAG, "Convite enviado com sucesso! " + id);
+                }
+            } else {
+                sUToastShort("Erro ao enviar convite!",16);
+            }
+        }
+    }
+    public void sUToastShort (String texto, float tamanho)  {
+
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_layout,
+                findViewById(R.id.toast_layout_root));
+
+        TextView text = layout.findViewById(R.id.text);
+        text.setText(texto);
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 12, 120);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+        toast.show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    public void validarconta()
+    {
+        mFirebaseInstance = FirebaseDatabase.getInstance();
+        mFirebaseDatabase = mFirebaseInstance.getReference("usuario");
+        usuario = FirebaseAuth.getInstance();
+        usuario = ValidarFirebase.getFirebaseAuth();
+        userId = usuario.getUid();
+
+    }
 }

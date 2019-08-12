@@ -1,8 +1,5 @@
 package br.com.digitalhouse.staruniverse.view.login;
 
-import android.app.Activity;
-import android.app.Application;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,10 +7,9 @@ import android.util.Base64;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,13 +28,14 @@ import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.view.cadastro.CadastroActivity;
-import br.com.digitalhouse.staruniverse.view.home.HomeActivity;
 import br.com.digitalhouse.staruniverse.model.usuarios.CadastroUsuario;
+import br.com.digitalhouse.staruniverse.view.cadastro.CadastroActivity;
 import br.com.digitalhouse.staruniverse.view.cadastro.validadorFirebase.ValidarFirebase;
+import br.com.digitalhouse.staruniverse.view.home.HomeActivity;
 
 
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
@@ -50,10 +47,12 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private MaterialButton buttonLogin;
     private MaterialButton buttonGmail;
     private CadastroUsuario usuario;
+    private Switch aSwitch;
     private FirebaseAuth auth;
     private GoogleApiClient mGoogleApiClient;
-    private String encriptarPassword;
+    private String decriptarPassword;
     private String usuarioBundle;
+    FirebaseAuth.AuthStateListener authStateListener;
 
 
     @Override
@@ -65,7 +64,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         botaoCadastrar();
 
-        auth = FirebaseAuth.getInstance();
+        preferences();
+
+         auth = FirebaseAuth.getInstance();
+
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -77,7 +79,16 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
                 .build();
 
-
+        authStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if(user == null){
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    finish();
+                }
+            }
+        };
 
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
@@ -88,13 +99,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     usuario.setEmail(textInputEditTextLogin.getText().toString());
                 usuario.setSenha(textInputEditTextSenha.getText().toString());
                     validarLogin();
-                    sUToastLong("BEM VINDO!",24);
                 }
                 else
                     {
-                        sUToastLong("BEM VINDO!",24);
-                        Intent i = new Intent(LoginActivity.this, HomeActivity.class);
-                        startActivity(i);
+                        sUToastShort("Você precisa ser cadastrado para entrar!",16);
                     }
 
             }
@@ -149,7 +157,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 }
                 else{
 
-                    Toast.makeText(getApplicationContext(),"Erro na autorização",Toast.LENGTH_SHORT).show();
+                    sUToastShort("Erro na autorização", 16);
                 }
 
             }
@@ -164,9 +172,11 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         ).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 goHome();
-                Toast.makeText(LoginActivity.this, "Sucesso ao fazer Login", Toast.LENGTH_LONG).show();
+                sUToastLong("BEM VINDO!",24);
+                finish();
+
             } else {
-                Toast.makeText(LoginActivity.this, "Erro ao efetuar Login", Toast.LENGTH_LONG).show();
+                sUToastShort("Erro ao efetuar Login!", 16 );
             }
         });
     }
@@ -182,11 +192,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
     private void iniciarViews() {
+
         buttonCadastrese = findViewById(R.id.btnCadastrese);
         buttonLogin = findViewById(R.id.btnLogar);
         buttonGmail = findViewById(R.id.btnGmail);
         textInputEditTextLogin = findViewById(R.id.textInputLayoutEmailLogin);
         textInputEditTextSenha = findViewById(R.id.textInputLayoutSenhaLogin);
+        aSwitch = findViewById(R.id.switch1);
     }
 
 
@@ -197,7 +209,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private void preferences() {
         final SharedPreferences preferences = getSharedPreferences("APP_REGISTER", MODE_PRIVATE);
 
-        encriptarPassword = decrypt(preferences.getString("PASSWORD", ""));
+        decriptarPassword = decrypt(preferences.getString("PASSWORD", ""));
         usuarioBundle = preferences.getString("E-MAIL", "");
 
         textInputEditTextLogin.setText(preferences.getString("E-MAIL", ""));
@@ -211,7 +223,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     public void sUToastLong (String texto, float tamanho)  {
 
         LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.toas_layout,
+        View layout = inflater.inflate(R.layout.toast_layout,
                 findViewById(R.id.toast_layout_root));
 
         TextView text = layout.findViewById(R.id.text);
@@ -224,7 +236,44 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         toast.setView(layout);
         toast.show();
     }
+    public void sUToastShort (String texto, float tamanho)  {
+
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_layout,
+                findViewById(R.id.toast_layout_root));
+
+        TextView text = layout.findViewById(R.id.text);
+        text.setText(texto);
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 12, 120);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+        toast.show();
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (aSwitch.isActivated()){
+        auth.addAuthStateListener(authStateListener);}
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        auth.signOut();
+        if(authStateListener!=null){
+            auth.removeAuthStateListener(authStateListener);
+
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        auth.signOut();
+    }
+}
 
 
 

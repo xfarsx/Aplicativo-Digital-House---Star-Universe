@@ -25,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
     private void comecarAnimacao() {
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
-        LinearLayout l = (LinearLayout) findViewById(R.id.main_layout);
+        LinearLayout l = findViewById(R.id.main_layout);
         if (l != null) {
             l.clearAnimation();
             l.startAnimation(anim);
@@ -34,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
 
         anim = AnimationUtils.loadAnimation(this, R.anim.translate);
         anim.reset();
-        ImageView iv = (ImageView) findViewById(R.id.splash);
+        ImageView iv = findViewById(R.id.splash);
         if (iv != null) {
             iv.clearAnimation();
             iv.startAnimation(anim);

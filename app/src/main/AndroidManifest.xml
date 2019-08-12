@@ -12,15 +12,29 @@
         android:roundIcon="@mipmap/logo_star_universe"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
-        <activity android:name=".view.favoritos.FavoritosActivity"/>
+        <activity android:name=".view.favoritos.FavoritosActivity" />
         <activity android:name=".view.naves.DetalhesNavesActivity" />
         <activity android:name=".view.cadastro.TrocaEmailActivity" />
         <activity android:name=".view.cadastro.PerfilActivity" />
         <activity android:name=".view.cadastro.TrocaSenhaActivity" />
         <activity android:name=".view.personagens.DetalhesPersonagensActivity" />
-        <activity android:name=".view.bottom.BottomActivity" android:label="@string/title_activity_bottom" />
-        <activity android:name=".view.home.HomeActivity" />
+        <activity
+            android:name=".view.bottom.BottomActivity"
+            android:label="@string/title_activity_bottom" />
+        <activity android:name=".view.home.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="example.com"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
         <activity android:name=".view.login.LoginActivity" />
+        <activity android:name=".view.login.SobreOAppActivity"/>
         <activity android:name=".view.cadastro.CadastroActivity" />
         <activity android:name=".view.filmes.DetalhesFilmesActivity" />
         <activity
@@ -29,6 +43,7 @@
             android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

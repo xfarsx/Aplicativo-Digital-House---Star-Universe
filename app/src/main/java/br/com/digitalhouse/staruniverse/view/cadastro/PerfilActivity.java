@@ -7,26 +7,33 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
+
 import br.com.digitalhouse.staruniverse.R;
-import br.com.digitalhouse.staruniverse.view.cadastro.validadorFirebase.ValidarFirebase;
 import br.com.digitalhouse.staruniverse.view.favoritos.FavoritosActivity;
 import br.com.digitalhouse.staruniverse.view.home.HomeActivity;
-import br.com.digitalhouse.staruniverse.view.login.LoginActivity;
 
 public class PerfilActivity extends AppCompatActivity {
 
     private Button alteraEmail;
     private Button alteraSenha;
     private Button favoritos;
-    private Button indiqueUmAmigo;
     private Button sair;
     private TextView user;
-    ValidarFirebase getcadastro = new ValidarFirebase();
+    private String userId, nomeJedi;
+    private FirebaseAuth usuario;
+    private DatabaseReference mFirebaseDatabase;
+    private FirebaseDatabase mFirebaseInstance;
+    private DataSnapshot dataSnapshot;
 
 
     @Override
@@ -34,9 +41,13 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
+            nomeJedi = "Usuário";
+
+        setTitle("Olá, " + nomeJedi);
+
         setUpToolbar();
-        setTitle("Olá, Jedi");
-        user = findViewById(R.id.user);
+        user = findViewById(R.id.textViewUser);
+        user.setText(nomeJedi);
 
         alteraEmail = findViewById(R.id.btn_alteraremail);
         alteraEmail.setOnClickListener(new View.OnClickListener() {
@@ -64,21 +75,13 @@ public class PerfilActivity extends AppCompatActivity {
                 startActivity(troca);       }
         });
 
-        indiqueUmAmigo = findViewById(R.id.btn_indiqueumamigo);
-        indiqueUmAmigo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(PerfilActivity.this, "Indique um amigo", Toast.LENGTH_SHORT).show();
-            }
-        });
-
 
 
         sair = findViewById(R.id.btn_sair);
         sair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PerfilActivity.this, LoginActivity.class);
+                Intent intent = new Intent(PerfilActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });
@@ -89,7 +92,7 @@ public class PerfilActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         if(toolbar != null){
             setSupportActionBar(toolbar);
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         }
     }
 
@@ -104,4 +107,5 @@ public class PerfilActivity extends AppCompatActivity {
         }
         return true;
     }
+
 }
