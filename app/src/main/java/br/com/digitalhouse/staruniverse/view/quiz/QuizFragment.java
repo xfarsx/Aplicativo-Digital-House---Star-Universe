@@ -4,23 +4,18 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.transition.Scene;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.interfaces.QuizComunicador;
@@ -44,8 +39,9 @@ public class QuizFragment extends Fragment {
     private Button buttonC;
     private Button buttonD;
     private CountDownTimer contador;
-    private ObjectAnimator animacao;
     private Button proximaPergunta;
+    private Button encerrarQuiz;
+    private int numeroPerguntas = 0;
 
 
 
@@ -68,15 +64,17 @@ public class QuizFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
         iniciarViews(view);
-        opcoes.add(view.findViewById(R.id.ButtonAlterA));
-        opcoes.add(view.findViewById(R.id.ButtonAlterB));
-        opcoes.add(view.findViewById(R.id.ButtonAlterC));
-        opcoes.add(view.findViewById(R.id.ButtonAlterD));
+
         proximaPergunta = view.findViewById(R.id.proximaPergunta);
+        encerrarQuiz = view.findViewById(R.id.encerrarQuiz);
         buttonA = view.findViewById(R.id.ButtonAlterA);
         buttonB = view.findViewById(R.id.ButtonAlterB);
         buttonC = view.findViewById(R.id.ButtonAlterC);
         buttonD = view.findViewById(R.id.ButtonAlterD);
+        opcoes.add(buttonA);
+        opcoes.add(buttonB);
+        opcoes.add(buttonC);
+        opcoes.add(buttonD);
 
 
 
@@ -89,7 +87,6 @@ public class QuizFragment extends Fragment {
         quizViewModel.getQuizLiveData().observe(this, pergunta -> {
             getList(pergunta);
         });
-
 
         return view;
 
@@ -107,14 +104,14 @@ public class QuizFragment extends Fragment {
             button.setText(alternativa);
              button.setBackgroundTintList(getResources().getColorStateList(R.color.black));
              proximaPergunta.setVisibility(View.GONE);
+            encerrarQuiz.setVisibility(View.GONE);
             button.setEnabled(true);
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     button.setEnabled(false);
                     if (button.getText().toString().equals(quiz.getResposta())) {
-                        setarAcertoOuErro("certo",button);
-                                //setarAnimacao(button);
+                        setarAcertoOuErro("certo", button);
                         buttonA.setEnabled(false);
                         buttonB.setEnabled(false);
                         buttonC.setEnabled(false);
@@ -123,15 +120,26 @@ public class QuizFragment extends Fragment {
 
 
                     } else {
-                        setarAcertoOuErro("",button);
+                        setarAcertoOuErro("", button);
                         buttonA.setEnabled(false);
                         buttonB.setEnabled(false);
                         buttonC.setEnabled(false);
                         buttonD.setEnabled(false);
-                        //setarAnimacao(button);
 
                     }
-                    esperarProximaPergunta(proximaPergunta);
+                    numeroPerguntas++;
+                    if (numeroPerguntas == 5 || numeroPerguntas == 10 || numeroPerguntas == 15) {
+                        encerrarQuiz.setVisibility(View.VISIBLE);
+                        encerrarQuiz.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                comunicador.receberMensagem(pontuacao);
+                            }
+                        });
+                    } else {
+                        encerrarQuiz.setVisibility(View.GONE);
+                    }
+                    esperarProximaPergunta();
 
                 }
 
@@ -185,19 +193,20 @@ public class QuizFragment extends Fragment {
         textViewPergunta = view.findViewById(R.id.textViewQuizPergunta);
         mTextField = view.findViewById(R.id.contador);
 
+
     }
 
-    public void esperarProximaPergunta(Button botaoPP)
+    public void esperarProximaPergunta()
     {
         contador.cancel();
-        botaoPP.setVisibility(View.VISIBLE);
-        botaoPP.setOnClickListener(new View.OnClickListener() {
+        proximaPergunta.setVisibility(View.VISIBLE);
+        proximaPergunta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 proximaPergunta();
             }
-        });
 
+        });
     }
 
     public void LayoutTransition()
@@ -221,7 +230,7 @@ public class QuizFragment extends Fragment {
 
          public void setarAnimacao(Button button)
          {
-             animacao.ofFloat(button,"rotation",360).setDuration(500).setAutoCancel(true);
+             ObjectAnimator.ofFloat(button,"rotation",360).setDuration(500).setAutoCancel(true);
          }
      }
 

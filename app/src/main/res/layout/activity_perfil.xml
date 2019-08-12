@@ -162,7 +162,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_indiqueumamigo"
         app:strokeColor="@color/black"
         app:strokeWidth="4dp" />
 
@@ -170,7 +169,7 @@
         android:id="@+id/textViewUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jedi"
+        android:text="Usuário"
         android:textColor="@color/black"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewPerfil"

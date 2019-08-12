@@ -14,7 +14,7 @@
         <item
             android:id="@+id/nav_menu"
 
-            android:title="Menu" />
+            android:title="Sobre o app" />
         <item
             android:id="@+id/nav_avalie"
 
@@ -31,7 +31,7 @@
             <item
                 android:id="@+id/nav_end"
 
-                android:title="Sair" />
+                android:title="Logoff" />
         </menu>
     </item>
 

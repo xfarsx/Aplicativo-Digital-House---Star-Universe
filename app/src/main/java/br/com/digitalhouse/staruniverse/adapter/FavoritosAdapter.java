@@ -11,18 +11,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.interfaces.RecyclerViewClickListenerFilmes1;
 import br.com.digitalhouse.staruniverse.model.Favoritos.Favoritos;
-import br.com.digitalhouse.staruniverse.view.favoritos.FavoritosActivity;
 
 public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.ViewHolder> {
 
     private List<Favoritos> listaFavoritos;
-    //private RecyclerViewClickListenerFilmes listener;
+    private RecyclerViewClickListenerFilmes1 listener;
 
 
-    public FavoritosAdapter(List<Favoritos> filmeFavotitos, FavoritosActivity favoritosActivity) {
+    public FavoritosAdapter(List<Favoritos> filmeFavotitos, RecyclerViewClickListenerFilmes1 listener) {
         this.listaFavoritos = filmeFavotitos;
-        //this.listener = listener;
+        this.listener = listener;
     }
 
 
@@ -37,9 +37,15 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
         final Favoritos novoFavorito = listaFavoritos.get(i);
-
         viewHolder.textViewTipoFavorito.setText(novoFavorito.getTipoFavorito());
         viewHolder.bind(novoFavorito);
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onClick(novoFavorito);
+            }
+        });
 
     }
 

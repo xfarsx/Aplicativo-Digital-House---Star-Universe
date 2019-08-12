@@ -4,6 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@drawable/starwarsbackground"
     tools:context=".view.login.SobreOAppActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:gravity="center"
+            android:background="@drawable/rounded_box"
+            android:text="@string/sobre_o_app"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_box_2"
+            android:paddingTop="32dp"
+            android:paddingBottom="32dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="16dp"
+            android:gravity="left"
+            android:text="@string/sobre_o_app_explicacao"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

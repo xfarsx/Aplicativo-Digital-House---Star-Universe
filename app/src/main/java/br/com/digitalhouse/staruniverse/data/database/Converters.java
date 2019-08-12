@@ -32,7 +32,7 @@ public class Converters {
     /// Type converter para uam lista de String
     @TypeConverter
     public List<String> fromString(String value) {
-        Type listType = (Type) new TypeToken<List<String>>() {
+        Type listType = new TypeToken<List<String>>() {
         }.getType();
         return new Gson().fromJson(value, listType);
     }
@@ -45,7 +45,7 @@ public class Converters {
 
     @TypeConverter
     public Favoritos fromFavoritos(String value) {
-        Type listType = (Type) new TypeToken<Favoritos>() {
+        Type listType = new TypeToken<Favoritos>() {
         }.getType();
         return new Gson().fromJson(value, listType);
     }
@@ -58,7 +58,7 @@ public class Converters {
 
     @TypeConverter
     public Filme fromFilme(String value) {
-        Type listType = (Type) new TypeToken<Filme>() {
+        Type listType = new TypeToken<Filme>() {
         }.getType();
         return new Gson().fromJson(value, listType);
     }
@@ -71,7 +71,7 @@ public class Converters {
 
     @TypeConverter
     public Nave fromNave(String value) {
-        Type listType = (Type) new TypeToken<Nave>() {
+        Type listType = new TypeToken<Nave>() {
         }.getType();
         return new Gson().fromJson(value, listType);
     }
@@ -84,7 +84,7 @@ public class Converters {
 
     @TypeConverter
     public Character fromCharacter(String value) {
-        Type listType = (Type) new TypeToken<Character>() {
+        Type listType = new TypeToken<Character>() {
         }.getType();
         return new Gson().fromJson(value, listType);
     }

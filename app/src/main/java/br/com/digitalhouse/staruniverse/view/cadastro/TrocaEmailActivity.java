@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,7 +23,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import br.com.digitalhouse.staruniverse.R;
 import br.com.digitalhouse.staruniverse.model.usuarios.CadastroUsuario;
-import br.com.digitalhouse.staruniverse.view.cadastro.validadorFirebase.ValidarFirebase;
 
 public class TrocaEmailActivity extends AppCompatActivity {
 
@@ -34,8 +34,7 @@ public class TrocaEmailActivity extends AppCompatActivity {
     private FirebaseDatabase mFirebaseInstance;
     private String userId;
     private FirebaseAuth usuario;
-
-
+    FirebaseUser usuarioLogado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +43,11 @@ public class TrocaEmailActivity extends AppCompatActivity {
 
         initViews();
 
+       // validarconta();
         mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("usuario");
-        usuario = FirebaseAuth.getInstance();
-        usuario = ValidarFirebase.getFirebaseAuth();
-        userId =  usuario.getCurrentUser().getUid();
+
+
 
         btnConfirmarEmail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +55,7 @@ public class TrocaEmailActivity extends AppCompatActivity {
 
                 validarEmail(editTextEmailAntigo,editTextNovoEmail,editTextConfirmarEmail);
                 String novasenha = editTextNovoEmail.getText().toString();
-                updateUsuario(novasenha);
+               // updateUsuario(novasenha);
 
             }
         });
@@ -68,7 +67,6 @@ public class TrocaEmailActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(password));{
             mFirebaseDatabase.child(userId).child("email").removeValue();
             mFirebaseDatabase.child(userId).child("email").setValue(password);
-            usuario.getCurrentUser().updatePassword(password);
         }
         addUserChangeListener();
     }
@@ -170,4 +168,13 @@ public class TrocaEmailActivity extends AppCompatActivity {
         toast.setView(layout);
         toast.show();
     }
+   /* public void validarconta()
+    {
+        mFirebaseInstance = FirebaseDatabase.getInstance();
+        mFirebaseDatabase = mFirebaseInstance.getReference("usuario");
+        usuario = FirebaseAuth.getInstance();
+        usuario = ValidarFirebase.getFirebaseAuth();
+
+
+    }*/
 }

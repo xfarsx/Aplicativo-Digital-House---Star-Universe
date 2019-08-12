@@ -18,8 +18,8 @@ public interface FavoritosDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(Favoritos favoritos);
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertAll(List<Favoritos> favoritos);
+//    @Insert(onConflict = OnConflictStrategy.REPLACE)
+//    Favoritos insertAll(List<Favoritos> favoritos);
 
     @Update
     void update(Favoritos favoritos);
@@ -39,6 +39,7 @@ public interface FavoritosDAO {
     @Query("SELECT * FROM favoritos WHERE id = :id")
     Favoritos getById(long id);
 
-    @Query("SELECT * FROM favoritos WHERE tipoFavorito =:tipoFavorito")
-    Favoritos getByName(String tipoFavorito);
+    @Query("SELECT * FROM favoritos WHERE filmeFavorito = :nomeFavorito LIMIT 1")
+    Favoritos getByName(String nomeFavorito);
+
 }

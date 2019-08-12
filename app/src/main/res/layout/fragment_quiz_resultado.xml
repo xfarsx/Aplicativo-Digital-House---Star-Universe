@@ -27,7 +27,7 @@
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="288dp"
+        android:layout_marginBottom="350dp"
         android:background="@drawable/circle"
         android:gravity="center"
         android:text="10"
@@ -48,7 +48,7 @@
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:text="@string/frase"
+        android:text=""
         android:textColor="@color/staruniverse"
         android:textSize="22sp"
         android:textStyle="bold"
@@ -72,23 +72,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewPontuacao">
 
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/ButtonReiniciarQuiz"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/design_default_color_primary"
-            android:text="Reiniciar Quiz"
-            android:textColor="@color/white" />
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/reiniciar_quiz"
+            android:gravity="center"
+            app:cornerRadius="100dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
-        <Button
-            android:id="@+id/ButtonRanking"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="@color/staruniverse"
-            android:text="Ver ranking"
-            tools:layout_editor_absoluteX="126dp"
-            tools:layout_editor_absoluteY="285dp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

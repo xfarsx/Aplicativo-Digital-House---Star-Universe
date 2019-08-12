@@ -93,6 +93,7 @@ public class BottomActivity extends AppCompatActivity implements QuizComunicador
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.containerFragments, fragment);
+        transaction.addToBackStack(null);
         transaction.commit();
     }
 
@@ -106,5 +107,11 @@ public class BottomActivity extends AppCompatActivity implements QuizComunicador
         Quiz.setArguments(bundle);
 
         replaceFragment(Quiz);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
     }
 }

@@ -27,18 +27,28 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.dynamiclinks.FirebaseDynamicLinks;
 import com.google.firebase.dynamiclinks.PendingDynamicLinkData;
 
 import br.com.digitalhouse.staruniverse.R;
+import br.com.digitalhouse.staruniverse.view.cadastro.validadorFirebase.ValidarFirebase;
 import br.com.digitalhouse.staruniverse.view.favoritos.FavoritosActivity;
 import br.com.digitalhouse.staruniverse.view.bottom.BottomActivity;
 import br.com.digitalhouse.staruniverse.view.cadastro.PerfilActivity;
+import br.com.digitalhouse.staruniverse.view.login.LoginActivity;
+import br.com.digitalhouse.staruniverse.view.login.SobreOAppActivity;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
     private ImageView btnFavoritos, btnPersonagens, btnQuiz, btnNaves, btnFilmes,btnIndiqueUmAmigo;
     private final String TAG = PerfilActivity.class.getSimpleName();
     private final int REQUEST_INVITE = 0;
+    private String userId, nomeJedi;
+    private FirebaseAuth usuario;
+    private DatabaseReference mFirebaseDatabase;
+    private FirebaseDatabase mFirebaseInstance;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -54,6 +64,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 onInviteClicked();
             }
         });
+
+        validarconta();
 
         botaoFilmes();
 
@@ -212,15 +224,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(this, PerfilActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_menu) {
-            Intent intent = new Intent(this, HomeActivity.class);
+            Intent intent = new Intent(this, SobreOAppActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_avalie) {
             //vai para loja avaliação
-            Toast.makeText(HomeActivity.this, "Avalie - Vai para a loja", Toast.LENGTH_SHORT).show();
+            sUToastShort( "Avalie - Vai para a loja", 16);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_end) {
-            finishAffinity();
+            usuario.signOut();
+            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -291,5 +304,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onStop() {
         super.onStop();
+    }
+
+    public void validarconta()
+    {
+        mFirebaseInstance = FirebaseDatabase.getInstance();
+        mFirebaseDatabase = mFirebaseInstance.getReference("usuario");
+        usuario = FirebaseAuth.getInstance();
+        usuario = ValidarFirebase.getFirebaseAuth();
+        userId = usuario.getUid();
+
     }
 }

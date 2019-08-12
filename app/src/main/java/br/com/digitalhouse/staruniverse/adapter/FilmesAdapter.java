@@ -29,10 +29,9 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
     private Character personagemFavorito = null;
 
 
-
     public FilmesAdapter(List<Filme> listaFilme, RecyclerViewClickListenerFilmes listener) {
         this.listaFilme = listaFilme;
-        this.listener =  listener;
+        this.listener = listener;
 
     }
 
@@ -49,6 +48,7 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
 
 
         Filme novoFilme = listaFilme.get(i);
+
         viewHolder.bind(novoFilme);
 
 
@@ -59,17 +59,27 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
 
                 dao = Database.getDatabase(view.getContext()).favoritosDAO();
 
-                if(novoFilme.isFavorite())
-                {viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_select);
-                new Thread(() -> {
-                        dao.insert( new Favoritos("Filme" , novoFilme, naveFavorita, personagemFavorito));
-                    }).start();}
-                else {
+                // Se for favorito muda a imagem
+                if (novoFilme.isFavorite()) {
+                    viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_select);
+                    novoFilme.setFavorite(true);
+
+                    new Thread(() -> {
+                        dao.insert(new Favoritos(novoFilme.getTitle(), "Filme", novoFilme, naveFavorita, personagemFavorito));
+                    }).start();
+
+
+                } else {
                     viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_unselect);
-                    novoFilme.setFavorite(!novoFilme.isFavorite());
+                    novoFilme.setFavorite(false);
+
+                    new Thread(() -> {
+                        dao.delete(new Favoritos(novoFilme.getTitle(), "Filme", novoFilme, naveFavorita, personagemFavorito));
+                    }).start();
 
                 }
                 // configura um novo valor para o favorito
+                novoFilme.setFavorite(!novoFilme.isFavorite());
             }
         });
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +89,7 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
             }
         });
     }
+
 
     public void update(List<Filme> listaFilme) {
         this.listaFilme = listaFilme;

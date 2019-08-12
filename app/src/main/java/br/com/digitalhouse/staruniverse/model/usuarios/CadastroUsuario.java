@@ -16,7 +16,7 @@ public class CadastroUsuario {
     public CadastroUsuario() {
     }
 
-    public CadastroUsuario(String nome, String sobrenome, String email, String nomeJedi, String senha, String confirmarSenha, String id) {
+    public CadastroUsuario(String email, String nomeJedi, String senha, String id) {
         this.email = email;
         this.nomeJedi = nomeJedi;
         this.senha = senha;
