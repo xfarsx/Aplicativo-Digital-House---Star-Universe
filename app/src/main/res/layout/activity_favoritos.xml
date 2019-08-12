@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/black"
-    tools:context=".favoritos.FavoritosActivity"
+    tools:context=".view.favoritos.FavoritosActivity"
     android:layout_height="match_parent">
 
 
@@ -32,6 +32,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycleFavoritos"
+                tools:listitem="@layout/item_recyclerview_favoritos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>

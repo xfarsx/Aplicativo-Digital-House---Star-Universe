@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="56dp"
     android:background="@color/black"
-    tools:context=".personagens.DetalhesPersonagensActivity"
+    tools:context=".view.personagens.DetalhesPersonagensActivity"
     tools:showIn="@layout/activity_detalhes_personagem">
 
     <ImageView

@@ -14,15 +14,12 @@
         <item
             android:id="@+id/nav_menu"
 
-            android:title="Menu" />
+            android:title="Sobre o app" />
         <item
             android:id="@+id/nav_avalie"
 
             android:title="Avalie-nos" />
-        <item
-            android:id="@+id/nav_indique"
 
-            android:title="Indique a um amigo" />
     </group>
 
     <item android:title="">
@@ -34,7 +31,7 @@
             <item
                 android:id="@+id/nav_end"
 
-                android:title="Sair" />
+                android:title="Logoff" />
         </menu>
     </item>
 

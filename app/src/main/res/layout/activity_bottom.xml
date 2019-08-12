@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:background="@color/black"
     android:layout_height="match_parent"
-    tools:context=".bottom.BottomActivity">
+    tools:context=".view.bottom.BottomActivity">
 
     <LinearLayout
         android:id="@+id/containerFragments"
@@ -28,7 +28,7 @@
         android:layout_marginStart="0dp"
         android:backgroundTint="@color/staruniverse"
         android:layout_marginEnd="0dp"
-        android:background="?android:attr/windowBackground"
+        android:background="@color/staruniverse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

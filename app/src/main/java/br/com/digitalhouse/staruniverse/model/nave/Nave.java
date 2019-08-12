@@ -5,6 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -68,6 +69,18 @@ public class Nave implements Parcelable {
 
     @SerializedName("starship_class")
     private String starshipClass;
+
+    @Expose
+    @ColumnInfo(name = "favorite")
+    private boolean favorite = true;
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
 
     @Expose
     @PrimaryKey

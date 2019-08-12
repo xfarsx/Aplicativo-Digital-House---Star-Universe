@@ -36,6 +36,159 @@
         "Rathtars"
       ],
       "resposta": "Rathtars"
+    },{
+      "titulo": "Qual o nome do ator que interpreta Cassian Andor?",
+      "alternativas": [
+        "Diego Luna",
+        "Donnie Yen",
+        "Forest Whiltaker",
+        "Felicity Jones"
+      ],
+      "resposta": "Diego Luna"
+    },{
+      "titulo": "Qual o nome da principal nave pilotada pelos protagonistas do filme?",
+      "alternativas": [
+        "X-wing",
+        "Y-wing",
+        "B-wing",
+        "U-wing"
+      ],
+      "resposta": "U-wing"
+    },{
+      "titulo": "Quais os nomes dos walkers cargueiros que operam em Scarif?",
+      "alternativas": [
+        "AT-AT",
+        "AT-ACT",
+        "AT-DP",
+        "AT-TE"
+      ],
+      "resposta": "AT-ACT"
+    },{
+      "titulo": "Quem são os Jedis que atacam a nave do General Grievous no começo de Star Wars: Episódio III: A Vingança dos Sith?",
+      "alternativas": [
+        "Obi-Wan e Mace Windu",
+        "Anakin Skywalker e Obi-Wan",
+        "Yoda e Obi-Wan",
+        "Anakin Skywalker e Obi-Wan"
+      ],
+      "resposta": "Anakin Skywalker e Obi-Wan"
+    },{
+      "titulo": "Qual Sith os Jedis enfrentam e derrotam na nave do general Grievous?",
+      "alternativas": [
+        "Super Battle Droids",
+        "Magnaguardas",
+        "Count Dooku",
+        "Soldados Geonosianos"
+      ],
+      "resposta": "Count Dooku"
+    },{
+      "titulo": "Em que planeta os Jedis e o Chancellor Palpatine aterrisam?",
+      "alternativas": [
+        "Mustafar",
+        "Utapau",
+        "Kashyyyk",
+        "Coruscant"
+      ],
+      "resposta": "Coruscant"
+    },{
+      "titulo": "Onde Obi-Wan vai investigar e procurar o General Grievous?",
+      "alternativas": [
+        "Felucia",
+        "Kashyyyk",
+        "Mustafar",
+        "Utapau"
+      ],
+      "resposta": "Utapau"
+    },{
+      "titulo": "Quem era o antigo mestre do Imperador?",
+      "alternativas": [
+        "Darth Sidious",
+        "Darth Nihilus",
+        "Darth Plagueis",
+        "Darth Bane"
+      ],
+      "resposta": "Darth Plagueis"
+    },{
+      "titulo": "Qual Jedi Anakin matará para salvar a pele do Imperador?",
+      "alternativas": [
+        "Yoda",
+        "Obi-Wan",
+        "Kit Fisto",
+        "Mace Windu"
+      ],
+      "resposta": "Mace Windu"
+    },{
+      "titulo": "Quem enfrentará o Imperador em Coruscant, depois da Ordem 66 ser executada?",
+      "alternativas": [
+        "Mace Windu",
+        "Obi-Wan",
+        "Yoda",
+        "Kit Fisto"
+      ],
+      "resposta": "Yoda"
+    },{
+      "titulo": "Quem é o (a) líder da organização terrorista Olho da Morte?",
+      "alternativas": [
+        "Bo-Katan Kryze",
+        "Pre Vizsla",
+        "Almec",
+        "Len Vizsla"
+      ],
+      "resposta": "Pre Vizsla"
+    },{
+      "titulo": "Quem é o (a) líder dos Twi'lek em Ryloth?",
+      "alternativas": [
+        "Hera Syndulla",
+        "Cham Syndulla",
+        "Mace Windu",
+        "Wat Tambor"
+      ],
+      "resposta": "Cham Syndulla"
+    },{
+      "titulo": "Quem matou o senador rodiano Onaconda Farr?",
+      "alternativas": [
+        "Halle Burtoni",
+        "Aurra Sing",
+        "Mee Deechi",
+        "Onaconda Farr"
+      ],
+      "resposta": "Onaconda Farr"
+    },{
+      "titulo": "Qual é a espécie da criatura que o General Grievous tinha em seu esconderijo no sistema Vassek?",
+      "alternativas": [
+        "Reek",
+        "Gundark",
+        "Roggwart",
+        "Nexu"
+      ],
+      "resposta": "Roggwart"
+    },{
+      "titulo": "Quem o vilão Kylo Ren mata?",
+      "alternativas": [
+        "Han Solo",
+        "Chewbacca",
+        "Luke",
+        "Rey"
+      ],
+      "resposta": "Han Solo"
+    },{
+      "titulo": "Kylo Ren é o que de Han Solo?",
+      "alternativas": [
+        "Pai",
+        "Filho",
+        "Sobrinho",
+        "Tio"
+      ],
+      "resposta": "Filho"
+    },{
+      "titulo": "Como Chewbacca morre?",
+      "alternativas": [
+        "Com vários de tiros",
+        "É decapitado por Kylo Ren",
+        "Han Solo atira nele",
+        "Ele não morre"
+      ],
+      "resposta": "Ele não morre"
     }
   ]
 }
