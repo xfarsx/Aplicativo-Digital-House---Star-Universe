@@ -30,7 +30,7 @@ public class PerfilActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
 
         setUpToolbar();
-        setTitle("Olá, Gean");
+        setTitle("Olá, usuário");
 
         alteraEmail = findViewById(R.id.btn_alteraremail);
         alteraEmail.setOnClickListener(new View.OnClickListener() {
@@ -54,8 +54,8 @@ public class PerfilActivity extends AppCompatActivity {
         favoritos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(PerfilActivity.this, "Favoritos", Toast.LENGTH_SHORT).show();
-            }
+               /*Intent troca = new Intent(PerfilActivity.this, FavoritosActivity.class);
+                startActivity(troca);   */         }
         });
 
         indiqueUmAmigo = findViewById(R.id.btn_indiqueumamigo);

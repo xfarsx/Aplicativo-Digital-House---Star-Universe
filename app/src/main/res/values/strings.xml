@@ -1,15 +1,6 @@
 <resources>
     <string name="app_name">Star Universe</string>
-    <string name="star_universe">Star Universe</string>
-    <string name="e_endereco_de_e_mail">e endereço de e-mail.</string>
-    <string name="editar_isso">Editar isso:</string>
-    <string name="receber">receberá:</string>
-    <string name="seu_perfil_p_blic_lista_de_amigos">Seu perfil público, lista de amigos</string>
     <string name="continuar">Continuar</string>
-    <string name="frase_final_facebook">Isso não permite que o app faça postagem no Facebook.</string>
-    <string name="Termos_de_Uso_Google">Para continuar, o Gogle compartilhará seu nome, seu enedereço de e-mail e sua foto do perfil com o app Star Universe. Antes de usar esse app, revise política de privacidade e os termos de serviço dele.</string>
-    <string name="escolha_uma_conta">Escolha uma conta</string>
-    <string name="para_continuar_no_star_universe">para continuar no star universe.</string>
 
     <!--LOGIN-->
     <string name="que_se_tornar_um_jedi">Que se tornar um Jedi ?</string>
@@ -17,11 +8,9 @@
     <string name="login_com_facebook">Login com Facebook</string>
 
     <!--CADASTRO-->
-    <string name="sobrenome">Sobrenome</string>
     <string name="e_mail">E-mail</string>
     <string name="nome_jedi">Nome Jedi</string>
     <string name="senha">Senha</string>
-    <string name="nome">Nome</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="confirmar_senha">Confirmar Senha</string>
     <string name="voltar">Voltar</string>
@@ -66,10 +55,10 @@
     <string name="desc">desc</string>
     <string name="sua_posi_o_103_lugar">Sua posição é -103º lugar</string>
     <string name="quiz">Quiz</string>
-    <string name="usuario_login">Usuário Login</string>
+    <string name="usuario_login">Usuário</string>
     <string name="cadastre_se_login">Cadastre-se</string>
     <string name="torne_se_jedi_cadastro">Torne-se um Jedi</string>
-    <string name="senha_login">Senha Login</string>
+    <string name="senha_login">Senha</string>
     <string name="title_naves">Naves</string>
 
     <!--Character Detail Format-->

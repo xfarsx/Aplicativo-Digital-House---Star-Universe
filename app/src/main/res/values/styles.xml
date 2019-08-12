@@ -7,6 +7,7 @@
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
+    <item name="drawerArrowStyle">@style/DrawIcon</item>
 </style>
 
     Login
@@ -50,6 +51,14 @@
 <item name="android:textColor">#000000</item>
 <item name="android:background">@color/staruniverse</item>
 </style>
+
+
+    <!-- Change Color Hamburguer menu -->
+    <style name="DrawIcon" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/black</item>
+        <item name="spinBars">true</item>
+    </style>
+
 
     <!-- FullScreen theme. -->
 <style name="FullScreen" parent="AppTheme">

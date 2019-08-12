@@ -41,6 +41,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/font_item"
         android:textStyle="bold"
+        android:autoSizeMaxTextSize="@dimen/activity_horizontal_margin"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewDeathStar"
         app:layout_constraintEnd_toEndOf="@+id/imageViewDeathStar"
         app:layout_constraintStart_toEndOf="@+id/imageViewImgDetalheNave"
