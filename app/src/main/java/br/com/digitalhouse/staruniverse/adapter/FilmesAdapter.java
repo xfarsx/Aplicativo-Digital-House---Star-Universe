@@ -62,7 +62,6 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
                 // Se for favorito muda a imagem
                 if (novoFilme.isFavorite()) {
                     viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_select);
-                    novoFilme.setFavorite(true);
 
                     new Thread(() -> {
                         dao.insert(new Favoritos(novoFilme.getTitle(), "Filme", novoFilme, naveFavorita, personagemFavorito));
@@ -71,7 +70,6 @@ public class FilmesAdapter extends RecyclerView.Adapter<FilmesAdapter.ViewHolder
 
                 } else {
                     viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_unselect);
-                    novoFilme.setFavorite(false);
 
                     new Thread(() -> {
                         dao.delete(new Favoritos(novoFilme.getTitle(), "Filme", novoFilme, naveFavorita, personagemFavorito));

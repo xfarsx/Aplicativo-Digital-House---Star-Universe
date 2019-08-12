@@ -10,7 +10,9 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.List;
 
 import br.com.digitalhouse.staruniverse.data.database.Database;
+import br.com.digitalhouse.staruniverse.data.database.dao.FavoritosDAO;
 import br.com.digitalhouse.staruniverse.data.database.dao.FilmesDAO;
+import br.com.digitalhouse.staruniverse.model.Favoritos.Favoritos;
 import br.com.digitalhouse.staruniverse.model.filme.Filme;
 import br.com.digitalhouse.staruniverse.model.filme.FilmeResult;
 import br.com.digitalhouse.staruniverse.repository.FilmeRepository;
@@ -25,7 +27,10 @@ public class FilmeViewModel extends AndroidViewModel {
     private MutableLiveData<List<Filme>> filmeLiveData = new MutableLiveData<>();
     private MutableLiveData<Throwable> errorLiveData = new MutableLiveData<>();
     private MutableLiveData<Boolean> loadingLiveData = new MutableLiveData<>();
-
+    private FavoritosDAO dao;
+    private FilmesDAO daof;
+    private List<Favoritos> favoritos;
+    private List<Filme> filmeaf;
     private CompositeDisposable disposable = new CompositeDisposable();
     private FilmeRepository repository = new FilmeRepository();
 
@@ -55,6 +60,7 @@ public class FilmeViewModel extends AndroidViewModel {
             getLocalFilme();
         }
     }
+
 
     private void getLocalFilme() {
         disposable.add(
