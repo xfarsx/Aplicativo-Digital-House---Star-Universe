@@ -27,10 +27,6 @@ public class FilmeViewModel extends AndroidViewModel {
     private MutableLiveData<List<Filme>> filmeLiveData = new MutableLiveData<>();
     private MutableLiveData<Throwable> errorLiveData = new MutableLiveData<>();
     private MutableLiveData<Boolean> loadingLiveData = new MutableLiveData<>();
-    private FavoritosDAO dao;
-    private FilmesDAO daof;
-    private List<Favoritos> favoritos;
-    private List<Filme> filmeaf;
     private CompositeDisposable disposable = new CompositeDisposable();
     private FilmeRepository repository = new FilmeRepository();
 

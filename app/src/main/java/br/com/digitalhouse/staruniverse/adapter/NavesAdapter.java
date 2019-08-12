@@ -48,32 +48,32 @@ public class NavesAdapter extends RecyclerView.Adapter<NavesAdapter.ViewHolder> 
             @Override
             public void onClick(View view) { listener.onClick(novaNave); }
         });
-            viewHolder.imageViewFavorite.setOnClickListener(new View.OnClickListener() {
+        viewHolder.imageViewFavorite.setOnClickListener(new View.OnClickListener() {
 
-                @Override
-                public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
 
-                    dao = Database.getDatabase(view.getContext()).favoritosDAO();
-                    // Se for favorito muda a imagem
-                    if (novaNave.isFavorite()){
-                        viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_select);
+                dao = Database.getDatabase(view.getContext()).favoritosDAO();
+                // Se for favorito muda a imagem
+                if (novaNave.isFavorite()){
+                    viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_select);
 
-                        new Thread(() -> {
-                            dao.insert( new Favoritos(novaNave.getName(),"Nave" , filmeFavorito, novaNave, personagemFavorito));
-                        }).start();
+                    new Thread(() -> {
+                        dao.insert( new Favoritos(novaNave.getName(),"Nave" , filmeFavorito, novaNave, personagemFavorito));
+                    }).start();
 
 
-                    }else {
-                        viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_unselect);
-                        new Thread(() -> {
-                            dao.delete( new Favoritos(novaNave.getName(),"Nave" , filmeFavorito, novaNave, personagemFavorito));
-                        }).start();
+                }else {
+                    viewHolder.imageViewFavorite.setImageResource(R.drawable.ic_fav_unselect);
+                    new Thread(() -> {
+                        dao.delete( new Favoritos(novaNave.getName(),"Nave" , filmeFavorito, novaNave, personagemFavorito));
+                    }).start();
 
-                    }
-                    // configura um novo valor para o favorito
-                    novaNave.setFavorite(!novaNave.isFavorite());
                 }
-            });
+                // configura um novo valor para o favorito
+                novaNave.setFavorite(!novaNave.isFavorite());
+            }
+        });
 
 
 
